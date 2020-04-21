@@ -1,0 +1,124 @@
+<resources>
+    <string name="app_name">CU Help Guide</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
+
+    <!--   <string-array name="nameList">
+        <item>Headings</item>
+        <item>Headings and Details</item>
+        <item>All Data</item>
+    </string-array>-->
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_tttttttttttt">tttttttttttt</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+
+    //============ Social Science Department name =========
+    <string name="social_economic"> Department of Economics </string>
+    <string name="social_political"> Department of Political Science</string>
+    <string name="social_sociology"> Department of Sociology</string>
+    <string name="social_administration"> Department of Public Administration</string>
+    <string name="social_journalism"> Department of Communication and Journalism</string>
+    <string name="social_criminology"> Department of Criminology and Police Science</string>
+
+    //============ Science Department name =========
+    <string name="science_physic"> Department of Physics </string>
+    <string name="science_chemistry"> Department of Chemistry </string>
+    <string name="science_mathematics"> Department of Mathematics </string>
+    <string name="science_statistics"> Department of Statistics </string>
+    <string name="science_appliedchemistry"> Department of Applied Chemistry and Chemical Engineering </string>
+
+    //============ Engineering Department name =========
+    <string name="engineer_cse"> Department of CSE </string>
+    <string name="engineer_eee"> Department of EEE </string>
+
+    //============ Business Department name =========
+    <string name="business_account"> Department of Accounting </string>
+    <string name="business_management"> Department of Management </string>
+    <string name="business_finance"> Department of Finance </string>
+    <string name="business_marketing"> Department of Marketing </string>
+    <string name="business_human"> Department of Human Resource Management </string>
+    <string name="business_banking"> Department of Banking and Insurance </string>
+
+    //============ Arts Department name =========
+    <string name="arts_bangla"> Department of Bangla </string>
+    <string name="arts_english"> Department of English </string>
+    <string name="arts_history"> Department of History </string>
+    <string name="arts_philosopy"> Department of Philosophy </string>
+    <string name="arts_islamic"> Department of Islamic History and Culture </string>
+
+    //============ Biology Department name =========
+    <string name="biology_zoology"> Department of Zoology </string>
+    <string name="biology_botany"> Department of Botany </string>
+    <string name="biology_pharmacy"> Department of Pharmacy </string>
+    <string name="biology_microbiology"> Department of Microbiology </string>
+    <string name="biology_psychology"> Department of Psychology </string>
+    <string name="biology_genetic"> Department of Genetic Engineering and Biotechnology </string>
+    <string name="biology_biochemistry"> Biochemistry and Molecular Biology </string>
+    <string name="biology_soil"> Department of Soil Science </string>
+    <string name="biology_geography"> Geography and Environmental Studies </string>
+
+    //============ Marine Department name =========
+    <string name="marine_marine"> Department of Marine </string>
+    <string name="marine_fisharies"> Department of Fisharies </string>
+
+    //============ Forestry Department name =========
+    <string name="forestry_forestry"> Department of Forestry </string>
+    <string name="forestry_environmental"> Department of Environmental </string>
+
+
+    //============ Law Department name =========
+    <string name="law"> Department of Law </string>
+    <string name="title_activity_main2">Main2Activity</string>
+
+
+    //===================== Practice Test Array
+    <string name="test_1"> Practice Test 1 </string>
+    <string name="test_2"> Practice Test 2 </string>
+    <string name="test_3"> Practice Test 3 </string>
+    <string name="test_4"> Practice Test 4 </string>
+    <string name="test_5"> Practice Test 5 </string>
+    <string name="test_6"> Practice Test 6 </string>
+    <string name="test_7"> Practice Test 7 </string>
+    <string-array name="test_title">
+        <item>@string/test_1</item>
+        <item>@string/test_2</item>
+        <item>@string/test_3</item>
+        <item>@string/test_4</item>
+        <item>@string/test_5</item>
+        <item>@string/test_6</item>
+        <item>@string/test_7 </item>
+    </string-array>
+
+    <string name="test1">test_1</string>
+    <string name="test2">test_2</string>
+    <string name="test3">test_3</string>
+    <string name="test4">test_4</string>
+    <string name="test5">test_5</string>
+    <string name="test6">test_6</string>
+    <string name="test7">test_7</string>
+
+
+    <string-array name="test_ID">
+        <item>@string/test1</item>
+        <item>@string/test2</item>
+        <item>@string/test3</item>
+        <item>@string/test4</item>
+        <item>@string/test5</item>
+        <item>@string/test6</item>
+        <item>@string/test7</item>
+    </string-array>
+
+
+</resources>

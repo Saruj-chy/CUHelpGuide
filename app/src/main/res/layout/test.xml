@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="15dp"
+       >
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+
+                android:layout_margin="5dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Roky Das"
+                android:textSize="40dp"
+                android:textColor="#000"
+                android:layout_marginLeft="20dp"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <Button
+                android:layout_width="165dp"
+                android:layout_height="165dp"
+                android:layout_margin="5dp"
+                android:textSize="15dp"
+                android:textColor="#FFFFFF"
+                android:textAlignment="center"
+                android:padding="10dp"
+                android:text="Subject Pre-requirement"
+                android:textAllCaps="false"/>
+            <Button
+                android:layout_width="165dp"
+                android:layout_height="165dp"
+                android:layout_margin="5dp"
+                android:textSize="15dp"
+                android:textColor="#FFFFFF"
+
+                android:textAlignment="center"
+                android:padding="10dp"
+                android:text="Faculty and Department"
+                android:textAllCaps="false">
+            </Button>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:layout_width="165dp"
+                android:layout_height="165dp"
+                android:textSize="15dp"
+                android:textColor="#FFFFFF"
+                android:layout_margin="5dp"
+
+                android:textAlignment="center"
+                android:text="Subject\nChoice List"
+                android:padding="10dp"
+                android:textAllCaps="false"/>
+
+              <!--
+
+
+
+               -->
+            <Button
+                android:layout_width="165dp"
+                android:layout_height="165dp"
+         android:layout_margin="5dp"
+
+                android:textSize="15dp"
+                android:textColor="#FFFFFF"
+
+                android:textAlignment="center"
+                android:padding="10dp"
+                android:text="Model Test\n"
+                android:textAllCaps="false">
+            </Button>
+        </LinearLayout>
+       <!-- <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:layout_width="165dp"
+                android:layout_height="165dp"
+                android:layout_margin="10dp"
+                android:textSize="15dp"
+                android:textColor="#FFFFFF"
+
+                android:textAlignment="center"
+                android:padding="10dp"
+                android:text="Subject Review"
+                android:textAllCaps="false"/>
+            <Button
+                android:layout_width="165dp"
+                android:layout_height="165dp"
+                android:layout_margin="5dp"
+                android:textSize="15dp"
+                android:textColor="#FFFFFF"
+
+                android:textAlignment="center"
+                android:padding="10dp"
+                android:text="Contact with Department Students"
+                android:textAllCaps="false">
+            </Button>
+        </LinearLayout>-->
+    </LinearLayout>
+    </ScrollView>
+
+    </LinearLayout>
+

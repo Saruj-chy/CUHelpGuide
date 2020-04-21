@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.sd.saruj.cuhelpguide">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <activity android:name=".ModelQuestion.PracticeTest.QuestionActivity"/>
+        <activity android:name=".ModelQuestion.PracticeTest.PracticeTestActivity"/>
+        <activity android:name=".ModelQuestion.ModelQuestionMainActivity" />
+        <activity android:name=".ModelQuestion.ResultActivity" />
+        <activity android:name=".ModelQuestion.ModelQuestionActivity" />
+        <activity android:name=".SubjectPrerequirement.Activities.D1UnitActivity" />
+        <activity android:name=".SubjectPrerequirement.Activities.DUnitActivity" />
+        <activity android:name=".SubjectPrerequirement.Activities.CUnitActivity" />
+        <activity android:name=".SubjectPrerequirement.Activities.B1UnitActivity" />
+        <activity android:name=".SubjectPrerequirement.Activities.BUnitActivity" />
+        <activity android:name=".SubjectPrerequirement.Activities.AUnitActivity" />
+        <activity android:name=".SubjectPrerequirement.Activities.AllUnitActivity" />
+        <activity android:name=".DepartmentInformation.DepartmentInformationActivity" />
+        <activity android:name=".Faculty.ForestryActivity" />
+        <activity android:name=".Faculty.ArtsAndHumanities_Activity" />
+        <activity android:name=".Faculty.Business_Activity" />
+        <activity android:name=".Faculty.Engineering_Activity" />
+        <activity android:name=".Faculty.Marine_Activity" />
+        <activity android:name=".Faculty.Science_Activity" />
+        <activity android:name=".Faculty.Social_Activity" />
+        <activity android:name=".Faculty.Biological_Activity" />
+        <activity android:name=".Faculty_MainActivity" />
+        <activity android:name=".MainActivity" />
+        <activity
+            android:name=".SplashActivity.SplashScreenActivity"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
