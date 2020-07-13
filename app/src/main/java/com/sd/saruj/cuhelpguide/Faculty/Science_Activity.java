@@ -5,7 +5,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -24,6 +26,14 @@ public class Science_Activity extends AppCompatActivity {
     List<Faculty> productList;
     RecyclerView recyclerView;
 
+    String[] DepartmentName = {
+            "Department of Physics",
+            "Department of Chemistry",
+            "Department of Mathematics",
+            "Department of Statistics",
+            "Applied Chemistry and Chemical Engineering"
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,61 +43,27 @@ public class Science_Activity extends AppCompatActivity {
         String facultyName = intent.getStringExtra("name");
         setTitle(facultyName);
 
+        Toolbar toolbar = findViewById(R.id.science_toolbar);
+        setSupportActionBar(toolbar);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setDisplayShowCustomEnabled(true);
+        getSupportActionBar().setTitle(facultyName);
+
         recyclerView = (RecyclerView) findViewById(R.id.scienceRecyclerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));
 
         productList = new ArrayList<>();
 
-
-        productList.add(
-                new Faculty(
-                        1,
-                        "Department of Physics"
-
-                )
-        );
-        productList.add(
-                new Faculty(
-                        2,
-                        "Department of Chemistry"
-
-
-                )
-        );
-
-        productList.add(
-                new Faculty(
-                        3,
-                        "Department of Mathematics"
-
-
-                )
-        );
-
-        productList.add(
-                new Faculty(
-                        4,
-                        "Department of Statistics"
-
-
-                )
-        );
-
-        productList.add(
-                new Faculty(
-                        5,
-                        "Applied Chemistry and Chemical Engineering"
-
-
-                )
-        );
-
-
-
-
-
-
+        for(int i=0; i<DepartmentName.length; i++){
+            productList.add(
+                    new Faculty(
+                            i+1,
+                            DepartmentName[i]
+                    )
+            );
+        }
 
         ScienceAdapter adapter = new ScienceAdapter(this, productList);
         recyclerView.setAdapter(adapter);

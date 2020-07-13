@@ -1,6 +1,8 @@
 package com.sd.saruj.cuhelpguide.SubjectPrerequirement.Activities;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -27,7 +29,12 @@ public class D1UnitActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_d1_unit);
 
-
+        Toolbar toolbar = findViewById(R.id.d1_Unit_toolbar);
+        setSupportActionBar(toolbar);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setDisplayShowCustomEnabled(true);
+        getSupportActionBar().setTitle("Unit D1");
 
         recyclerView = (RecyclerView) findViewById(R.id.UnitRecyclerView);
         recyclerView.setHasFixedSize(true);

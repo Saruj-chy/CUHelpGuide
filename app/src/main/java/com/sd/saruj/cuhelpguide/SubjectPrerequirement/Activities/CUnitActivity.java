@@ -1,6 +1,8 @@
 package com.sd.saruj.cuhelpguide.SubjectPrerequirement.Activities;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -25,10 +27,27 @@ public class CUnitActivity extends AppCompatActivity {
     CUnitAdapter adapter;
     EditText unitEdit;
 
+    String[] unitSubject = {
+            "Marketing",
+            "Accounting",
+            "Management",
+            "Finance",
+            "Human Research Management",
+            "Banking and Insurance"
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_c_unit);
+
+        Toolbar toolbar = findViewById(R.id.c_Unit_toolbar);
+        setSupportActionBar(toolbar);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setDisplayShowCustomEnabled(true);
+        getSupportActionBar().setTitle("Unit C");
+
 
         unitEdit = findViewById(R.id.unitEdit);
 
@@ -38,59 +57,14 @@ public class CUnitActivity extends AppCompatActivity {
 
         productList = new ArrayList<>();
 
-
-        productList.add(
-                new Faculty(
-                        1,
-                        "Marketing"
-
-                )
-        );
-        productList.add(
-                new Faculty(
-                        2,
-                        "Accounting"
-
-
-                )
-        );
-        productList.add(
-                new Faculty(
-                        3,
-                        "Management"
-
-
-                )
-        );
-
-        productList.add(
-                new Faculty(
-                        4,
-                        "Finance"
-
-
-                )
-        );
-
-        productList.add(
-                new Faculty(
-                        5,
-                        "Human Research Management"
-
-
-                )
-        );
-
-        productList.add(
-                new Faculty(
-                        6,
-                        "Banking and Insurance"
-
-
-                )
-        );
-
-
+        for(int i=0; i<unitSubject.length; i++){
+            productList.add(
+                    new Faculty(
+                            i+1,
+                            unitSubject[i]
+                    )
+            );
+        }
 
         adapter = new CUnitAdapter(this, productList);
         recyclerView.setAdapter(adapter);

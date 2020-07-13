@@ -22,7 +22,7 @@ import com.sd.saruj.cuhelpguide.R;
 
 import java.util.List;
 
-public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ProductViewHolderownmake>
+public class FacultyMainRecyclerAdapter extends RecyclerView.Adapter<FacultyMainRecyclerAdapter.ProductViewHolderownmake>
 {
     //this context we will use to inflate the layout
     private Context mCtx;
@@ -30,7 +30,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     //we are storing all the products in a list
     private List<Faculty> productList;
 
-    public RecyclerViewAdapter(Context mCtx, List<Faculty> productList) {
+    public FacultyMainRecyclerAdapter(Context mCtx, List<Faculty> productList) {
         this.mCtx = mCtx;
         this.productList = productList;
     }

@@ -120,5 +120,54 @@
         <item>@string/test7</item>
     </string-array>
 
+    <!--     TODO:  Choice listItem -->
+    <string-array name="all_unit">
+        <item>All Unit</item>
+        <item>A Unit</item>
+        <item>B Unit</item>
+        <item>C Unit</item>
+        <item>D Unit</item>
+        <item>E Unit</item>
+        <item>F Unit</item>
+    </string-array>
+
+    <string-array name="a_unit">
+        <item>None of them</item>
+        <item>Engineer</item>
+        <item>Biology</item>
+    </string-array>
+
+    <string-array name="subjectEngName">
+        <item>Department of Computer Science and Engineering</item>
+        <item>Department of EEE</item>
+        <item>Department of Physics</item>
+        <item>Department of Checmistry</item>
+        <item>Department of Math</item>
+        <item>Department of BioChemistry</item>
+
+    </string-array>
+
+    <string-array name="subjectBioName">
+        <item>Department of Biology</item>
+        <item>Department of Farmacy</item>
+        <item>Department of Biochemistry</item>
+        <item>Department of Zoology</item>
+        <item>Department of Botany</item>
+        <item>Department of Soil Science</item>
+    </string-array>
+
+    //================ uploadPost
+    <string-array name="allFaculty">
+        <item>All Subject</item>
+        <item>Science</item>
+        <item>Business</item>
+        <item>Arts and Humanities</item>
+        <item>Social Science</item>
+        <item>Engineer</item>
+        <item>Biology</item>
+        <item>Forestry</item>
+        <item>Law</item>
+    </string-array>
+
 
 </resources>

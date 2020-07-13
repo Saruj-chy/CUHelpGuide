@@ -11,17 +11,39 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.navigation.NavigationView;
+import com.sd.saruj.cuhelpguide.Choice.ChoiceActivity;
+import com.sd.saruj.cuhelpguide.JavaClass.Faculty;
 import com.sd.saruj.cuhelpguide.ModelQuestion.ModelQuestionMainActivity;
 import com.sd.saruj.cuhelpguide.ModelQuestion.PracticeTest.PracticeTestActivity;
 import com.sd.saruj.cuhelpguide.SubjectPrerequirement.Activities.AllUnitActivity;
+import com.sd.saruj.cuhelpguide.UploadPost.DepartmentPostActivity;
+import com.sd.saruj.cuhelpguide.UploadPost.UpploadPostActivity;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-
-
     DrawerLayout drawerLayout;
     TextView appName;
+    ActionBarDrawerToggle drawerToggle;
+
+    RecyclerView recyclerList;
+    List<Faculty> mainToolsList;
+    String[] mainToolsName = {
+            "Faculty Information",
+            "Subject Pre-Requirement",
+            "Subject Choice",
+            "Subject Review",
+            "Question and Test",
+            "Admission Notice"
+    };
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,28 +51,46 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.main_page_toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("CU Help Guide");
 
+
+        recyclerList = findViewById(R.id.main_page_recycler) ;
+        recyclerList.setHasFixedSize(true);
+        recyclerList.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));
 
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-
         NavigationView navigationView = (NavigationView) findViewById(R.id.header);
-        navigationView.setNavigationItemSelectedListener(this);
 
-        ActionBarDrawerToggle drawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar,
+        mainToolsList = new ArrayList<>();
+
+        for(int i=0; i<mainToolsName.length; i++){
+            mainToolsList.add(
+                    new Faculty(
+                            i+1,
+                            mainToolsName[i]
+                    )
+            );
+        }
+
+        MainPageRecyclerAdapter adapter = new MainPageRecyclerAdapter(this, mainToolsList);
+        recyclerList.setAdapter(adapter);
+
+        GridLayoutManager manager = new GridLayoutManager(this, 2, GridLayoutManager.VERTICAL, false);
+        recyclerList.setLayoutManager(manager);
+
+        navigationView.setNavigationItemSelectedListener(this);
+        drawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar,
         R.string.drawer_open,R.string.drawer_close);
         drawerLayout.addDrawerListener(drawerToggle);
         drawerToggle.syncState();
 
-        appName = (TextView) findViewById(R.id.appName);
-
-
-        appName.setText("CU Help Guide");
+//        appName = (TextView) findViewById(R.id.appName);
+//        appName.setText("CU Help Guide");
 
 
     }
-
-
 
 
 
@@ -60,9 +100,6 @@ public boolean onOptionsItemSelected(MenuItem item) {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-
 
         return super.onOptionsItemSelected(item);
         }
@@ -89,6 +126,16 @@ public boolean onNavigationItemSelected(MenuItem item) {
         case R.id.item_d:
                 startActivity(new Intent(this, PracticeTestActivity.class));
                 break;
+        case R.id.item_e:
+                startActivity(new Intent(this, ChoiceActivity.class));
+                break;
+        case R.id.item_f:
+                startActivity(new Intent(this, UpploadPostActivity.class));
+                break;
+            case R.id.item_g:
+                startActivity(new Intent(this, DepartmentPostActivity.class));
+                break;
+
         }
         return false;
         }

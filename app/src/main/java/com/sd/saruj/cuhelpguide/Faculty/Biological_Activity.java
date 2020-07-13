@@ -5,7 +5,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -22,6 +24,18 @@ public class Biological_Activity extends AppCompatActivity {
     List<Faculty> productList;
     RecyclerView recyclerView;
 
+    String[] DepartmentName = {
+            "Department of Zoology",
+            "Department of Botany",
+            "Department of Pharmacy",
+            "Biochemistry and Molecular Biology",
+            "Department of Microbiology",
+            "Department of Soil Science",
+            "Genetic Engineering and Biotechnology",
+            "Department of Psychology",
+            "Geography and Environmental Studies"
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +44,13 @@ public class Biological_Activity extends AppCompatActivity {
         String facultyName = intent.getStringExtra("name");
         setTitle(facultyName);
 
+        Toolbar toolbar = findViewById(R.id.biology_toolbar);
+        setSupportActionBar(toolbar);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setDisplayShowCustomEnabled(true);
+        getSupportActionBar().setTitle(facultyName);
+
 
         recyclerView = (RecyclerView) findViewById(R.id.biologyRecyclerView);
         recyclerView.setHasFixedSize(true);
@@ -37,89 +58,14 @@ public class Biological_Activity extends AppCompatActivity {
 
         productList = new ArrayList<>();
 
-
-        productList.add(
-                new Faculty(
-                        1,
-                        "Department of Zoology"
-
-                )
-        );
-        productList.add(
-                new Faculty(
-                        2,
-                        "Department of Botany"
-
-
-                )
-        );
-
-        productList.add(
-                new Faculty(
-                        3,
-                        "Department of Pharmacy"
-
-
-
-                )
-        );
-
-        productList.add(
-                new Faculty(
-                        4,
-                        "Biochemistry and Molecular Biology"
-
-
-                )
-        );
-
-        productList.add(
-                new Faculty(
-                        5,
-                        "Department of Microbiology"
-
-
-                )
-        );
-
-        productList.add(
-                new Faculty(
-                        5,
-                        "Department of Soil Science"
-
-
-                )
-        );
-
-        productList.add(
-                new Faculty(
-                        5,
-                        "Genetic Engineering and Biotechnology"
-
-
-                )
-        );
-
-        productList.add(
-                new Faculty(
-                        5,
-                        "Department of Psychology"
-
-
-                )
-        );
-
-        productList.add(
-                new Faculty(
-                        5,
-                        "Geography and Environmental Studies"
-
-
-                )
-        );
-
-
-
+        for(int i=0; i<DepartmentName.length; i++){
+            productList.add(
+                    new Faculty(
+                            i+1,
+                            DepartmentName[i]
+                    )
+            );
+        }
 
         BiologicalAdapter adapter = new BiologicalAdapter(this, productList);
         recyclerView.setAdapter(adapter);

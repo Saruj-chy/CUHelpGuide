@@ -1,6 +1,8 @@
 package com.sd.saruj.cuhelpguide.SubjectPrerequirement.Activities;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -13,7 +15,6 @@ import android.widget.EditText;
 import com.sd.saruj.cuhelpguide.JavaClass.Faculty;
 import com.sd.saruj.cuhelpguide.R;
 import com.sd.saruj.cuhelpguide.SubjectPrerequirement.Adapter.AUnitAdapter;
-import com.sd.saruj.cuhelpguide.SubjectPrerequirement.Adapter.AllUnitAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,6 +29,31 @@ public class AUnitActivity extends AppCompatActivity {
 
     AUnitAdapter adapter;
 
+    String[] unitSubject = {
+            "Physics",
+            "Chemistry",
+            "Math",
+            "Statistics",
+            "Applied Chemistry and Chemical Engineering",
+            "Forestry",
+            "Environmental Science",
+            "Zoology",
+            "Botany",
+            "Geography and Environment Studies",
+            "Biochemistry",
+            "Microbiology",
+            "Soil Science",
+            "Genetic Engineering and Biotechnology",
+            "Psychology",
+            "Pharmacy",
+            "Computer Science and Engineering",
+            "Electrical and Electronic Engineering",
+            "Institute of Marine Science",
+            "Oceanography",
+            "Fisheries"
+    };
+
+
 
 
     @Override
@@ -35,6 +61,12 @@ public class AUnitActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_a_unit);
 
+        Toolbar toolbar = findViewById(R.id.a_Unit_toolbar);
+        setSupportActionBar(toolbar);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setDisplayShowCustomEnabled(true);
+        getSupportActionBar().setTitle("Unit A");
 
         unitEdit = findViewById(R.id.unitEdit);
 
@@ -44,181 +76,14 @@ public class AUnitActivity extends AppCompatActivity {
 
         productList = new ArrayList<>();
 
-
-        productList.add(
-                new Faculty(
-                        1,
-                        "Physics"
-
-                )
-        );
-        productList.add(
-                new Faculty(
-                        2,
-                        "Chemistry"
-
-
-                )
-        );
-        productList.add(
-                new Faculty(
-                        3,
-                        "Math"
-
-
-                )
-        );
-
-        productList.add(
-                new Faculty(
-                        4,
-                        "Statistics"
-
-
-                )
-        );
-
-        productList.add(
-                new Faculty(
-                        6,
-                        "Applied Chemistry and Chemical Engineering"
-
-
-                )
-        );
-
-        productList.add(
-                new Faculty(
-                        7,
-                        "Forestry"
-
-
-                )
-        );
-        productList.add(
-                new Faculty(
-                        8,
-                        "Environmental Science"
-
-
-                )
-        );
-
-        productList.add(
-                new Faculty(
-                        9,
-                        "Zoology"
-
-
-                )
-        );
-        productList.add(
-                new Faculty(
-                        10,
-                        "Botany"
-
-
-                )
-        );
-        productList.add(
-                new Faculty(
-                        11,
-                        "Geography and Environment Studies"
-
-
-                )
-        );
-        productList.add(
-                new Faculty(
-                        12,
-                        "Biochemistry"
-
-
-                )
-        );
-        productList.add(
-                new Faculty(
-                        12,
-                        "Microbiology"
-
-
-                )
-        );
-        productList.add(
-                new Faculty(
-                        13,
-                        "Soil Science"
-
-
-                )
-        );
-        productList.add(
-                new Faculty(
-                        14,
-                        "Genetic Engineering and Biotechnology"
-
-
-                )
-        );
-        productList.add(
-                new Faculty(
-                        15,
-                        "Psychology"
-
-
-                )
-        );
-        productList.add(
-                new Faculty(
-                        16,
-                        "Pharmacy"
-
-
-                )
-        );
-        productList.add(
-                new Faculty(
-                        17,
-                        "Computer Science and Engineering"
-
-
-                )
-        );
-        productList.add(
-                new Faculty(
-                        18,
-                        "Electrical and Electronic Engineering"
-
-
-                )
-        );
-        productList.add(
-                new Faculty(
-                        19,
-                        "Institute of Marine Science"
-
-
-                )
-        );
-        productList.add(
-                new Faculty(
-                        20,
-                        "Oceanography"
-
-
-                )
-        );
-        productList.add(
-                new Faculty(
-                        21,
-                        "Fisheries"
-
-
-                )
-        );
-
-
-
+        for(int i=0; i<unitSubject.length; i++){
+            productList.add(
+                    new Faculty(
+                            i+1,
+                            unitSubject[i]
+                    )
+            );
+        }
 
         adapter = new AUnitAdapter(this, productList);
         recyclerView.setAdapter(adapter);

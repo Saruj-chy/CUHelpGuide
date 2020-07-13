@@ -1,6 +1,8 @@
 package com.sd.saruj.cuhelpguide.SubjectPrerequirement.Activities;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -28,11 +30,24 @@ public class B1UnitActivity extends AppCompatActivity {
     EditText unitEdit;
     B1UnitAdapter adapter;
 
+    String[] unitSubject = {
+            "Fine Arts",
+            "Dramatics",
+            "Music"
+    };
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_b1_unit);
+
+        Toolbar toolbar = findViewById(R.id.b1_Unit_toolbar);
+        setSupportActionBar(toolbar);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setDisplayShowCustomEnabled(true);
+        getSupportActionBar().setTitle("Unit B1");
 
 
         unitEdit = findViewById(R.id.unitEdit);
@@ -43,32 +58,14 @@ public class B1UnitActivity extends AppCompatActivity {
 
         productList = new ArrayList<>();
 
-
-        productList.add(
-                new Faculty(
-                        1,
-                        "Fine Arts"
-
-                )
-        );
-        productList.add(
-                new Faculty(
-                        2,
-                        "Dramatics"
-
-
-                )
-        );
-        productList.add(
-                new Faculty(
-                        3,
-                        "Music"
-
-
-                )
-        );
-
-
+        for(int i=0; i<unitSubject.length; i++){
+            productList.add(
+                    new Faculty(
+                            i+1,
+                            unitSubject[i]
+                    )
+            );
+        }
 
         adapter = new B1UnitAdapter(this, productList);
         recyclerView.setAdapter(adapter);

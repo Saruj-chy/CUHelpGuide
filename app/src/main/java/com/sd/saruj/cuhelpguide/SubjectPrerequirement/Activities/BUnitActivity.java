@@ -1,6 +1,8 @@
 package com.sd.saruj.cuhelpguide.SubjectPrerequirement.Activities;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -12,7 +14,6 @@ import android.widget.EditText;
 
 import com.sd.saruj.cuhelpguide.JavaClass.Faculty;
 import com.sd.saruj.cuhelpguide.R;
-import com.sd.saruj.cuhelpguide.SubjectPrerequirement.Adapter.AUnitAdapter;
 import com.sd.saruj.cuhelpguide.SubjectPrerequirement.Adapter.BUnitAdapter;
 
 import java.util.ArrayList;
@@ -26,12 +27,34 @@ public class BUnitActivity extends AppCompatActivity {
     BUnitAdapter adapter;
     EditText unitEdit;
 
+    String[] unitSubject = {
+            "Bangla",
+            "English",
+            "History",
+            "Islamic History and Culture",
+            "Farsi Language and Literature",
+            "Language and Linguistics",
+            "Paali",
+            "Sanskrit",
+            "Institute of Education and Research",
+            "Bangladesh Studies",
+            "Philosophy",
+            "Arabic",
+            "Islamic Studies"
+    };
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_b_unit);
 
+        Toolbar toolbar = findViewById(R.id.b_Unit_toolbar);
+        setSupportActionBar(toolbar);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setDisplayShowCustomEnabled(true);
+        getSupportActionBar().setTitle("Unit B");
 
         unitEdit = findViewById(R.id.unitEdit);
 
@@ -41,115 +64,14 @@ public class BUnitActivity extends AppCompatActivity {
 
         productList = new ArrayList<>();
 
-
-        productList.add(
-                new Faculty(
-                        1,
-                        "Bangla"
-
-                )
-        );
-        productList.add(
-                new Faculty(
-                        2,
-                        "English"
-
-
-                )
-        );
-        productList.add(
-                new Faculty(
-                        3,
-                        "History"
-
-
-                )
-        );
-
-        productList.add(
-                new Faculty(
-                        4,
-                        "Islamic History and Culture"
-
-
-                )
-        );
-        productList.add(
-                new Faculty(
-                        5,
-                        "Farsi Language and Literature"
-
-
-                )
-        );
-
-        productList.add(
-                new Faculty(
-                        6,
-                        "Language and Linguistics"
-
-
-                )
-        );
-
-        productList.add(
-                new Faculty(
-                        7,
-                        "Paali"
-
-
-                )
-        );
-        productList.add(
-                new Faculty(
-                        8,
-                        "Sanskrit"
-
-
-                )
-        );
-        productList.add(
-                new Faculty(
-                        9,
-                        "Institute of Education and Research"
-
-
-                )
-        );
-        productList.add(
-                new Faculty(
-                        10,
-                        "Bangladesh Studies"
-
-
-                )
-        );
-        productList.add(
-                new Faculty(
-                        11,
-                        "Philosophy"
-
-
-                )
-        );
-        productList.add(
-                new Faculty(
-                        12,
-                        "Arabic"
-
-
-                )
-        );
-        productList.add(
-                new Faculty(
-                        13,
-                        "Islamic Studies"
-
-
-                )
-        );
-
-
+        for(int i=0; i<unitSubject.length; i++){
+            productList.add(
+                    new Faculty(
+                            i+1,
+                            unitSubject[i]
+                    )
+            );
+        }
 
         adapter = new BUnitAdapter(this, productList);
         recyclerView.setAdapter(adapter);

@@ -1,6 +1,8 @@
 package com.sd.saruj.cuhelpguide.SubjectPrerequirement.Activities;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -35,12 +37,35 @@ public class DUnitActivity extends AppCompatActivity {
 
     Spinner mySpinner;
     String[] categories={"Science","Business Studies","Humanities "};
+    String[] scienceSubject =
+            {   "Economics",   "Political Science",    "Sociology",     "Public Administration",
+            "Anthropology",     "International Relation",    "Communication and Journalism",    "Development Studies",
+            "Criminology and Police Science",   "Accounting",   "Management",   "Finance",      "Marketing",
+            "Human resource and Management",        "Banking and Insurance"
+            };
+    String[] commerceSubject =
+            {  "Economics",  "Political Science ",   "Sociology ",   " Public Administration",
+            "Anthropology ",    " International Relation",   "Communication and Journalism ",
+            "Development Studies ",     "Criminology and Police Science "
+            };
+    String[] artsSubject =
+            {    "Economics",   " Political Science",   " Sociology",   "Public Administration ",   "Anthropology ",
+            " International Relation",  "Communication and Journalism",     "Development Studies",      "Criminology and Police Science",
+            "Accounting",   "Management",   "Finance",      "Marketing",    "Geography and Environmental study",    "Psychology"
+            };
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_d_unit);
+
+        Toolbar toolbar = findViewById(R.id.d_Unit_toolbar);
+        setSupportActionBar(toolbar);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setDisplayShowCustomEnabled(true);
+        getSupportActionBar().setTitle("Unit D");
 
         unitEdit = findViewById(R.id.unitEdit);
 
@@ -68,337 +93,31 @@ public class DUnitActivity extends AppCompatActivity {
         });
 
         productList = new ArrayList<>();
-        productList.add(
-                new Faculty(
-                        0,
-                        "Economics"
 
-                )
-        );
-        productList.add(
-                new Faculty(
-                        0,
-                        "Political Science"
-
-                )
-        );
-        productList.add(
-                new Faculty(
-                        0,
-                        "Sociology"
-
-                )
-        );
-        productList.add(
-                new Faculty(
-                        0,
-                        "Public Administration"
-
-                )
-        );
-        productList.add(
-                new Faculty(
-                        0,
-                        "Anthropology"
-
-                )
-        );
-        productList.add(
-                new Faculty(
-                        0,
-                        "International Relation"
-
-                )
-        );
-        productList.add(
-                new Faculty(
-                        0,
-                        "Communication and Journalism"
-
-                )
-        );
-        productList.add(
-                new Faculty(
-                        0,
-                        "Development Studies"
-
-                )
-        );
-        productList.add(
-                new Faculty(
-                        0,
-                        "Criminology and Police Science"
-
-                )
-        );
-        productList.add(
-                new Faculty(
-                        0,
-                        "Accounting"
-
-                )
-        );
-        productList.add(
-                new Faculty(
-                        0,
-                        "Management"
-
-                )
-        );
-
-        productList.add(
-                new Faculty(
-                        0,
-                        "Finance"
-
-                )
-        );
-
-        productList.add(
-                new Faculty(
-                        0,
-                        "Marketing"
-
-                )
-        );
-        productList.add(
-                new Faculty(
-                        0,
-                        "Human resource and Management"
-
-                )
-        );
-
-        productList.add(
-                new Faculty(
-                        0,
-                        "Banking and Insurance"
-
-                )
-        );
-
-//===========================================    2
-        productList.add(
-                new Faculty(
-                        1,
-                        "Economics"
-
-
-                )
-        );
-
-
-        productList.add(
-                new Faculty(
-                        1,
-                        "Political Science "
-
-
-                )
-        );
-
-        productList.add(
-                new Faculty(
-                        1,
-                        "Sociology "
-
-
-                )
-        );
-
-        productList.add(
-                new Faculty(
-                        1,
-                        " Public Administration"
-
-
-                )
-        );
-
-
-        productList.add(
-                new Faculty(
-                        1,
-                        "Anthropology "
-
-
-                )
-        );
-
-        productList.add(
-                new Faculty(
-                        1,
-                        " International Relation"
-
-
-                )
-        );
-
-        productList.add(
-                new Faculty(
-                        1,
-                        "Communication and Journalism "
-
-
-                )
-        );
-
-        productList.add(
-                new Faculty(
-                        1,
-                        "Development Studies "
-
-
-                )
-        );
-
-
-        productList.add(
-                new Faculty(
-                        1,
-                        "Criminology and Police Science "
-
-
-                )
-        );
-
-    //   =========================================               3
-        productList.add(
-                new Faculty(
-                        2,
-                        "Economics"
-
-
-                )
-        );
-
-        productList.add(
-                new Faculty(
-                        2,
-                        " Political Science"
-
-
-                )
-        );
-
-        productList.add(
-                new Faculty(
-                        2,
-                        " Sociology"
-
-
-                )
-        );
-
-        productList.add(
-                new Faculty(
-                        2,
-                        "Public Administration "
-
-
-                )
-        );
-
-        productList.add(
-                new Faculty(
-                        2,
-                        "Anthropology "
-
-
-                )
-        );
-
-        productList.add(
-                new Faculty(
-                        2,
-                        " International Relation"
-
-
-                )
-        );
-
-        productList.add(
-                new Faculty(
-                        2,
-                        "Communication and Journalism"
-
-
-                )
-        );
-
-        productList.add(
-                new Faculty(
-                        2,
-                        "Development Studies"
-
-
-                )
-        );
-
-        productList.add(
-                new Faculty(
-                        2,
-                        "Criminology and Police Science"
-
-
-                )
-        );
-
-        productList.add(
-                new Faculty(
-                        2,
-                        "Accounting"
-
-
-                )
-        );
-
-        productList.add(
-                new Faculty(
-                        2,
-                        "Management"
-
-
-                )
-        );
-
-        productList.add(
-                new Faculty(
-                        2,
-                        "Finance"
-
-
-                )
-        );
-
-        productList.add(
-                new Faculty(
-                        2,
-                        "Marketing"
-
-
-                )
-        );
-
-        productList.add(
-                new Faculty(
-                        2,
-                        "Geography and Environmental study"
-
-
-                )
-        );
-
-        productList.add(
-                new Faculty(
-                        2,
-                        "Psychology"
-
-
-                )
-        );
-
-
+        for(int i=0; i<scienceSubject.length; i++){
+            productList.add(
+                    new Faculty(
+                            0,
+                            scienceSubject[i]
+                    )
+            );
+        }
+        for(int i=0; i<commerceSubject.length; i++){
+            productList.add(
+                    new Faculty(
+                            1,
+                            commerceSubject[i]
+                    )
+            );
+        }
+        for(int i=0; i<artsSubject.length; i++){
+            productList.add(
+                    new Faculty(
+                            2,
+                            artsSubject[i]
+                    )
+            );
+        }
 
         adapter = new DUnitAdapter(this, productList);
         recyclerView.setAdapter(adapter);
