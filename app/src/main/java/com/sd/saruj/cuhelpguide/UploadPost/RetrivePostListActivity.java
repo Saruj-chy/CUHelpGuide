@@ -8,14 +8,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.sd.saruj.cuhelpguide.JavaClass.Faculty;
+import com.sd.saruj.cuhelpguide.Faculty.Faculty;
 import com.sd.saruj.cuhelpguide.R;
 
 import org.json.JSONArray;

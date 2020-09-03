@@ -1,6 +1,6 @@
-package com.sd.saruj.cuhelpguide.JavaClass;
+package com.sd.saruj.cuhelpguide.SubjectPrerequirement.Adapter;
+
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,54 +9,45 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.sd.saruj.cuhelpguide.DepartmentInformation.DepartmentInformationActivity;
-import com.sd.saruj.cuhelpguide.Faculty.ArtsAndHumanities_Activity;
-import com.sd.saruj.cuhelpguide.Faculty.Biological_Activity;
-import com.sd.saruj.cuhelpguide.Faculty.Business_Activity;
-import com.sd.saruj.cuhelpguide.Faculty.Engineering_Activity;
-import com.sd.saruj.cuhelpguide.Faculty.ForestryActivity;
-import com.sd.saruj.cuhelpguide.Faculty.Marine_Activity;
-import com.sd.saruj.cuhelpguide.Faculty.Science_Activity;
-import com.sd.saruj.cuhelpguide.Faculty.Social_Activity;
+import com.sd.saruj.cuhelpguide.Faculty.Faculty;
 import com.sd.saruj.cuhelpguide.R;
 
 import java.util.List;
 
-public class FacultyMainRecyclerAdapter extends RecyclerView.Adapter<FacultyMainRecyclerAdapter.ProductViewHolderownmake>
+public class UnitAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
 {
-    //this context we will use to inflate the layout
     private Context mCtx;
-
-    //we are storing all the products in a list
     private List<Faculty> productList;
 
-    public FacultyMainRecyclerAdapter(Context mCtx, List<Faculty> productList) {
+    public UnitAdapter(Context mCtx, List<Faculty> productList) {
         this.mCtx = mCtx;
         this.productList = productList;
     }
 
 
+    //  subject search option
+    public void filterList(List<Faculty> filteredList) {
+        productList = filteredList;
+        notifyDataSetChanged();
+    }
+
 
     @NonNull
     @Override
-    public ProductViewHolderownmake onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         //inflating and returning our view holder
         LayoutInflater inflater = LayoutInflater.from(mCtx);
         View view = inflater.inflate(R.layout.card_list, null);
-        return new ProductViewHolderownmake(view);
+        return new UnitAdapter.ProductViewHolderownmake(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ProductViewHolderownmake holder, final int position) {
+    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, final int position) {
 
         Faculty faculty = productList.get(position);
+        ((ProductViewHolderownmake)holder).bind(faculty);
 
-        Faculty product = productList.get(position);
-        holder.textViewName.setText(product.getName());
-
-        final String Name = faculty.getName().toString().trim();
-
-        if(position==0) {
+       /* if(position==0) {
             holder.textViewName.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -157,7 +148,7 @@ public class FacultyMainRecyclerAdapter extends RecyclerView.Adapter<FacultyMain
                     context.startActivity(intent);
                 }
             });
-        }
+        }*/
 
     }
 
@@ -171,16 +162,12 @@ public class FacultyMainRecyclerAdapter extends RecyclerView.Adapter<FacultyMain
     {
         TextView textViewName;
 
-
-
-
         public ProductViewHolderownmake(@NonNull View itemView) {
             super(itemView);
-
             textViewName = itemView.findViewById(R.id.cardtextview);
-
-
-
+        }
+        public void bind(Faculty faculty){
+            textViewName.setText(faculty.getName());
         }
     }
 

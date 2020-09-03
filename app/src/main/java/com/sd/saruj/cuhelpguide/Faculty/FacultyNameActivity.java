@@ -1,9 +1,6 @@
 package com.sd.saruj.cuhelpguide.Faculty;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,67 +9,63 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.sd.saruj.cuhelpguide.JavaClass.Faculty;
-import com.sd.saruj.cuhelpguide.JavaClass.ForestryAdapter;
+
 import com.sd.saruj.cuhelpguide.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Marine_Activity extends AppCompatActivity{
+public class FacultyNameActivity extends AppCompatActivity {
 
-    List<Faculty> productList;
-    RecyclerView recyclerView;
+    private List<Faculty> productList;
+    private RecyclerView recyclerView;
+    private FacultyNameAdapter adapter ;
 
-    String[] DepartmentName = {
-            "Deparetment of Marine",
-            "Department of Fisharies"
+    String[] FacultyName = {"Faculty of Engineering",
+            "Faculty of Business Administration",
+            "Faculty of Social Science",
+            "Faculty of Science",
+            "Faculty of Arts and Humanities",
+            "Faculty of Biology",
+            "Faculty of Marine Science",
+            "Faculty of Forestry and Environment",
+            "Faculty of LAW"
     };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_marine);
+        setContentView(R.layout.activity_faculty_name);
 
-        Intent intent = getIntent();
-        String facultyName = intent.getStringExtra("name");
-        setTitle(facultyName);
-
-        Toolbar toolbar = findViewById(R.id.marine_toolbar);
+        Toolbar toolbar = findViewById(R.id.faculty_main_toolbar);
         setSupportActionBar(toolbar);
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setDisplayShowCustomEnabled(true);
-        getSupportActionBar().setTitle(facultyName);
+        getSupportActionBar().setTitle("Faculty Information");
 
-        recyclerView = (RecyclerView) findViewById(R.id.marineRecyclerView);
+
+        recyclerView = (RecyclerView) findViewById(R.id.facultyRecyclerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));
 
         productList = new ArrayList<>();
 
-        for(int i=0; i<DepartmentName.length; i++){
+        for(int i=0; i<FacultyName.length; i++){
             productList.add(
                     new Faculty(
                             i+1,
-                            DepartmentName[i]
+                            FacultyName[i]
                     )
             );
         }
 
-        ForestryAdapter adapter = new ForestryAdapter(this, productList);
+        adapter = new FacultyNameAdapter(this, productList);
         recyclerView.setAdapter(adapter);
-
 
         GridLayoutManager manager = new GridLayoutManager(this, 2, GridLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(manager);
 
 
-
-
-
-
-
     }
-
 }

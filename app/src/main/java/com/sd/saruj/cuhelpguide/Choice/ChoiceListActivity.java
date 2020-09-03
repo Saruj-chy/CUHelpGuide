@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.sd.saruj.cuhelpguide.JavaClass.Faculty;
+import com.sd.saruj.cuhelpguide.Faculty.Faculty;
 import com.sd.saruj.cuhelpguide.R;
 
 import java.util.ArrayList;

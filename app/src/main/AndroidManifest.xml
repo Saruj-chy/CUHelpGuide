@@ -37,57 +37,26 @@
         <activity android:name=".ModelQuestion.ResultActivity" />
         <activity android:name=".ModelQuestion.ModelQuestionActivity" />
         <activity
-            android:name=".SubjectPrerequirement.Activities.D1UnitActivity"
-            android:parentActivityName=".SubjectPrerequirement.Activities.AllUnitActivity" />
-        <activity
             android:name=".SubjectPrerequirement.Activities.DUnitActivity"
-            android:parentActivityName=".SubjectPrerequirement.Activities.AllUnitActivity" />
+            android:parentActivityName=".SubjectPrerequirement.Activities.AllUnitViewActivity" />
         <activity
-            android:name=".SubjectPrerequirement.Activities.CUnitActivity"
-            android:parentActivityName=".SubjectPrerequirement.Activities.AllUnitActivity" />
+            android:name=".SubjectPrerequirement.Activities.UnitActivity"
+            android:parentActivityName=".SubjectPrerequirement.Activities.AllUnitViewActivity" />
         <activity
-            android:name=".SubjectPrerequirement.Activities.B1UnitActivity"
-            android:parentActivityName=".SubjectPrerequirement.Activities.AllUnitActivity" />
-        <activity
-            android:name=".SubjectPrerequirement.Activities.BUnitActivity"
-            android:parentActivityName=".SubjectPrerequirement.Activities.AllUnitActivity" />
-        <activity
-            android:name=".SubjectPrerequirement.Activities.AUnitActivity"
-            android:parentActivityName=".SubjectPrerequirement.Activities.AllUnitActivity" />
-        <activity
-            android:name=".SubjectPrerequirement.Activities.AllUnitActivity"
+            android:name=".SubjectPrerequirement.Activities.AllUnitViewActivity"
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".DepartmentInformation.DepartmentInformationActivity"
-            android:parentActivityName=".Faculty_MainActivity" />
+            android:parentActivityName=".Faculty.FacultyNameActivity" />
         <activity
-            android:name=".Faculty.ForestryActivity"
-            android:parentActivityName=".Faculty_MainActivity" />
+            android:name=".Faculty.FacultyDepartmentNameActivity"
+            android:parentActivityName=".Faculty.FacultyNameActivity" />
         <activity
-            android:name=".Faculty.ArtsAndHumanities_Activity"
-            android:parentActivityName=".Faculty_MainActivity" />
-        <activity
-            android:name=".Faculty.Business_Activity"
-            android:parentActivityName=".Faculty_MainActivity" />
-        <activity
-            android:name=".Faculty.Engineering_Activity"
-            android:parentActivityName=".Faculty_MainActivity" />
-        <activity
-            android:name=".Faculty.Marine_Activity"
-            android:parentActivityName=".Faculty_MainActivity" />
-        <activity
-            android:name=".Faculty.Science_Activity"
-            android:parentActivityName=".Faculty_MainActivity" />
-        <activity
-            android:name=".Faculty.Social_Activity"
-            android:parentActivityName=".Faculty_MainActivity" />
-        <activity
-            android:name=".Faculty.Biological_Activity"
-            android:parentActivityName=".Faculty_MainActivity" />
-        <activity
-            android:name=".Faculty_MainActivity"
+            android:name=".Faculty.FacultyNameActivity"
             android:parentActivityName=".MainActivity" />
         <activity android:name=".MainActivity" />
+
+
         <activity
             android:name=".SplashActivity.SplashScreenActivity"
             android:theme="@style/SplashTheme">

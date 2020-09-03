@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -17,11 +18,10 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.sd.saruj.cuhelpguide.JavaClass.Faculty;
+import com.sd.saruj.cuhelpguide.Faculty.Faculty;
 import com.sd.saruj.cuhelpguide.R;
-import com.sd.saruj.cuhelpguide.SubjectPrerequirement.Adapter.AUnitAdapter;
-import com.sd.saruj.cuhelpguide.SubjectPrerequirement.Adapter.CUnitAdapter;
 import com.sd.saruj.cuhelpguide.SubjectPrerequirement.Adapter.DUnitAdapter;
+import com.sd.saruj.cuhelpguide.SubjectPrerequirement.Adapter.UnitAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,7 +32,7 @@ public class DUnitActivity extends AppCompatActivity {
     List<Faculty> productList;
     RecyclerView recyclerView;
 
-    DUnitAdapter adapter;
+    UnitAdapter adapter;
     EditText unitEdit;
 
     Spinner mySpinner;
@@ -60,12 +60,15 @@ public class DUnitActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_d_unit);
 
+        Intent intent = getIntent();
+        String unitName = intent.getStringExtra("name");
+
         Toolbar toolbar = findViewById(R.id.d_Unit_toolbar);
         setSupportActionBar(toolbar);
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setDisplayShowCustomEnabled(true);
-        getSupportActionBar().setTitle("Unit D");
+        getSupportActionBar().setTitle(unitName);
 
         unitEdit = findViewById(R.id.unitEdit);
 
@@ -119,7 +122,7 @@ public class DUnitActivity extends AppCompatActivity {
             );
         }
 
-        adapter = new DUnitAdapter(this, productList);
+        adapter = new UnitAdapter(this, productList);
         recyclerView.setAdapter(adapter);
 
 
@@ -184,7 +187,7 @@ public class DUnitActivity extends AppCompatActivity {
                 }
             }
             //instatiate adapter a
-            adapter = new DUnitAdapter(this,  product);
+            adapter = new UnitAdapter(this,  product);
       //  }
         //set the adapter to GridView
         recyclerView.setAdapter(adapter);

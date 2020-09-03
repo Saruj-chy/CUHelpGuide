@@ -7,21 +7,21 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
 
-    tools:context=".Faculty.Marine_Activity">
+    tools:context=".SubjectPrerequirement.Activities.AllUnitViewActivity">
 
     <include
         layout="@layout/app_bar_layout"
-        android:id="@+id/marine_toolbar"/>
+        android:id="@+id/allUnit_toolbar"/>
 
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/marineRecyclerView"
+        android:id="@+id/allUnitRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="15dp"
 
-        android:layout_below="@+id/marine_toolbar"
-        android:layout_alignParentTop="@+id/marine_toolbar"
+        android:layout_below="@+id/allUnit_toolbar"
+        android:layout_alignParentTop="@+id/allUnit_toolbar"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"

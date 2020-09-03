@@ -203,5 +203,6 @@ public class UpploadPostActivity extends AppCompatActivity {
         };
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(stringRequest);
+        Log.d("TAG", "stringRequest: "+stringRequest ) ;
     }
 }

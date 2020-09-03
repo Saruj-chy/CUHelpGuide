@@ -9,7 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.sd.saruj.cuhelpguide.JavaClass.Faculty;
+import com.sd.saruj.cuhelpguide.Faculty.Faculty;
 import com.sd.saruj.cuhelpguide.R;
 
 import java.util.List;

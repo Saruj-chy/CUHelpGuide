@@ -10,16 +10,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.widget.ArrayAdapter;
 import android.widget.EditText;
-import android.widget.ListView;
 
-import com.sd.saruj.cuhelpguide.JavaClass.Faculty;
+import com.sd.saruj.cuhelpguide.Faculty.Faculty;
 import com.sd.saruj.cuhelpguide.R;
-import com.sd.saruj.cuhelpguide.SubjectPrerequirement.Adapter.AUnitAdapter;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class DepartmentPostActivity extends AppCompatActivity {

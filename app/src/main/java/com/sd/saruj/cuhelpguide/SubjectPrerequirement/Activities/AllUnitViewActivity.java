@@ -1,9 +1,4 @@
-package com.sd.saruj.cuhelpguide.Faculty;
-
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
+package com.sd.saruj.cuhelpguide.SubjectPrerequirement.Activities;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,65 +7,62 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.sd.saruj.cuhelpguide.JavaClass.BusinessAdapter;
-import com.sd.saruj.cuhelpguide.JavaClass.EngineeringAdapter;
-import com.sd.saruj.cuhelpguide.JavaClass.Faculty;
+import android.os.Bundle;
+
+import com.sd.saruj.cuhelpguide.Faculty.Faculty;
 import com.sd.saruj.cuhelpguide.R;
+import com.sd.saruj.cuhelpguide.SubjectPrerequirement.Adapter.AllUnitViewAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Business_Activity extends AppCompatActivity  {
+public class AllUnitViewActivity extends AppCompatActivity {
+
+
     List<Faculty> productList;
     RecyclerView recyclerView;
 
-    String[] DepartmentName = {
-            "Department of Accounting",
-            "Department of Management",
-            "Department of Finance",
-            "Department of Marketing",
-            "Human Resource Management",
-            "Banking and Insurance"
+    String[] unitName = {
+            "A Unit",
+            "B Unit",
+            "B1 Unit",
+            "C Unit",
+            "D Unit",
+            "D1 Unit"
     };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_business);
+        setContentView(R.layout.activity_all_unit_view);
 
-        Intent intent = getIntent();
-        String facultyName = intent.getStringExtra("name");
-        setTitle(facultyName);
-
-        Toolbar toolbar = findViewById(R.id.business_toolbar);
+        Toolbar toolbar = findViewById(R.id.allUnit_toolbar);
         setSupportActionBar(toolbar);
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setDisplayShowCustomEnabled(true);
-        getSupportActionBar().setTitle(facultyName);
+        getSupportActionBar().setTitle("Subject Pre-Requirement");
 
-        recyclerView = (RecyclerView) findViewById(R.id.businessRecyclerView);
+        recyclerView = (RecyclerView) findViewById(R.id.allUnitRecyclerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));
 
         productList = new ArrayList<>();
 
-        for(int i=0; i<DepartmentName.length; i++){
+        for(int i=0; i<unitName.length; i++){
             productList.add(
                     new Faculty(
                             i+1,
-                            DepartmentName[i]
+                            unitName[i]
                     )
             );
         }
 
-        BusinessAdapter adapter = new BusinessAdapter(this, productList);
+        AllUnitViewAdapter adapter = new AllUnitViewAdapter(this, productList);
         recyclerView.setAdapter(adapter);
 
         GridLayoutManager manager = new GridLayoutManager(this, 2, GridLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(manager);
 
     }
-
-
 }

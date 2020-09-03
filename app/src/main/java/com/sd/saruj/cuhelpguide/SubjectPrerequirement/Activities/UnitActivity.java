@@ -7,47 +7,44 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
+import android.view.View;
 import android.widget.EditText;
 
-import com.sd.saruj.cuhelpguide.JavaClass.Faculty;
+import com.sd.saruj.cuhelpguide.Constant.DepartmentName;
+import com.sd.saruj.cuhelpguide.Faculty.Faculty;
 import com.sd.saruj.cuhelpguide.R;
-import com.sd.saruj.cuhelpguide.SubjectPrerequirement.Adapter.AUnitAdapter;
-import com.sd.saruj.cuhelpguide.SubjectPrerequirement.Adapter.CUnitAdapter;
+import com.sd.saruj.cuhelpguide.SubjectPrerequirement.Adapter.UnitAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class CUnitActivity extends AppCompatActivity {
+public class UnitActivity extends AppCompatActivity {
 
     List<Faculty> productList;
     RecyclerView recyclerView;
-    CUnitAdapter adapter;
     EditText unitEdit;
-
-    String[] unitSubject = {
-            "Marketing",
-            "Accounting",
-            "Management",
-            "Finance",
-            "Human Research Management",
-            "Banking and Insurance"
-    };
+    UnitAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_c_unit);
+        setContentView(R.layout.activity_unit);
 
-        Toolbar toolbar = findViewById(R.id.c_Unit_toolbar);
+
+        Intent intent = getIntent();
+        String unitName = intent.getStringExtra("name");
+
+        Toolbar toolbar = findViewById(R.id.a_Unit_toolbar);
         setSupportActionBar(toolbar);
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setDisplayShowCustomEnabled(true);
-        getSupportActionBar().setTitle("Unit C");
-
+        getSupportActionBar().setTitle(unitName);
 
         unitEdit = findViewById(R.id.unitEdit);
 
@@ -57,25 +54,58 @@ public class CUnitActivity extends AppCompatActivity {
 
         productList = new ArrayList<>();
 
-        for(int i=0; i<unitSubject.length; i++){
-            productList.add(
-                    new Faculty(
-                            i+1,
-                            unitSubject[i]
-                    )
-            );
-        }
+        Log.e("Unit", "unitname: "+unitName ) ;
 
-        adapter = new CUnitAdapter(this, productList);
+        switch (unitName){
+            case "A Unit":
+                getUnitName(DepartmentName.unit_A_Subj,unitName);
+                break;
+            case "B Unit":
+                getUnitName(DepartmentName.unit_B_Subj,unitName);
+                break;
+            case "B1 Unit":
+                unitEdit.setVisibility(View.GONE);
+                getUnitName(DepartmentName.unit_B1_Subj,unitName);
+                break;
+            case "C Unit":
+                unitEdit.setVisibility(View.GONE);
+                getUnitName(DepartmentName.unit_C_Subj,unitName);
+                break;
+            case "D1 Unit":
+                unitEdit.setVisibility(View.GONE);
+                getUnitName(DepartmentName.unit_D1_Subj,unitName);
+                break;
+            default:
+                return;
+
+        }
+        adapter = new UnitAdapter(this, productList);
         recyclerView.setAdapter(adapter);
 
 
         GridLayoutManager manager = new GridLayoutManager(this, 2, GridLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(manager);
 
+        //===============   search option
         AddTextChange();
 
+
     }
+
+    private void getUnitName(String[] unitNameList, String type) {
+        for(int i=0; i<unitNameList.length; i++){
+            productList.add(
+                    new Faculty(
+                            i+1,
+                            unitNameList[i],
+                            type
+                    )
+            );
+        }
+    }
+
+
+
 
     public void AddTextChange(){
         unitEdit.addTextChangedListener(new TextWatcher() {

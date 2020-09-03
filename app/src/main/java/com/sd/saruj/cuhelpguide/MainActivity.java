@@ -17,10 +17,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.navigation.NavigationView;
 import com.sd.saruj.cuhelpguide.Choice.ChoiceActivity;
-import com.sd.saruj.cuhelpguide.JavaClass.Faculty;
+import com.sd.saruj.cuhelpguide.Faculty.Faculty;
+import com.sd.saruj.cuhelpguide.Faculty.FacultyNameActivity;
 import com.sd.saruj.cuhelpguide.ModelQuestion.ModelQuestionMainActivity;
 import com.sd.saruj.cuhelpguide.ModelQuestion.PracticeTest.PracticeTestActivity;
-import com.sd.saruj.cuhelpguide.SubjectPrerequirement.Activities.AllUnitActivity;
+import com.sd.saruj.cuhelpguide.SubjectPrerequirement.Activities.AllUnitViewActivity;
 import com.sd.saruj.cuhelpguide.UploadPost.DepartmentPostActivity;
 import com.sd.saruj.cuhelpguide.UploadPost.UpploadPostActivity;
 
@@ -115,10 +116,10 @@ public boolean onNavigationItemSelected(MenuItem item) {
 
         switch (item.getItemId()){
         case R.id.item_a:
-        startActivity(new Intent(this, Faculty_MainActivity.class));
+        startActivity(new Intent(this, FacultyNameActivity.class));
         break;
         case R.id.item_b:
-            startActivity(new Intent(this, AllUnitActivity.class));
+            startActivity(new Intent(this, AllUnitViewActivity.class));
             break;
         case R.id.item_c:
                 startActivity(new Intent(this, ModelQuestionMainActivity.class));

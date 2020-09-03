@@ -1,15 +1,23 @@
-package com.sd.saruj.cuhelpguide.JavaClass;
+package com.sd.saruj.cuhelpguide.Faculty;
 
 public class Faculty {
     private  int id;
     private  String name;
     private  String title;
     private  String details;
+    private String type;
 
 
     public Faculty(int id, String name) {
         this.id = id;
         this.name = name;
+    }
+
+    //==========engineering
+    public Faculty(int id, String name, String type) {
+        this.id = id;
+        this.name = name;
+        this.type = type;
     }
 
     //===========     NoticeActivity
@@ -41,5 +49,9 @@ public class Faculty {
 
     public String getDetails() {
         return details;
+    }
+
+    public String getType() {
+        return type;
     }
 }

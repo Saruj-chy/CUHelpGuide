@@ -7,21 +7,21 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
 
-    tools:context=".Faculty.ForestryActivity">
+    tools:context=".Faculty.FacultyNameActivity">
 
-    <include
-        layout="@layout/app_bar_layout"
-        android:id="@+id/forestry_toolbar"/>
+  <include
+    layout="@layout/app_bar_layout"
+    android:id="@+id/faculty_main_toolbar"/>
 
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/forestryRecyclerView"
+        android:id="@+id/facultyRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="15dp"
 
-        android:layout_below="@+id/forestry_toolbar"
-        android:layout_alignParentTop="@+id/forestry_toolbar"
+        android:layout_below="@+id/faculty_main_toolbar"
+        android:layout_alignParentTop="@+id/faculty_main_toolbar"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"

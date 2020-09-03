@@ -1,6 +1,5 @@
 package com.sd.saruj.cuhelpguide;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -8,7 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -16,19 +14,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.sd.saruj.cuhelpguide.AdmisionNotice.NoticeListActivity;
 import com.sd.saruj.cuhelpguide.Choice.ChoiceActivity;
-import com.sd.saruj.cuhelpguide.DepartmentInformation.DepartmentInformationActivity;
-import com.sd.saruj.cuhelpguide.Faculty.ArtsAndHumanities_Activity;
-import com.sd.saruj.cuhelpguide.Faculty.Biological_Activity;
-import com.sd.saruj.cuhelpguide.Faculty.Business_Activity;
-import com.sd.saruj.cuhelpguide.Faculty.Engineering_Activity;
-import com.sd.saruj.cuhelpguide.Faculty.ForestryActivity;
-import com.sd.saruj.cuhelpguide.Faculty.Marine_Activity;
-import com.sd.saruj.cuhelpguide.Faculty.Science_Activity;
-import com.sd.saruj.cuhelpguide.Faculty.Social_Activity;
-import com.sd.saruj.cuhelpguide.JavaClass.Faculty;
+import com.sd.saruj.cuhelpguide.Faculty.Faculty;
+import com.sd.saruj.cuhelpguide.Faculty.FacultyNameActivity;
 import com.sd.saruj.cuhelpguide.ModelQuestion.ModelQuestionMainActivity;
 import com.sd.saruj.cuhelpguide.ModelQuestion.PracticeTest.PracticeTestActivity;
-import com.sd.saruj.cuhelpguide.SubjectPrerequirement.Activities.AllUnitActivity;
+import com.sd.saruj.cuhelpguide.SubjectPrerequirement.Activities.AllUnitViewActivity;
 import com.sd.saruj.cuhelpguide.UploadPost.DepartmentPostActivity;
 
 import java.util.List;
@@ -67,7 +57,7 @@ public class MainPageRecyclerAdapter extends RecyclerView.Adapter<MainPageRecycl
                 @Override
                 public void onClick(View view) {
                     Context context = view.getContext();
-                    Intent intent = new Intent(context, Faculty_MainActivity.class);
+                    Intent intent = new Intent(context, FacultyNameActivity.class);
 //                    intent.putExtra("name", Name);
                     context.startActivity(intent);
                 }
@@ -78,7 +68,7 @@ public class MainPageRecyclerAdapter extends RecyclerView.Adapter<MainPageRecycl
                 @Override
                 public void onClick(View view) {
                     Context context = view.getContext();
-                    Intent intent = new Intent(context, AllUnitActivity.class);
+                    Intent intent = new Intent(context, AllUnitViewActivity.class);
 //                    intent.putExtra("name", Name);
                     context.startActivity(intent);
                 }
