@@ -3,8 +3,8 @@ package com.sd.saruj.cuhelpguide.Constant;
 public class Config {
 
 
-    public static final String DATA_URL = "http://192.168.1.6/android/CU_HELP_GUIDE/getDepartmentDetails.php?DepartmentName=";
-    public static final String DATA_URL_HASH = "http://192.168.1.6/android/CU_HELP_GUIDE/getAllDepartment.php";
+    public static final String DATA_URL = "http://192.168.1.5/android/CU_HELP_GUIDE/getDepartmentDetails.php?DepartmentName=";
+    public static final String DATA_URL_HASH = "http://192.168.1.5/android/CU_HELP_GUIDE/getAllDepartment.php";
 
     public static final String FACULTY_NAME= "facultyName";
     public static final String DEPARTMENT_NAME= "DepartmentName";

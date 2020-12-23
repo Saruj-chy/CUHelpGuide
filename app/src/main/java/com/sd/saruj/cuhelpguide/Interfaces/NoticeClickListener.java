@@ -1,4 +1,4 @@
-package com.sd.saruj.cuhelpguide.AdmisionNotice;
+package com.sd.saruj.cuhelpguide.Interfaces;
 
 import android.view.View;
 

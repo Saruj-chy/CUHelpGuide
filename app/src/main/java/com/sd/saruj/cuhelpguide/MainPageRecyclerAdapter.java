@@ -13,13 +13,13 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.sd.saruj.cuhelpguide.AdmisionNotice.NoticeListActivity;
-import com.sd.saruj.cuhelpguide.Choice.ChoiceActivity;
-import com.sd.saruj.cuhelpguide.Faculty.Faculty;
-import com.sd.saruj.cuhelpguide.Faculty.FacultyNameActivity;
+import com.sd.saruj.cuhelpguide.Activity.ChoiceActivity;
+import com.sd.saruj.cuhelpguide.ModelClass.Faculty;
+import com.sd.saruj.cuhelpguide.Activity.FacultyNameActivity;
 import com.sd.saruj.cuhelpguide.ModelQuestion.ModelQuestionMainActivity;
 import com.sd.saruj.cuhelpguide.ModelQuestion.PracticeTest.PracticeTestActivity;
-import com.sd.saruj.cuhelpguide.SubjectPrerequirement.Activities.AllUnitViewActivity;
-import com.sd.saruj.cuhelpguide.UploadPost.DepartmentPostActivity;
+import com.sd.saruj.cuhelpguide.Activity.AllUnitViewActivity;
+import com.sd.saruj.cuhelpguide.Activity.SubjectReviewActivity;
 
 import java.util.List;
 
@@ -91,7 +91,7 @@ public class MainPageRecyclerAdapter extends RecyclerView.Adapter<MainPageRecycl
                 @Override
                 public void onClick(View view) {
                     Context context = view.getContext();
-                    Intent intent = new Intent(context, DepartmentPostActivity.class);
+                    Intent intent = new Intent(context, SubjectReviewActivity.class);
 //                    intent.putExtra("name", Name);
                     context.startActivity(intent);
                 }

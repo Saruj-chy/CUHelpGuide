@@ -1,4 +1,4 @@
-package com.sd.saruj.cuhelpguide.Choice;
+package com.sd.saruj.cuhelpguide.Activity;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;

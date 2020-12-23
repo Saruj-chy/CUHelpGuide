@@ -1,4 +1,4 @@
-package com.sd.saruj.cuhelpguide.UploadPost;
+package com.sd.saruj.cuhelpguide.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -10,18 +10,19 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.sd.saruj.cuhelpguide.Faculty.Faculty;
+import com.sd.saruj.cuhelpguide.Activity.ShowPostActivity;
+import com.sd.saruj.cuhelpguide.ModelClass.Faculty;
 import com.sd.saruj.cuhelpguide.R;
 
 import java.util.List;
 
-public class RetrivePostListAdapter extends RecyclerView.Adapter<RetrivePostListAdapter.ProductViewHolder> {
+public class RetriveSubjectPostListAdapter extends RecyclerView.Adapter<RetriveSubjectPostListAdapter.ProductViewHolder> {
 
 
     private Context mCtx;
     private List<Faculty> productList;
 
-    public RetrivePostListAdapter(Context mCtx, List<Faculty> productList) {
+    public RetriveSubjectPostListAdapter(Context mCtx, List<Faculty> productList) {
         this.mCtx = mCtx;
         this.productList = productList;
     }

@@ -1,4 +1,4 @@
-package com.sd.saruj.cuhelpguide.Faculty;
+package com.sd.saruj.cuhelpguide.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,13 +12,16 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.sd.saruj.cuhelpguide.Constant.DepartmentName;
+import com.sd.saruj.cuhelpguide.Adapter.DepartmentNameAdapter;
+import com.sd.saruj.cuhelpguide.Interfaces.DepartmentNameInterfaces;
+import com.sd.saruj.cuhelpguide.ModelClass.Faculty;
 import com.sd.saruj.cuhelpguide.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
-public class FacultyDepartmentNameActivity extends AppCompatActivity {
+public class DepartmentNameActivity extends AppCompatActivity implements DepartmentNameInterfaces {
 
     List<Faculty> productList;
     RecyclerView recyclerView;
@@ -47,41 +50,42 @@ public class FacultyDepartmentNameActivity extends AppCompatActivity {
 
         switch (facultyName){
             case "Faculty of Engineering":
-                getDepartmentName(DepartmentName.EngineerDepartmentName, "Engineer");
+                getAllDepartmentName(DepartmentName.EngineerDepartmentName, "Engineer");
                 break;
             case "Faculty of Business Administration":
-                getDepartmentName(DepartmentName.BusinesssDepartmentName, "Business");
+                getAllDepartmentName(DepartmentName.BusinesssDepartmentName, "Business");
                 break;
             case "Faculty of Social Science":
-                getDepartmentName(DepartmentName.SocialDepartmentName, "Social");
+                getAllDepartmentName(DepartmentName.SocialDepartmentName, "Social");
                 break;
             case "Faculty of Science":
-                getDepartmentName(DepartmentName.ScienceDepartmentName, "Science");
+                getAllDepartmentName(DepartmentName.ScienceDepartmentName, "Science");
                 break;
             case "Faculty of Arts and Humanities":
-                getDepartmentName(DepartmentName.ArtsDepartmentName, "Arts");
+                getAllDepartmentName(DepartmentName.ArtsDepartmentName, "Arts");
                 break;
             case "Faculty of Biology":
-                getDepartmentName(DepartmentName.BiologicalDepartmentName, "Biology");
+                getAllDepartmentName(DepartmentName.BiologicalDepartmentName, "Biology");
                 break;
             case "Faculty of Marine Science":
-                getDepartmentName(DepartmentName.MarineDepartmentName, "Forestry");
+                getAllDepartmentName(DepartmentName.MarineDepartmentName, "Forestry");
                 break;
             case "Faculty of Forestry and Environment":
-                getDepartmentName(DepartmentName.ForestryDepartmentName, "Forestry");
+                getAllDepartmentName(DepartmentName.ForestryDepartmentName, "Forestry");
                 break;
             default:
                 return;
         }
 
-        FacultyDepartmentNameAdapter adapter = new FacultyDepartmentNameAdapter(this, productList);
+        DepartmentNameAdapter adapter = new DepartmentNameAdapter(this, productList);
         recyclerView.setAdapter(adapter);
         GridLayoutManager manager = new GridLayoutManager(this, 2, GridLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(manager);
 
     }
 
-    private void getDepartmentName(String[] departmentNameList, String type) {
+    @Override
+    public void getAllDepartmentName(String[] departmentNameList, String type) {
         for(int i=0; i<departmentNameList.length; i++){
             productList.add(
                     new Faculty(
@@ -92,6 +96,4 @@ public class FacultyDepartmentNameActivity extends AppCompatActivity {
             );
         }
     }
-
-
 }

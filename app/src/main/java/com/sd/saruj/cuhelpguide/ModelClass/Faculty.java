@@ -1,4 +1,4 @@
-package com.sd.saruj.cuhelpguide.Faculty;
+package com.sd.saruj.cuhelpguide.ModelClass;
 
 public class Faculty {
     private  int id;

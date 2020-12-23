@@ -10,7 +10,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.sd.saruj.cuhelpguide.Faculty.Faculty;
+import com.sd.saruj.cuhelpguide.Adapter.NoticeListAdapter;
+import com.sd.saruj.cuhelpguide.Interfaces.NoticeClickListener;
+import com.sd.saruj.cuhelpguide.ModelClass.Faculty;
 import com.sd.saruj.cuhelpguide.R;
 
 import java.util.ArrayList;

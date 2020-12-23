@@ -1,4 +1,4 @@
-package com.sd.saruj.cuhelpguide.UploadPost;
+package com.sd.saruj.cuhelpguide.Activity;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,17 +12,18 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.widget.EditText;
 
-import com.sd.saruj.cuhelpguide.Faculty.Faculty;
+import com.sd.saruj.cuhelpguide.ModelClass.Faculty;
 import com.sd.saruj.cuhelpguide.R;
+import com.sd.saruj.cuhelpguide.Adapter.SubjectReviewAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class DepartmentPostActivity extends AppCompatActivity {
+public class SubjectReviewActivity extends AppCompatActivity {
 
     private RecyclerView mRecyclerView;
     private EditText mEditText ;
-   private DepartmentPostAdapter mAdapter;
+   private SubjectReviewAdapter mAdapter;
    private List<Faculty> departmentList;
 
     String[] departmentName = {
@@ -67,7 +68,7 @@ public class DepartmentPostActivity extends AppCompatActivity {
             );
         }
 
-        mAdapter = new DepartmentPostAdapter(this, departmentList);
+        mAdapter = new SubjectReviewAdapter(this, departmentList);
         mRecyclerView.setAdapter(mAdapter);
 
 

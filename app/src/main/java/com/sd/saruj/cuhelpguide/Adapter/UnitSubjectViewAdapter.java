@@ -1,35 +1,31 @@
-package com.sd.saruj.cuhelpguide.SubjectPrerequirement.Adapter;
+package com.sd.saruj.cuhelpguide.Adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.sd.saruj.cuhelpguide.Faculty.Faculty;
+import com.sd.saruj.cuhelpguide.ModelClass.Faculty;
 import com.sd.saruj.cuhelpguide.R;
 
 import java.util.List;
 
-public class DUnitAdapter extends RecyclerView.Adapter<DUnitAdapter.ProductViewHolderownmake>
+public class UnitSubjectViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
 {
-    //this context we will use to inflate the layout
     private Context mCtx;
-
-    //we are storing all the products in a list
     private List<Faculty> productList;
 
-    public DUnitAdapter(Context mCtx, List<Faculty> productList) {
+    public UnitSubjectViewAdapter(Context mCtx, List<Faculty> productList) {
         this.mCtx = mCtx;
         this.productList = productList;
     }
 
-     //  subject search option
-    //======================
+
+    //  subject search option
     public void filterList(List<Faculty> filteredList) {
         productList = filteredList;
         notifyDataSetChanged();
@@ -38,35 +34,20 @@ public class DUnitAdapter extends RecyclerView.Adapter<DUnitAdapter.ProductViewH
 
     @NonNull
     @Override
-    public DUnitAdapter.ProductViewHolderownmake onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         //inflating and returning our view holder
         LayoutInflater inflater = LayoutInflater.from(mCtx);
         View view = inflater.inflate(R.layout.card_list, null);
-        return new DUnitAdapter.ProductViewHolderownmake(view);
+        return new UnitSubjectViewAdapter.ProductViewHolderownmake(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull DUnitAdapter.ProductViewHolderownmake holder, final int position) {
+    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, final int position) {
 
         Faculty faculty = productList.get(position);
+        ((ProductViewHolderownmake)holder).bind(faculty);
 
-        Faculty product = productList.get(position);
-        holder.textViewName.setText(product.getName());
-
-        final String Name = faculty.getName().toString().trim();
-
-        holder.textViewName.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Context context = view.getContext();
-               /* Intent intent = new Intent(context, Engineering_Activity.class);
-                intent.putExtra("name", Name);
-                context.startActivity(intent);*/
-                Toast.makeText(context, Name, Toast.LENGTH_SHORT).show();
-            }
-        });
-
-      /*  if(position==0) {
+       /* if(position==0) {
             holder.textViewName.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -74,7 +55,6 @@ public class DUnitAdapter extends RecyclerView.Adapter<DUnitAdapter.ProductViewH
                     Intent intent = new Intent(context, Engineering_Activity.class);
                     intent.putExtra("name", Name);
                     context.startActivity(intent);
-                    Toast.makeText(context, "0", Toast.LENGTH_SHORT).show();
                 }
             });
         }
@@ -182,16 +162,12 @@ public class DUnitAdapter extends RecyclerView.Adapter<DUnitAdapter.ProductViewH
     {
         TextView textViewName;
 
-
-
-
         public ProductViewHolderownmake(@NonNull View itemView) {
             super(itemView);
-
             textViewName = itemView.findViewById(R.id.cardtextview);
-
-
-
+        }
+        public void bind(Faculty faculty){
+            textViewName.setText(faculty.getName());
         }
     }
 

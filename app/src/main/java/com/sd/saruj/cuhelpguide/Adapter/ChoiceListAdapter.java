@@ -1,4 +1,4 @@
-package com.sd.saruj.cuhelpguide.Choice;
+package com.sd.saruj.cuhelpguide.Adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -8,17 +8,17 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-import com.sd.saruj.cuhelpguide.Faculty.Faculty;
+import com.sd.saruj.cuhelpguide.ModelClass.Faculty;
 import com.sd.saruj.cuhelpguide.R;
 
 import java.util.List;
 
-public class ChoiceListRecyclerAdapter extends RecyclerView.Adapter<ChoiceListRecyclerAdapter.ProductViewHolderownmake>
+public class ChoiceListAdapter extends RecyclerView.Adapter<ChoiceListAdapter.ProductViewHolderownmake>
 {
     private Context mCtx;
     private List<Faculty> productList;
 
-    public ChoiceListRecyclerAdapter(Context mCtx, List<Faculty> productList) {
+    public ChoiceListAdapter(Context mCtx, List<Faculty> productList) {
         this.mCtx = mCtx;
         this.productList = productList;
     }
@@ -27,15 +27,15 @@ public class ChoiceListRecyclerAdapter extends RecyclerView.Adapter<ChoiceListRe
 
     @NonNull
     @Override
-    public ChoiceListRecyclerAdapter.ProductViewHolderownmake onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+    public ChoiceListAdapter.ProductViewHolderownmake onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         //inflating and returning our view holder
         LayoutInflater inflater = LayoutInflater.from(mCtx);
         View view = inflater.inflate(R.layout.choice_list, null);
-        return new ChoiceListRecyclerAdapter.ProductViewHolderownmake(view);
+        return new ChoiceListAdapter.ProductViewHolderownmake(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ChoiceListRecyclerAdapter.ProductViewHolderownmake holder, final int position) {
+    public void onBindViewHolder(@NonNull ChoiceListAdapter.ProductViewHolderownmake holder, final int position) {
 
         Faculty faculty = productList.get(position);
 

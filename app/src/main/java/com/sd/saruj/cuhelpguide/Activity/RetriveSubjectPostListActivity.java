@@ -1,4 +1,4 @@
-package com.sd.saruj.cuhelpguide.UploadPost;
+package com.sd.saruj.cuhelpguide.Activity;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,8 +14,9 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.sd.saruj.cuhelpguide.Faculty.Faculty;
+import com.sd.saruj.cuhelpguide.ModelClass.Faculty;
 import com.sd.saruj.cuhelpguide.R;
+import com.sd.saruj.cuhelpguide.Adapter.RetriveSubjectPostListAdapter;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -24,11 +25,11 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RetrivePostListActivity extends AppCompatActivity {
+public class RetriveSubjectPostListActivity extends AppCompatActivity {
 
     //this is the JSON Data URL
     //make sure you are using the correct ip else it will not work
-    private static final String URL_PRODUCTS = "http://10.0.2.2/android/CU_HELP_GUIDE/getAllDepartmentPost.php?subject=";
+    private static final String URL_PRODUCTS = "http://192.168.1.5/android/CU_HELP_GUIDE/getAllDepartmentPost.php?subject=";
 
     //a list to store all the products
     List<Faculty> productList;
@@ -36,6 +37,8 @@ public class RetrivePostListActivity extends AppCompatActivity {
     //the recyclerview
     RecyclerView recyclerView;
     String subjectName;
+
+    private RetriveSubjectPostListAdapter adapter ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,7 +91,7 @@ public class RetrivePostListActivity extends AppCompatActivity {
                             }
 
                             //creating adapter object and setting it to recyclerview
-                            RetrivePostListAdapter adapter = new RetrivePostListAdapter(RetrivePostListActivity.this, productList);
+                            adapter = new RetriveSubjectPostListAdapter(RetriveSubjectPostListActivity.this, productList);
                             recyclerView.setAdapter(adapter);
                         } catch (JSONException e) {
                             e.printStackTrace();

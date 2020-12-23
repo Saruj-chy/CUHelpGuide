@@ -1,4 +1,6 @@
-package com.sd.saruj.cuhelpguide.SubjectPrerequirement.Activities;
+package com.sd.saruj.cuhelpguide.Activity;
+
+import android.os.Bundle;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -7,62 +9,65 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.os.Bundle;
 
-import com.sd.saruj.cuhelpguide.Faculty.Faculty;
+import com.sd.saruj.cuhelpguide.ModelClass.Faculty;
+import com.sd.saruj.cuhelpguide.Adapter.FacultyNameAdapter;
 import com.sd.saruj.cuhelpguide.R;
-import com.sd.saruj.cuhelpguide.SubjectPrerequirement.Adapter.AllUnitViewAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class AllUnitViewActivity extends AppCompatActivity {
+public class FacultyNameActivity extends AppCompatActivity {
 
+    private List<Faculty> productList;
+    private RecyclerView recyclerView;
+    private FacultyNameAdapter adapter ;
 
-    List<Faculty> productList;
-    RecyclerView recyclerView;
-
-    String[] unitName = {
-            "A Unit",
-            "B Unit",
-            "B1 Unit",
-            "C Unit",
-            "D Unit",
-            "D1 Unit"
+    String[] FacultyName = {"Faculty of Engineering",
+            "Faculty of Business Administration",
+            "Faculty of Social Science",
+            "Faculty of Science",
+            "Faculty of Arts and Humanities",
+            "Faculty of Biology",
+            "Faculty of Marine Science",
+            "Faculty of Forestry and Environment",
+            "Faculty of LAW"
     };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_all_unit_view);
+        setContentView(R.layout.activity_faculty_name);
 
-        Toolbar toolbar = findViewById(R.id.allUnit_toolbar);
+        Toolbar toolbar = findViewById(R.id.faculty_main_toolbar);
         setSupportActionBar(toolbar);
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setDisplayShowCustomEnabled(true);
-        getSupportActionBar().setTitle("Subject Pre-Requirement");
+        getSupportActionBar().setTitle("Faculty Information");
 
-        recyclerView = (RecyclerView) findViewById(R.id.allUnitRecyclerView);
+
+        recyclerView = (RecyclerView) findViewById(R.id.facultyRecyclerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));
 
         productList = new ArrayList<>();
 
-        for(int i=0; i<unitName.length; i++){
+        for(int i=0; i<FacultyName.length; i++){
             productList.add(
                     new Faculty(
                             i+1,
-                            unitName[i]
+                            FacultyName[i]
                     )
             );
         }
 
-        AllUnitViewAdapter adapter = new AllUnitViewAdapter(this, productList);
+        adapter = new FacultyNameAdapter(this, productList);
         recyclerView.setAdapter(adapter);
 
         GridLayoutManager manager = new GridLayoutManager(this, 2, GridLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(manager);
+
 
     }
 }

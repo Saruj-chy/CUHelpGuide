@@ -1,12 +1,12 @@
-package com.sd.saruj.cuhelpguide.SplashActivity;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.sd.saruj.cuhelpguide.Activity;
 
 import android.animation.ObjectAnimator;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.widget.ProgressBar;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.sd.saruj.cuhelpguide.MainActivity;
 import com.sd.saruj.cuhelpguide.R;

@@ -1,4 +1,4 @@
-package com.sd.saruj.cuhelpguide.SubjectPrerequirement.Activities;
+package com.sd.saruj.cuhelpguide.Activity;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,19 +16,19 @@ import android.view.View;
 import android.widget.EditText;
 
 import com.sd.saruj.cuhelpguide.Constant.DepartmentName;
-import com.sd.saruj.cuhelpguide.Faculty.Faculty;
+import com.sd.saruj.cuhelpguide.ModelClass.Faculty;
 import com.sd.saruj.cuhelpguide.R;
-import com.sd.saruj.cuhelpguide.SubjectPrerequirement.Adapter.UnitAdapter;
+import com.sd.saruj.cuhelpguide.Adapter.UnitSubjectViewAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class UnitActivity extends AppCompatActivity {
+public class UnitSubjectViewActivity extends AppCompatActivity {
 
     List<Faculty> productList;
     RecyclerView recyclerView;
     EditText unitEdit;
-    UnitAdapter adapter;
+    UnitSubjectViewAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,7 +79,7 @@ public class UnitActivity extends AppCompatActivity {
                 return;
 
         }
-        adapter = new UnitAdapter(this, productList);
+        adapter = new UnitSubjectViewAdapter(this, productList);
         recyclerView.setAdapter(adapter);
 
 

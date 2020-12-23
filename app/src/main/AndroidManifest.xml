@@ -18,47 +18,47 @@
         <activity android:name=".AdmisionNotice.NoticeListActivity"
             android:parentActivityName=".MainActivity"/>
         <activity
-            android:name=".UploadPost.ShowPostActivity"
-            android:parentActivityName=".UploadPost.RetrivePostListActivity" />
+            android:name=".Activity.ShowPostActivity"
+            android:parentActivityName=".Activity.RetriveSubjectPostListActivity" />
         <activity
-            android:name=".UploadPost.RetrivePostListActivity"
-            android:parentActivityName=".UploadPost.DepartmentPostActivity" />
-        <activity android:name=".UploadPost.UpploadPostActivity" />
+            android:name=".Activity.RetriveSubjectPostListActivity"
+            android:parentActivityName=".Activity.SubjectReviewActivity" />
+        <activity android:name=".Activity.UpploadPostActivity" />
         <activity
-            android:name=".UploadPost.DepartmentPostActivity"
+            android:name=".Activity.SubjectReviewActivity"
             android:parentActivityName=".MainActivity" />
         <activity
-            android:name=".Choice.ChoiceListActivity"
-            android:parentActivityName=".Choice.ChoiceActivity" />
-        <activity android:name=".Choice.ChoiceActivity" />
+            android:name=".Activity.ChoiceListActivity"
+            android:parentActivityName=".Activity.ChoiceActivity" />
+        <activity android:name=".Activity.ChoiceActivity" />
         <activity android:name=".ModelQuestion.PracticeTest.QuestionActivity" />
         <activity android:name=".ModelQuestion.PracticeTest.PracticeTestActivity" />
         <activity android:name=".ModelQuestion.ModelQuestionMainActivity" />
         <activity android:name=".ModelQuestion.ResultActivity" />
         <activity android:name=".ModelQuestion.ModelQuestionActivity" />
         <activity
-            android:name=".SubjectPrerequirement.Activities.DUnitActivity"
-            android:parentActivityName=".SubjectPrerequirement.Activities.AllUnitViewActivity" />
+            android:name=".Activity.DUnitSubjectViewActivity"
+            android:parentActivityName=".Activity.AllUnitViewActivity" />
         <activity
-            android:name=".SubjectPrerequirement.Activities.UnitActivity"
-            android:parentActivityName=".SubjectPrerequirement.Activities.AllUnitViewActivity" />
+            android:name=".Activity.UnitSubjectViewActivity"
+            android:parentActivityName=".Activity.AllUnitViewActivity" />
         <activity
-            android:name=".SubjectPrerequirement.Activities.AllUnitViewActivity"
+            android:name=".Activity.AllUnitViewActivity"
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".DepartmentInformation.DepartmentInformationActivity"
-            android:parentActivityName=".Faculty.FacultyNameActivity" />
+            android:parentActivityName=".Activity.FacultyNameActivity" />
         <activity
-            android:name=".Faculty.FacultyDepartmentNameActivity"
-            android:parentActivityName=".Faculty.FacultyNameActivity" />
+            android:name=".Activity.DepartmentNameActivity"
+            android:parentActivityName=".Activity.FacultyNameActivity" />
         <activity
-            android:name=".Faculty.FacultyNameActivity"
+            android:name=".Activity.FacultyNameActivity"
             android:parentActivityName=".MainActivity" />
         <activity android:name=".MainActivity" />
 
 
         <activity
-            android:name=".SplashActivity.SplashScreenActivity"
+            android:name=".Activity.SplashScreenActivity"
             android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

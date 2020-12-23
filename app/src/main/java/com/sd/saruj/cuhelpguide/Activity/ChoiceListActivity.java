@@ -1,4 +1,4 @@
-package com.sd.saruj.cuhelpguide.Choice;
+package com.sd.saruj.cuhelpguide.Activity;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,7 +10,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.sd.saruj.cuhelpguide.Faculty.Faculty;
+import com.sd.saruj.cuhelpguide.Adapter.ChoiceListAdapter;
+import com.sd.saruj.cuhelpguide.ModelClass.Faculty;
 import com.sd.saruj.cuhelpguide.R;
 
 import java.util.ArrayList;
@@ -21,6 +22,7 @@ public class ChoiceListActivity extends AppCompatActivity {
     String subCategory;
     List<Faculty> productList;
     RecyclerView recyclerView;
+    private ChoiceListAdapter adapter ;
 
     String[] subName;
 
@@ -68,7 +70,7 @@ public class ChoiceListActivity extends AppCompatActivity {
         }
         
 
-        ChoiceListRecyclerAdapter adapter = new ChoiceListRecyclerAdapter(this, productList);
+         adapter = new ChoiceListAdapter(this, productList);
         recyclerView.setAdapter(adapter);
 
 

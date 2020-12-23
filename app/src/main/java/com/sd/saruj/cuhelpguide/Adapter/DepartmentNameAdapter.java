@@ -1,4 +1,4 @@
-package com.sd.saruj.cuhelpguide.Faculty;
+package com.sd.saruj.cuhelpguide.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -12,17 +12,18 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.sd.saruj.cuhelpguide.DepartmentInformation.DepartmentInformationActivity;
+import com.sd.saruj.cuhelpguide.ModelClass.Faculty;
 import com.sd.saruj.cuhelpguide.R;
 
 import java.util.List;
 
-public class FacultyDepartmentNameAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
+public class DepartmentNameAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
 {
     private Context mCtx;
     private List<Faculty> productList;
     int departmentType ;
 
-    public FacultyDepartmentNameAdapter(Context mCtx, List<Faculty> productList) {
+    public DepartmentNameAdapter(Context mCtx, List<Faculty> productList) {
         this.mCtx = mCtx;
         this.productList = productList;
     }
@@ -70,7 +71,7 @@ public class FacultyDepartmentNameAdapter extends RecyclerView.Adapter<RecyclerV
         View view = inflater.inflate(R.layout.card_list, null);
         Log.e("faculty", "viewType: "+ viewType ) ;
 
-        return new FacultyDepartmentNameAdapter.ProductViewHolderownmake(view);
+        return new DepartmentNameAdapter.ProductViewHolderownmake(view);
     }
 
     @Override

@@ -16,14 +16,14 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.navigation.NavigationView;
-import com.sd.saruj.cuhelpguide.Choice.ChoiceActivity;
-import com.sd.saruj.cuhelpguide.Faculty.Faculty;
-import com.sd.saruj.cuhelpguide.Faculty.FacultyNameActivity;
+import com.sd.saruj.cuhelpguide.Activity.ChoiceActivity;
+import com.sd.saruj.cuhelpguide.Activity.UpploadPostActivity;
+import com.sd.saruj.cuhelpguide.ModelClass.Faculty;
+import com.sd.saruj.cuhelpguide.Activity.FacultyNameActivity;
 import com.sd.saruj.cuhelpguide.ModelQuestion.ModelQuestionMainActivity;
 import com.sd.saruj.cuhelpguide.ModelQuestion.PracticeTest.PracticeTestActivity;
-import com.sd.saruj.cuhelpguide.SubjectPrerequirement.Activities.AllUnitViewActivity;
-import com.sd.saruj.cuhelpguide.UploadPost.DepartmentPostActivity;
-import com.sd.saruj.cuhelpguide.UploadPost.UpploadPostActivity;
+import com.sd.saruj.cuhelpguide.Activity.AllUnitViewActivity;
+import com.sd.saruj.cuhelpguide.Activity.SubjectReviewActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -134,7 +134,7 @@ public boolean onNavigationItemSelected(MenuItem item) {
                 startActivity(new Intent(this, UpploadPostActivity.class));
                 break;
             case R.id.item_g:
-                startActivity(new Intent(this, DepartmentPostActivity.class));
+                startActivity(new Intent(this, SubjectReviewActivity.class));
                 break;
 
         }
