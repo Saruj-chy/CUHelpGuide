@@ -14,8 +14,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.sd.saruj.cuhelpguide.AdmisionNotice.NoticeListActivity;
 import com.sd.saruj.cuhelpguide.Activity.ChoiceActivity;
+import com.sd.saruj.cuhelpguide.Interfaces.FacultyNameInterfaces;
 import com.sd.saruj.cuhelpguide.ModelClass.Faculty;
 import com.sd.saruj.cuhelpguide.Activity.FacultyNameActivity;
+import com.sd.saruj.cuhelpguide.ModelQuestion.ModelQuestionActivity;
 import com.sd.saruj.cuhelpguide.ModelQuestion.ModelQuestionMainActivity;
 import com.sd.saruj.cuhelpguide.ModelQuestion.PracticeTest.PracticeTestActivity;
 import com.sd.saruj.cuhelpguide.Activity.AllUnitViewActivity;
@@ -23,7 +25,7 @@ import com.sd.saruj.cuhelpguide.Activity.SubjectReviewActivity;
 
 import java.util.List;
 
-public class MainPageRecyclerAdapter extends RecyclerView.Adapter<MainPageRecyclerAdapter.MainPageViewHolder>
+public class MainPageRecyclerAdapter extends RecyclerView.Adapter<MainPageRecyclerAdapter.MainPageViewHolder> implements FacultyNameInterfaces
 {
     private Context mCtx;
     private List<Faculty> toolsList;
@@ -56,10 +58,7 @@ public class MainPageRecyclerAdapter extends RecyclerView.Adapter<MainPageRecycl
             holder.textViewName.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Context context = view.getContext();
-                    Intent intent = new Intent(context, FacultyNameActivity.class);
-//                    intent.putExtra("name", Name);
-                    context.startActivity(intent);
+                    onIntent(view.getContext(), FacultyNameActivity.class, "", "");
                 }
             });
         }
@@ -67,10 +66,7 @@ public class MainPageRecyclerAdapter extends RecyclerView.Adapter<MainPageRecycl
             holder.textViewName.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Context context = view.getContext();
-                    Intent intent = new Intent(context, AllUnitViewActivity.class);
-//                    intent.putExtra("name", Name);
-                    context.startActivity(intent);
+               onIntent(view.getContext(), AllUnitViewActivity.class, "", "");
                 }
             });
         }
@@ -79,10 +75,7 @@ public class MainPageRecyclerAdapter extends RecyclerView.Adapter<MainPageRecycl
             holder.textViewName.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Context context = view.getContext();
-                    Intent intent = new Intent(context, ChoiceActivity.class);
-//                    intent.putExtra("name", Name);
-                    context.startActivity(intent);
+                 onIntent(view.getContext(), ChoiceActivity.class, "", "");
                 }
             });
         }
@@ -90,10 +83,7 @@ public class MainPageRecyclerAdapter extends RecyclerView.Adapter<MainPageRecycl
             holder.textViewName.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Context context = view.getContext();
-                    Intent intent = new Intent(context, SubjectReviewActivity.class);
-//                    intent.putExtra("name", Name);
-                    context.startActivity(intent);
+                    onIntent(view.getContext(), SubjectReviewActivity.class, "", "");
                 }
             });
         }
@@ -115,14 +105,10 @@ public class MainPageRecyclerAdapter extends RecyclerView.Adapter<MainPageRecycl
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
                             if( i == 0){
-                                Context context = view.getContext();
-                                Intent intent = new Intent(context, PracticeTestActivity.class);
-                                context.startActivity(intent);
+                                onIntent(view.getContext(), PracticeTestActivity.class, "", "");
                             }
                             else if( i == 1){
-                                Context context = view.getContext();
-                                Intent intent = new Intent(context, ModelQuestionMainActivity.class);
-                                context.startActivity(intent);
+                                onIntent(view.getContext(), ModelQuestionActivity.class, "", "");
                             }
                         }
                     });
@@ -139,11 +125,7 @@ public class MainPageRecyclerAdapter extends RecyclerView.Adapter<MainPageRecycl
             holder.textViewName.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Context context = view.getContext();
-                    Intent intent = new Intent(context, NoticeListActivity.class);
-//                    intent.putExtra("name", Name);
-                    context.startActivity(intent);
-//                    Toast.makeText(mCtx, "Upcoming soon...", Toast.LENGTH_SHORT).show();
+                    onIntent(view.getContext(), NoticeListActivity.class, "", "");
                 }
             });
         }
@@ -156,25 +138,19 @@ public class MainPageRecyclerAdapter extends RecyclerView.Adapter<MainPageRecycl
         return toolsList.size();
     }
 
+    @Override
+    public void onIntent(Context context, Object activity, String name, String value) {
+        Intent intent = new Intent(context, (Class<?>) activity);
+        context.startActivity(intent);
+    }
+
 
     class MainPageViewHolder extends RecyclerView.ViewHolder
     {
         TextView textViewName;
-
-
-
-
         public MainPageViewHolder(@NonNull View itemView) {
             super(itemView);
-
             textViewName = itemView.findViewById(R.id.cardtextview);
-
-
-
         }
     }
-
-
-
-
 }

@@ -59,7 +59,7 @@ public class FacultyNameAdapter extends RecyclerView.Adapter<FacultyNameAdapter.
 //
 //                    context.startActivity(intent);
 
-                    onIntent(view.getContext(), DepartmentInformationActivity.class, "faculty","Law");
+                    onIntent(view.getContext(), DepartmentInformationActivity.class, "department","Law");
                 }
             });
         }
@@ -97,10 +97,6 @@ public class FacultyNameAdapter extends RecyclerView.Adapter<FacultyNameAdapter.
     class ProductViewHolderownmake  extends RecyclerView.ViewHolder
     {
         TextView textViewName;
-
-
-
-
         public ProductViewHolderownmake(@NonNull View itemView) {
             super(itemView);
 

@@ -23,8 +23,10 @@ import java.util.List;
 
 public class DepartmentNameActivity extends AppCompatActivity implements DepartmentNameInterfaces {
 
-    List<Faculty> productList;
-    RecyclerView recyclerView;
+    private List<Faculty> productList;
+    private RecyclerView recyclerView;
+    private DepartmentNameAdapter adapter ;
+    private GridLayoutManager manager ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,9 +79,9 @@ public class DepartmentNameActivity extends AppCompatActivity implements Departm
                 return;
         }
 
-        DepartmentNameAdapter adapter = new DepartmentNameAdapter(this, productList);
+        adapter = new DepartmentNameAdapter(this, productList);
         recyclerView.setAdapter(adapter);
-        GridLayoutManager manager = new GridLayoutManager(this, 2, GridLayoutManager.VERTICAL, false);
+        manager = new GridLayoutManager(this, 2, GridLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(manager);
 
     }

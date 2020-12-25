@@ -36,7 +36,7 @@ import static com.sd.saruj.cuhelpguide.R.string.science_chemistry;
 public class DepartmentInformationActivity extends AppCompatActivity {
     TextView departmentText;
     ImageView departmentImage;
-    String FacultyName, departmentName;
+    String  departmentName;
 
     HashMap<String, ArrayList<DepartmentModel>> departmentList = new HashMap<>() ;
 
@@ -46,7 +46,6 @@ public class DepartmentInformationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_department_information);
 
         Intent intent = getIntent();
-        FacultyName = intent.getExtras().getString("faculty");
         departmentName = intent.getExtras().getString("department");
 
         Toolbar toolbar = findViewById(R.id.dept_information_toolbar);

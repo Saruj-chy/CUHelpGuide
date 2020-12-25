@@ -6,6 +6,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
@@ -20,6 +21,7 @@ public class NoticeViewActivity extends AppCompatActivity {
 
     private WebView webView;
     private ProgressBar progressBar;
+    private String url ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +45,9 @@ public class NoticeViewActivity extends AppCompatActivity {
         webView.getSettings().setDisplayZoomControls(false);
         webView.setWebChromeClient(new WebChromeClient());
 
-        final int position = getIntent().getIntExtra("position",0);
+//        final int position = getIntent().getIntExtra("position",0);
+         url = getIntent().getStringExtra("url");
+//        Log.e("TAG", " url:  "+ url +"  position:  "+ position ) ;
 
 
         webView.setWebViewClient(new WebViewClient(){
@@ -60,7 +64,7 @@ public class NoticeViewActivity extends AppCompatActivity {
         //this link for show from pdf in web page
 //        webView.loadUrl("https://docs.google.com/gview?embedded=true&url="+MainActivity.list.get(position).getPdfUrl());
         //========   thsi link for google drive..
-        webView.loadUrl(NoticeListActivity.list.get(position).getName());
+        webView.loadUrl(url);
 
     }
 }

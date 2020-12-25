@@ -25,10 +25,11 @@ import java.util.List;
 
 public class UnitSubjectViewActivity extends AppCompatActivity {
 
-    List<Faculty> productList;
-    RecyclerView recyclerView;
-    EditText unitEdit;
-    UnitSubjectViewAdapter adapter;
+    private List<Faculty> productList;
+    private RecyclerView recyclerView;
+    private EditText unitEdit;
+    private UnitSubjectViewAdapter adapter;
+    private GridLayoutManager manager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,7 +84,7 @@ public class UnitSubjectViewActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
 
 
-        GridLayoutManager manager = new GridLayoutManager(this, 2, GridLayoutManager.VERTICAL, false);
+        manager = new GridLayoutManager(this, 2, GridLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(manager);
 
         //===============   search option

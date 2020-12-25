@@ -57,10 +57,6 @@ public class AllUnitViewAdapter extends RecyclerView.Adapter<AllUnitViewAdapter.
             holder.textViewName.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-//                    Context context = view.getContext();
-//                    Intent intent = new Intent(context, DUnitSubjectViewActivity.class);
-//                    intent.putExtra("name", Name);
-//                    context.startActivity(intent);
                     onIntent(view.getContext(), DUnitSubjectViewActivity.class, "name", Name);
                 }
             });
@@ -69,19 +65,10 @@ public class AllUnitViewAdapter extends RecyclerView.Adapter<AllUnitViewAdapter.
             holder.textViewName.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-//                    Context context = view.getContext();
-//                    Intent intent = new Intent(context, UnitSubjectViewActivity.class);
-//                    intent.putExtra("name", Name);
-//                    context.startActivity(intent);
                     onIntent(view.getContext(), UnitSubjectViewActivity.class, "name", Name);
-
                 }
             });
         }
-
-
-
-
     }
 
     @Override
@@ -102,18 +89,10 @@ public class AllUnitViewAdapter extends RecyclerView.Adapter<AllUnitViewAdapter.
     class ProductViewHolderownmake  extends RecyclerView.ViewHolder
     {
         TextView textViewName;
-
         public ProductViewHolderownmake(@NonNull View itemView) {
             super(itemView);
 
             textViewName = itemView.findViewById(R.id.cardtextview);
-
-
-
         }
     }
-
-
-
-
 }

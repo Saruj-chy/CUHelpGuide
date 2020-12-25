@@ -23,6 +23,7 @@ public class ChoiceListActivity extends AppCompatActivity {
     List<Faculty> productList;
     RecyclerView recyclerView;
     private ChoiceListAdapter adapter ;
+    private GridLayoutManager manager ;
 
     String[] subName;
 
@@ -74,7 +75,7 @@ public class ChoiceListActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
 
 
-        GridLayoutManager manager = new GridLayoutManager(this, 1, GridLayoutManager.VERTICAL, false);
+        manager = new GridLayoutManager(this, 1, GridLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(manager);
 
     }

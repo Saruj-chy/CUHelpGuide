@@ -17,20 +17,20 @@ import java.util.List;
 
 public class NoticeListAdapter extends RecyclerView.Adapter<NoticeListAdapter.Holder> {
 
-    private List<Faculty> list;
-    private Context context;
-    NoticeClickListener noticeClickListener;
+    private List<Faculty> mNoticeList;
+    private Context mContext;
+    NoticeClickListener mNoticeClickListener;
 
     public NoticeListAdapter(List<Faculty> list, Context context, NoticeClickListener noticeClickListener) {
-        this.list = list;
-        this.context = context;
-        this.noticeClickListener = noticeClickListener;
+        this.mNoticeList = list;
+        this.mContext = context;
+        this.mNoticeClickListener = noticeClickListener;
     }
 
     @NonNull
     @Override
     public Holder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(context).inflate(R.layout.choice_list,parent,false);
+        View v = LayoutInflater.from(mContext).inflate(R.layout.choice_list,parent,false);
         Holder holder = new Holder(v);
         return holder;
     }
@@ -38,12 +38,12 @@ public class NoticeListAdapter extends RecyclerView.Adapter<NoticeListAdapter.Ho
     @Override
     public void onBindViewHolder(@NonNull Holder holder, int position) {
 
-        holder.pdfListTitle.setText(list.get(position).getTitle());
+        holder.pdfListTitle.setText(mNoticeList.get(position).getName());
     }
 
     @Override
     public int getItemCount() {
-        return list.size();
+        return mNoticeList.size();
     }
 
     public class Holder extends RecyclerView.ViewHolder implements View.OnClickListener {
@@ -57,7 +57,7 @@ public class NoticeListAdapter extends RecyclerView.Adapter<NoticeListAdapter.Ho
 
         @Override
         public void onClick(View v) {
-            noticeClickListener.onClick(v,getAdapterPosition(),false);
+            mNoticeClickListener.onClick(v,getAdapterPosition(),false);
         }
     }
 }

@@ -19,10 +19,12 @@ import java.util.List;
 public class AllUnitViewActivity extends AppCompatActivity {
 
 
-    List<Faculty> productList;
-    RecyclerView recyclerView;
+    private List<Faculty> productList;
+    private RecyclerView recyclerView;
+    private AllUnitViewAdapter adapter ;
+    private GridLayoutManager manager ;
 
-    String[] unitName = {
+    private String[] unitName = {
             "A Unit",
             "B Unit",
             "B1 Unit",
@@ -58,10 +60,10 @@ public class AllUnitViewActivity extends AppCompatActivity {
             );
         }
 
-        AllUnitViewAdapter adapter = new AllUnitViewAdapter(this, productList);
+        adapter = new AllUnitViewAdapter(this, productList);
         recyclerView.setAdapter(adapter);
 
-        GridLayoutManager manager = new GridLayoutManager(this, 2, GridLayoutManager.VERTICAL, false);
+        manager = new GridLayoutManager(this, 2, GridLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(manager);
 
     }

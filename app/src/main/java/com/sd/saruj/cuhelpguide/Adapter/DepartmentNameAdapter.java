@@ -12,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.sd.saruj.cuhelpguide.DepartmentInformation.DepartmentInformationActivity;
+import com.sd.saruj.cuhelpguide.Interfaces.FacultyNameInterfaces;
 import com.sd.saruj.cuhelpguide.ModelClass.Faculty;
 import com.sd.saruj.cuhelpguide.R;
 
@@ -31,7 +32,6 @@ public class DepartmentNameAdapter extends RecyclerView.Adapter<RecyclerView.Vie
     @Override
     public int getItemViewType(int position) {
         String faculty = productList.get(position).getType() ;
-//        Log.e("faculty", "Faculty: "+ faculty ) ;
 
         switch (faculty){
             case "Engineer":
@@ -81,7 +81,6 @@ public class DepartmentNameAdapter extends RecyclerView.Adapter<RecyclerView.Vie
 
         ((ProductViewHolderownmake) holder).bind(department, departmentType);
 
-
     }
 
     @Override
@@ -90,27 +89,22 @@ public class DepartmentNameAdapter extends RecyclerView.Adapter<RecyclerView.Vie
     }
 
 
+
+
     class ProductViewHolderownmake  extends RecyclerView.ViewHolder
     {
         TextView textViewName;
-
-
-
 
         public ProductViewHolderownmake(@NonNull View itemView) {
             super(itemView);
 
             textViewName = itemView.findViewById(R.id.cardtextview);
-
-
-
         }
 
         public void bind(Faculty department, int type) {
             textViewName.setText(department.getName());
             String typeName = department.getType() ;
 
-//            Log.e("faculty", "Faculty Name: "+ department.getName() ) ;
             Log.e("faculty", "Faculty type: "+ department.getType() ) ;
 
             switch (type){
@@ -261,7 +255,6 @@ public class DepartmentNameAdapter extends RecyclerView.Adapter<RecyclerView.Vie
                 public void onClick(View view) {
                     Context context = view.getContext();
                     Intent intent = new Intent(context, DepartmentInformationActivity.class);
-                    intent.putExtra("faculty", facultyName);
                     intent.putExtra("department", departmentName);
                     context.startActivity(intent);
                 }
@@ -270,8 +263,6 @@ public class DepartmentNameAdapter extends RecyclerView.Adapter<RecyclerView.Vie
         }
 
     }
-
-
 
 
 }

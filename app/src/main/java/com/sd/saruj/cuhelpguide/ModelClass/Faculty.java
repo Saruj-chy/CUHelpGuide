@@ -13,7 +13,7 @@ public class Faculty {
         this.name = name;
     }
 
-    //==========engineering
+    //==========engineering   &&  NoticeListActivity(type instead of url)
     public Faculty(int id, String name, String type) {
         this.id = id;
         this.name = name;
@@ -34,6 +34,8 @@ public class Faculty {
         this.title = title;
         this.details = details;
     }
+
+
 
     public int getId() {
         return id;

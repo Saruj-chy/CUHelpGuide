@@ -24,6 +24,7 @@ public class SubjectReviewActivity extends AppCompatActivity {
     private RecyclerView mRecyclerView;
     private EditText mEditText ;
    private SubjectReviewAdapter mAdapter;
+   private GridLayoutManager manager ;
    private List<Faculty> departmentList;
 
     String[] departmentName = {
@@ -72,7 +73,7 @@ public class SubjectReviewActivity extends AppCompatActivity {
         mRecyclerView.setAdapter(mAdapter);
 
 
-        GridLayoutManager manager = new GridLayoutManager(this, 2, GridLayoutManager.VERTICAL, false);
+        manager = new GridLayoutManager(this, 2, GridLayoutManager.VERTICAL, false);
         mRecyclerView.setLayoutManager(manager);
 
         //===============   search option
