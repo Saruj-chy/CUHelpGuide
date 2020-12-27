@@ -1,7 +1,5 @@
 package com.sd.saruj.cuhelpguide.Adapter;
 import android.content.Context;
-import android.content.Intent;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,18 +8,21 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.sd.saruj.cuhelpguide.Class.ExtraIntentClass;
 import com.sd.saruj.cuhelpguide.DepartmentInformation.DepartmentInformationActivity;
 import com.sd.saruj.cuhelpguide.Activity.DepartmentNameActivity;
-import com.sd.saruj.cuhelpguide.Interfaces.FacultyNameInterfaces;
+import com.sd.saruj.cuhelpguide.Interfaces.ExtraIntentInterface;
 import com.sd.saruj.cuhelpguide.ModelClass.Faculty;
 import com.sd.saruj.cuhelpguide.R;
 
 import java.util.List;
 
-public class FacultyNameAdapter extends RecyclerView.Adapter<FacultyNameAdapter.ProductViewHolderownmake> implements FacultyNameInterfaces
+public class FacultyNameAdapter extends RecyclerView.Adapter<FacultyNameAdapter.ProductViewHolderownmake>
 {
    private Context mCtx;
    private List<Faculty> productList;
+
+   ExtraIntentInterface facultyNameInterface ;
 
     public FacultyNameAdapter(Context mCtx, List<Faculty> productList) {
         this.mCtx = mCtx;
@@ -36,6 +37,8 @@ public class FacultyNameAdapter extends RecyclerView.Adapter<FacultyNameAdapter.
         //inflating and returning our view holder
         LayoutInflater inflater = LayoutInflater.from(mCtx);
         View view = inflater.inflate(R.layout.card_list, null);
+
+        facultyNameInterface = new ExtraIntentClass(view.getContext()) ;
         return new ProductViewHolderownmake(view);
     }
 
@@ -53,13 +56,9 @@ public class FacultyNameAdapter extends RecyclerView.Adapter<FacultyNameAdapter.
             holder.textViewName.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-//                    Context context = view.getContext();
-//                    Intent intent = new Intent(context, DepartmentInformationActivity.class);
-//                    intent.putExtra("faculty", "Law");
-//
-//                    context.startActivity(intent);
 
-                    onIntent(view.getContext(), DepartmentInformationActivity.class, "department","Law");
+                    facultyNameInterface.onIntent( DepartmentInformationActivity.class, "department","Law");
+
                 }
             });
         }
@@ -67,11 +66,8 @@ public class FacultyNameAdapter extends RecyclerView.Adapter<FacultyNameAdapter.
             holder.textViewName.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-//                    Context context = view.getContext();
-//                    Intent intent = new Intent(context, DepartmentNameActivity.class);
-//                    intent.putExtra("name", Name);
-//                    context.startActivity(intent);
-                    onIntent(view.getContext(), DepartmentNameActivity.class,"name", Name);
+
+                    facultyNameInterface.onIntent( DepartmentNameActivity.class,"name", Name);
                 }
             });
         }
@@ -82,16 +78,6 @@ public class FacultyNameAdapter extends RecyclerView.Adapter<FacultyNameAdapter.
     public int getItemCount() {
         return productList.size();
     }
-
-
-    @Override
-    public void onIntent(Context context, Object activity, String name, String value) {
-        Log.e("TAG", "name: "+name) ;
-        Intent intent = new Intent(context, (Class<?>) activity);
-        intent.putExtra(name, value);
-        context.startActivity(intent);
-    }
-
 
 
     class ProductViewHolderownmake  extends RecyclerView.ViewHolder

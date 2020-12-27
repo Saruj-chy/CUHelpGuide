@@ -13,6 +13,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <activity android:name=".Activity.RegistrationActivity" />
+        <activity android:name=".Activity.LoginActivity" />
+
         <activity android:name=".AdmisionNotice.NoticeViewActivity"
             android:parentActivityName=".AdmisionNotice.NoticeListActivity"/>
         <activity android:name=".AdmisionNotice.NoticeListActivity"

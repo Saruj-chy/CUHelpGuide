@@ -1,7 +1,6 @@
 package com.sd.saruj.cuhelpguide.Adapter;
 
 import android.content.Context;
-import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,8 +10,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.sd.saruj.cuhelpguide.Class.ExtraIntentClass;
 import com.sd.saruj.cuhelpguide.DepartmentInformation.DepartmentInformationActivity;
-import com.sd.saruj.cuhelpguide.Interfaces.FacultyNameInterfaces;
+import com.sd.saruj.cuhelpguide.Interfaces.ExtraIntentInterface;
 import com.sd.saruj.cuhelpguide.ModelClass.Faculty;
 import com.sd.saruj.cuhelpguide.R;
 
@@ -23,6 +23,7 @@ public class DepartmentNameAdapter extends RecyclerView.Adapter<RecyclerView.Vie
     private Context mCtx;
     private List<Faculty> productList;
     int departmentType ;
+    private ExtraIntentInterface extraInterface ;
 
     public DepartmentNameAdapter(Context mCtx, List<Faculty> productList) {
         this.mCtx = mCtx;
@@ -70,6 +71,7 @@ public class DepartmentNameAdapter extends RecyclerView.Adapter<RecyclerView.Vie
         LayoutInflater inflater = LayoutInflater.from(mCtx);
         View view = inflater.inflate(R.layout.card_list, null);
         Log.e("faculty", "viewType: "+ viewType ) ;
+        extraInterface = new ExtraIntentClass(mCtx) ;
 
         return new DepartmentNameAdapter.ProductViewHolderownmake(view);
     }
@@ -253,10 +255,8 @@ public class DepartmentNameAdapter extends RecyclerView.Adapter<RecyclerView.Vie
             textViewName.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Context context = view.getContext();
-                    Intent intent = new Intent(context, DepartmentInformationActivity.class);
-                    intent.putExtra("department", departmentName);
-                    context.startActivity(intent);
+                    extraInterface.onIntent(DepartmentInformationActivity.class,"department", departmentName );
+
                 }
             });
 

@@ -1,7 +1,6 @@
 package com.sd.saruj.cuhelpguide.Adapter;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,7 +9,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.sd.saruj.cuhelpguide.Interfaces.FacultyNameInterfaces;
+import com.sd.saruj.cuhelpguide.Class.ExtraIntentClass;
+import com.sd.saruj.cuhelpguide.Interfaces.ExtraIntentInterface;
 import com.sd.saruj.cuhelpguide.ModelClass.Faculty;
 import com.sd.saruj.cuhelpguide.R;
 import com.sd.saruj.cuhelpguide.Activity.UnitSubjectViewActivity;
@@ -18,13 +18,14 @@ import com.sd.saruj.cuhelpguide.Activity.DUnitSubjectViewActivity;
 
 import java.util.List;
 
-public class AllUnitViewAdapter extends RecyclerView.Adapter<AllUnitViewAdapter.ProductViewHolderownmake> implements FacultyNameInterfaces
+public class AllUnitViewAdapter extends RecyclerView.Adapter<AllUnitViewAdapter.ProductViewHolderownmake>
 {
     //this context we will use to inflate the layout
     private Context mCtx;
 
     //we are storing all the products in a list
     private List<Faculty> productList;
+    private ExtraIntentInterface extraInterface ;
 
     public AllUnitViewAdapter(Context mCtx, List<Faculty> productList) {
         this.mCtx = mCtx;
@@ -39,6 +40,7 @@ public class AllUnitViewAdapter extends RecyclerView.Adapter<AllUnitViewAdapter.
         //inflating and returning our view holder
         LayoutInflater inflater = LayoutInflater.from(mCtx);
         View view = inflater.inflate(R.layout.card_list, null);
+        extraInterface = new ExtraIntentClass(mCtx) ;
         return new AllUnitViewAdapter.ProductViewHolderownmake(view);
     }
 
@@ -57,7 +59,7 @@ public class AllUnitViewAdapter extends RecyclerView.Adapter<AllUnitViewAdapter.
             holder.textViewName.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    onIntent(view.getContext(), DUnitSubjectViewActivity.class, "name", Name);
+                    extraInterface.onIntent(DUnitSubjectViewActivity.class, "name", Name);
                 }
             });
         }
@@ -65,7 +67,7 @@ public class AllUnitViewAdapter extends RecyclerView.Adapter<AllUnitViewAdapter.
             holder.textViewName.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    onIntent(view.getContext(), UnitSubjectViewActivity.class, "name", Name);
+                    extraInterface.onIntent(UnitSubjectViewActivity.class, "name", Name);
                 }
             });
         }
@@ -77,13 +79,13 @@ public class AllUnitViewAdapter extends RecyclerView.Adapter<AllUnitViewAdapter.
     }
 
 
-
-    @Override
-    public void onIntent(Context context, Object activity, String name, String value) {
-        Intent intent = new Intent(context, (Class<?>) activity);
-        intent.putExtra(name, value);
-        context.startActivity(intent);
-    }
+//
+//    @Override
+//    public void onIntent(Context context, Object activity, String name, String value) {
+//        Intent intent = new Intent(context, (Class<?>) activity);
+//        intent.putExtra(name, value);
+//        context.startActivity(intent);
+//    }
 
 
     class ProductViewHolderownmake  extends RecyclerView.ViewHolder

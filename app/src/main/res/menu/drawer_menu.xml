@@ -47,4 +47,10 @@
         android:icon="@android:drawable/ic_menu_upload"
         android:title="Retrive Post"
         />
+    <item
+        android:id="@+id/item_h"
+        android:checkable="true"
+        android:icon="@android:drawable/ic_menu_upload"
+        android:title="Log Out"
+        />
 </menu>

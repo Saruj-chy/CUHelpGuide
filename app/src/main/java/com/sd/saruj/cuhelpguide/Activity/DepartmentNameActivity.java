@@ -3,6 +3,7 @@ package com.sd.saruj.cuhelpguide.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.sd.saruj.cuhelpguide.Class.DepartmentNameClass;
 import com.sd.saruj.cuhelpguide.Constant.DepartmentName;
 import com.sd.saruj.cuhelpguide.Adapter.DepartmentNameAdapter;
 import com.sd.saruj.cuhelpguide.Interfaces.DepartmentNameInterfaces;
@@ -21,12 +23,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class DepartmentNameActivity extends AppCompatActivity implements DepartmentNameInterfaces {
+public class DepartmentNameActivity extends AppCompatActivity {
 
     private List<Faculty> productList;
     private RecyclerView recyclerView;
     private DepartmentNameAdapter adapter ;
     private GridLayoutManager manager ;
+
+    private DepartmentNameInterfaces mInterfaces ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,31 +53,32 @@ public class DepartmentNameActivity extends AppCompatActivity implements Departm
         recyclerView.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));
 
         productList = new ArrayList<>();
+        mInterfaces = new DepartmentNameClass(this);
 
         switch (facultyName){
             case "Faculty of Engineering":
-                getAllDepartmentName(DepartmentName.EngineerDepartmentName, "Engineer");
+                mInterfaces.getAllDepartmentName(DepartmentName.EngineerDepartmentName, "Engineer", productList);
                 break;
             case "Faculty of Business Administration":
-                getAllDepartmentName(DepartmentName.BusinesssDepartmentName, "Business");
+                mInterfaces.getAllDepartmentName(DepartmentName.BusinesssDepartmentName, "Business", productList);
                 break;
             case "Faculty of Social Science":
-                getAllDepartmentName(DepartmentName.SocialDepartmentName, "Social");
+                mInterfaces.getAllDepartmentName(DepartmentName.SocialDepartmentName, "Social",productList);
                 break;
             case "Faculty of Science":
-                getAllDepartmentName(DepartmentName.ScienceDepartmentName, "Science");
+                mInterfaces.getAllDepartmentName(DepartmentName.ScienceDepartmentName, "Science",productList);
                 break;
             case "Faculty of Arts and Humanities":
-                getAllDepartmentName(DepartmentName.ArtsDepartmentName, "Arts");
+                mInterfaces.getAllDepartmentName(DepartmentName.ArtsDepartmentName, "Arts",productList);
                 break;
             case "Faculty of Biology":
-                getAllDepartmentName(DepartmentName.BiologicalDepartmentName, "Biology");
+                mInterfaces.getAllDepartmentName(DepartmentName.BiologicalDepartmentName, "Biology", productList);
                 break;
             case "Faculty of Marine Science":
-                getAllDepartmentName(DepartmentName.MarineDepartmentName, "Forestry");
+                mInterfaces.getAllDepartmentName(DepartmentName.MarineDepartmentName, "Forestry", productList);
                 break;
             case "Faculty of Forestry and Environment":
-                getAllDepartmentName(DepartmentName.ForestryDepartmentName, "Forestry");
+                mInterfaces.getAllDepartmentName(DepartmentName.ForestryDepartmentName, "Forestry", productList);
                 break;
             default:
                 return;
@@ -85,17 +90,18 @@ public class DepartmentNameActivity extends AppCompatActivity implements Departm
         recyclerView.setLayoutManager(manager);
 
     }
-
-    @Override
-    public void getAllDepartmentName(String[] departmentNameList, String type) {
-        for(int i=0; i<departmentNameList.length; i++){
-            productList.add(
-                    new Faculty(
-                            i+1,
-                            departmentNameList[i],
-                            type
-                    )
-            );
-        }
-    }
+//
+//    @Override
+//    public List<Faculty> getAllDepartmentName(String[] departmentNameList, String type, List<Faculty> productList) {
+//        for(int i=0; i<departmentNameList.length; i++){
+//            productList.add(
+//                    new Faculty(
+//                            i+1,
+//                            departmentNameList[i],
+//                            type
+//                    )
+//            );
+//        }
+//        return productList;
+//    }
 }

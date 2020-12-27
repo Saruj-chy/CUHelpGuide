@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "790836041106",
+    "firebase_url": "https://sd-saruj-knmgmo.firebaseio.com",
+    "project_id": "sd-saruj-knmgmo",
+    "storage_bucket": "sd-saruj-knmgmo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:790836041106:android:1c0b4f35b263be36f69d4b",
+        "android_client_info": {
+          "package_name": "com.sd.saruj.cuhelpguide"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "790836041106-j72tdev4rvntr4tvd4oduis4ln9os1ai.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCCxfrs-PL4Lu6QnnAbBMhlZtiITXnHMDU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "790836041106-hjtf2u93gn2khv4ohbkf6pi1quhc1t5u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

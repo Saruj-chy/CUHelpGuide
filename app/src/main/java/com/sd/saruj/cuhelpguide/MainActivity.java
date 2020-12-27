@@ -1,6 +1,7 @@
 package com.sd.saruj.cuhelpguide;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.Window;
@@ -16,10 +17,14 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 import com.sd.saruj.cuhelpguide.Activity.ChoiceActivity;
+import com.sd.saruj.cuhelpguide.Activity.LoginActivity;
 import com.sd.saruj.cuhelpguide.Activity.UpploadPostActivity;
+import com.sd.saruj.cuhelpguide.Class.FacultyBuilderClass;
 import com.sd.saruj.cuhelpguide.ModelClass.Faculty;
 import com.sd.saruj.cuhelpguide.Activity.FacultyNameActivity;
+import com.sd.saruj.cuhelpguide.ModelClass.FacultyBuilderModel;
 import com.sd.saruj.cuhelpguide.ModelQuestion.ModelQuestionMainActivity;
 import com.sd.saruj.cuhelpguide.ModelQuestion.PracticeTest.PracticeTestActivity;
 import com.sd.saruj.cuhelpguide.Activity.AllUnitViewActivity;
@@ -34,7 +39,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     ActionBarDrawerToggle drawerToggle;
 
     RecyclerView recyclerList;
-    List<Faculty> mainToolsList;
+//    List<Faculty> mainToolsList;
+    List<FacultyBuilderModel> mainToolsList;
     String[] mainToolsName = {
             "Faculty Information",
             "Subject Pre-Requirement",
@@ -44,7 +50,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             "Admission Notice"
     };
 
-
+    private FirebaseAuth mAuth = FirebaseAuth.getInstance();
+    FacultyBuilderModel builderModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,14 +73,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         mainToolsList = new ArrayList<>();
 
+
         for(int i=0; i<mainToolsName.length; i++){
-            mainToolsList.add(
-                    new Faculty(
-                            i+1,
-                            mainToolsName[i]
-                    )
-            );
+            builderModel = new FacultyBuilderClass().setId(i+1).setName(mainToolsName[i]).build();
+            mainToolsList.add(builderModel);
         }
+
+
 
         MainPageRecyclerAdapter adapter = new MainPageRecyclerAdapter(this, mainToolsList);
         recyclerList.setAdapter(adapter);
@@ -86,10 +92,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         R.string.drawer_open,R.string.drawer_close);
         drawerLayout.addDrawerListener(drawerToggle);
         drawerToggle.syncState();
-
-//        appName = (TextView) findViewById(R.id.appName);
-//        appName.setText("CU Help Guide");
-
 
     }
 
@@ -133,9 +135,14 @@ public boolean onNavigationItemSelected(MenuItem item) {
         case R.id.item_f:
                 startActivity(new Intent(this, UpploadPostActivity.class));
                 break;
-            case R.id.item_g:
+        case R.id.item_g:
                 startActivity(new Intent(this, SubjectReviewActivity.class));
                 break;
+        case R.id.item_h:
+            mAuth.signOut();
+            startActivity(new Intent(this, LoginActivity.class));
+                break;
+
 
         }
         return false;
@@ -154,4 +161,11 @@ public void onBackPressed() {
         }
         super.onBackPressed();
         }
+
+
+    public static void sharedSaved(SharedPreferences sharedPreferences, String state, String memberState){
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString(state, memberState);
+        editor.apply();
+    }
 }
