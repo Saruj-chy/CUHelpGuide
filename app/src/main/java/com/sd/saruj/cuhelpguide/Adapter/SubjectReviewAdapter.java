@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.sd.saruj.cuhelpguide.ModelClass.Faculty;
+import com.sd.saruj.cuhelpguide.ModelClass.FacultyBuilderModel;
 import com.sd.saruj.cuhelpguide.R;
 import com.sd.saruj.cuhelpguide.Activity.RetriveSubjectPostListActivity;
 
@@ -22,16 +23,16 @@ public class SubjectReviewAdapter extends RecyclerView.Adapter<SubjectReviewAdap
     private Context mCtx;
 
     //we are storing all the products in a list
-    private List<Faculty> productList;
+    private List<FacultyBuilderModel> productList;
 
-    public SubjectReviewAdapter(Context mCtx, List<Faculty> productList) {
+    public SubjectReviewAdapter(Context mCtx, List<FacultyBuilderModel> productList) {
         this.mCtx = mCtx;
         this.productList = productList;
     }
 
 
     //  subject search option
-    public void filterList(List<Faculty> filteredList) {
+    public void filterList(List<FacultyBuilderModel> filteredList) {
         productList = filteredList;
         notifyDataSetChanged();
     }
@@ -49,10 +50,9 @@ public class SubjectReviewAdapter extends RecyclerView.Adapter<SubjectReviewAdap
     @Override
     public void onBindViewHolder(@NonNull SubjectReviewAdapter.ProductViewHolderownmake holder, final int position) {
 
-        Faculty faculty = productList.get(position);
+        FacultyBuilderModel faculty = productList.get(position);
 
-        Faculty product = productList.get(position);
-        holder.textViewName.setText(product.getName());
+        holder.textViewName.setText(faculty.getName());
 
         final String Name = faculty.getName().toString().trim();
 

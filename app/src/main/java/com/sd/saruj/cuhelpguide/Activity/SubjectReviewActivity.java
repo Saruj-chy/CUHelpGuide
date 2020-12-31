@@ -12,7 +12,9 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.widget.EditText;
 
+import com.sd.saruj.cuhelpguide.Class.FacultyBuilderClass;
 import com.sd.saruj.cuhelpguide.ModelClass.Faculty;
+import com.sd.saruj.cuhelpguide.ModelClass.FacultyBuilderModel;
 import com.sd.saruj.cuhelpguide.R;
 import com.sd.saruj.cuhelpguide.Adapter.SubjectReviewAdapter;
 
@@ -25,7 +27,7 @@ public class SubjectReviewActivity extends AppCompatActivity {
     private EditText mEditText ;
    private SubjectReviewAdapter mAdapter;
    private GridLayoutManager manager ;
-   private List<Faculty> departmentList;
+   private List<FacultyBuilderModel> departmentList;
 
     String[] departmentName = {
             "Department of Accounting", "Department of Management", "Department of Finance", "Department of Marketing", "Human Resource Management", "Banking and Insurance",
@@ -61,12 +63,8 @@ public class SubjectReviewActivity extends AppCompatActivity {
         departmentList = new ArrayList<>();
 
         for(int i=0; i<departmentName.length; i++){
-            departmentList.add(
-                    new Faculty(
-                            i+1,
-                            departmentName[i]
-                    )
-            );
+            departmentList.add(new FacultyBuilderClass().setId(i+1).setName(departmentName[i]).build());
+
         }
 
         mAdapter = new SubjectReviewAdapter(this, departmentList);
@@ -96,9 +94,9 @@ public class SubjectReviewActivity extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable s) {
-                List<Faculty> filteredList = new ArrayList<>();
+                List<FacultyBuilderModel> filteredList = new ArrayList<>();
 
-                for (Faculty item : departmentList) {
+                for (FacultyBuilderModel item : departmentList) {
 
                     if (item.getName().toLowerCase().contains(s.toString().toLowerCase())){
                         filteredList.add(item);

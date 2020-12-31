@@ -19,21 +19,21 @@ public class Faculty {
         this.name = name;
         this.type = type;
     }
-
-    //===========     NoticeActivity
-    public Faculty(String title, String name) {
-        this.title = title;
-        this.name = name;
-
-    }
-
-    //============ RetrivePostListActivity
-    public Faculty(int id, String title, String details, String name) {
-        this.id = id;
-        this.name = name;
-        this.title = title;
-        this.details = details;
-    }
+//
+//    //===========     NoticeActivity
+//    public Faculty(String title, String name) {
+//        this.title = title;
+//        this.name = name;
+//
+//    }
+//
+//    //============ RetrivePostListActivity
+//    public Faculty(int id, String title, String details, String name) {
+//        this.id = id;
+//        this.name = name;
+//        this.title = title;
+//        this.details = details;
+//    }
 
 
 

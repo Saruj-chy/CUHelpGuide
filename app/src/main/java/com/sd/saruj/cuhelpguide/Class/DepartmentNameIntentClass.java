@@ -4,13 +4,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 
-import com.sd.saruj.cuhelpguide.Interfaces.ExtraIntentInterface;
+import com.sd.saruj.cuhelpguide.Interfaces.PutIntentInterface;
 
-public class ExtraIntentClass implements ExtraIntentInterface {
+public class DepartmentNameIntentClass implements PutIntentInterface {
 
     Context context ;
 
-    public ExtraIntentClass(Context context) {
+    public DepartmentNameIntentClass(Context context) {
         this.context = context;
     }
 

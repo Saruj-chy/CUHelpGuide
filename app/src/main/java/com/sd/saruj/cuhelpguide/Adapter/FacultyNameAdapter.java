@@ -8,11 +8,11 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.sd.saruj.cuhelpguide.Class.ExtraIntentClass;
+import com.sd.saruj.cuhelpguide.Class.FacultyNameIntentClass;
 import com.sd.saruj.cuhelpguide.DepartmentInformation.DepartmentInformationActivity;
 import com.sd.saruj.cuhelpguide.Activity.DepartmentNameActivity;
-import com.sd.saruj.cuhelpguide.Interfaces.ExtraIntentInterface;
-import com.sd.saruj.cuhelpguide.ModelClass.Faculty;
+import com.sd.saruj.cuhelpguide.Interfaces.PutIntentInterface;
+import com.sd.saruj.cuhelpguide.ModelClass.FacultyBuilderModel;
 import com.sd.saruj.cuhelpguide.R;
 
 import java.util.List;
@@ -20,11 +20,11 @@ import java.util.List;
 public class FacultyNameAdapter extends RecyclerView.Adapter<FacultyNameAdapter.ProductViewHolderownmake>
 {
    private Context mCtx;
-   private List<Faculty> productList;
+   private List<FacultyBuilderModel> productList;
 
-   ExtraIntentInterface facultyNameInterface ;
+   PutIntentInterface facultyNameInterface ;
 
-    public FacultyNameAdapter(Context mCtx, List<Faculty> productList) {
+    public FacultyNameAdapter(Context mCtx, List<FacultyBuilderModel> productList) {
         this.mCtx = mCtx;
         this.productList = productList;
     }
@@ -38,17 +38,16 @@ public class FacultyNameAdapter extends RecyclerView.Adapter<FacultyNameAdapter.
         LayoutInflater inflater = LayoutInflater.from(mCtx);
         View view = inflater.inflate(R.layout.card_list, null);
 
-        facultyNameInterface = new ExtraIntentClass(view.getContext()) ;
+        facultyNameInterface = new FacultyNameIntentClass(view.getContext()) ;
         return new ProductViewHolderownmake(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ProductViewHolderownmake holder, final int position) {
 
-        final Faculty faculty = productList.get(position);
+        final FacultyBuilderModel faculty = productList.get(position);
 
-        Faculty product = productList.get(position);
-        holder.textViewName.setText(product.getName());
+        holder.textViewName.setText(faculty.getName());
 
         final String Name = faculty.getName().toString().trim();
 

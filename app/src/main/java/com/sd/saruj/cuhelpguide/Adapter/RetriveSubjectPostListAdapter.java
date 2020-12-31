@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.sd.saruj.cuhelpguide.Activity.ShowPostActivity;
 import com.sd.saruj.cuhelpguide.ModelClass.Faculty;
+import com.sd.saruj.cuhelpguide.ModelClass.FacultyBuilderModel;
 import com.sd.saruj.cuhelpguide.R;
 
 import java.util.List;
@@ -20,9 +21,9 @@ public class RetriveSubjectPostListAdapter extends RecyclerView.Adapter<RetriveS
 
 
     private Context mCtx;
-    private List<Faculty> productList;
+    private List<FacultyBuilderModel> productList;
 
-    public RetriveSubjectPostListAdapter(Context mCtx, List<Faculty> productList) {
+    public RetriveSubjectPostListAdapter(Context mCtx, List<FacultyBuilderModel> productList) {
         this.mCtx = mCtx;
         this.productList = productList;
     }
@@ -36,7 +37,7 @@ public class RetriveSubjectPostListAdapter extends RecyclerView.Adapter<RetriveS
 
     @Override
     public void onBindViewHolder(ProductViewHolder holder, int position) {
-        final Faculty product = productList.get(position);
+        final FacultyBuilderModel product = productList.get(position);
 
 
 

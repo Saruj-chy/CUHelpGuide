@@ -10,8 +10,10 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 
+import com.sd.saruj.cuhelpguide.Class.FacultyBuilderClass;
 import com.sd.saruj.cuhelpguide.ModelClass.Faculty;
 import com.sd.saruj.cuhelpguide.Adapter.FacultyNameAdapter;
+import com.sd.saruj.cuhelpguide.ModelClass.FacultyBuilderModel;
 import com.sd.saruj.cuhelpguide.R;
 
 import java.util.ArrayList;
@@ -19,7 +21,7 @@ import java.util.List;
 
 public class FacultyNameActivity extends AppCompatActivity {
 
-    private List<Faculty> productList;
+    private List<FacultyBuilderModel> productList;
     private RecyclerView recyclerView;
     private FacultyNameAdapter adapter ;
 
@@ -54,12 +56,7 @@ public class FacultyNameActivity extends AppCompatActivity {
         productList = new ArrayList<>();
 
         for(int i=0; i<FacultyName.length; i++){
-            productList.add(
-                    new Faculty(
-                            i+1,
-                            FacultyName[i]
-                    )
-            );
+            productList.add(new FacultyBuilderClass().setId(i+1).setName(FacultyName[i]).build());
         }
 
         adapter = new FacultyNameAdapter(this, productList);

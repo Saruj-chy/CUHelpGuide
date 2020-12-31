@@ -9,7 +9,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
+import com.sd.saruj.cuhelpguide.Class.FacultyBuilderClass;
 import com.sd.saruj.cuhelpguide.ModelClass.Faculty;
+import com.sd.saruj.cuhelpguide.ModelClass.FacultyBuilderModel;
 import com.sd.saruj.cuhelpguide.R;
 import com.sd.saruj.cuhelpguide.Adapter.AllUnitViewAdapter;
 
@@ -19,7 +21,7 @@ import java.util.List;
 public class AllUnitViewActivity extends AppCompatActivity {
 
 
-    private List<Faculty> productList;
+    private List<FacultyBuilderModel> productList;
     private RecyclerView recyclerView;
     private AllUnitViewAdapter adapter ;
     private GridLayoutManager manager ;
@@ -51,14 +53,20 @@ public class AllUnitViewActivity extends AppCompatActivity {
 
         productList = new ArrayList<>();
 
+//        for(int i=0; i<unitName.length; i++){
+//            productList.add(
+//                    new Faculty(
+//                            i+1,
+//                            unitName[i]
+//                    )
+//            );
+//        }
+
+
         for(int i=0; i<unitName.length; i++){
-            productList.add(
-                    new Faculty(
-                            i+1,
-                            unitName[i]
-                    )
-            );
+            productList.add(new FacultyBuilderClass().setId(i+1).setName(unitName[i]).build());
         }
+
 
         adapter = new AllUnitViewAdapter(this, productList);
         recyclerView.setAdapter(adapter);

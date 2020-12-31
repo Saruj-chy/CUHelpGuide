@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     RecyclerView recyclerList;
 //    List<Faculty> mainToolsList;
     List<FacultyBuilderModel> mainToolsList;
+    private MainPageRecyclerAdapter adapter ;
     String[] mainToolsName = {
             "Faculty Information",
             "Subject Pre-Requirement",
@@ -81,7 +82,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
 
-        MainPageRecyclerAdapter adapter = new MainPageRecyclerAdapter(this, mainToolsList);
+        adapter = new MainPageRecyclerAdapter(this, mainToolsList);
         recyclerList.setAdapter(adapter);
 
         GridLayoutManager manager = new GridLayoutManager(this, 2, GridLayoutManager.VERTICAL, false);

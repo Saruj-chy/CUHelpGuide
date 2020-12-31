@@ -1,6 +1,7 @@
 package com.sd.saruj.cuhelpguide.Class;
 
 import android.content.Context;
+import android.content.Intent;
 import android.widget.Toast;
 
 import com.sd.saruj.cuhelpguide.Activity.AllUnitViewActivity;
@@ -46,6 +47,7 @@ public class MainPageClickListenerClass implements MainPageInterfaces {
 
     @Override
     public void onIntent(Object activity) {
-
+        Intent intent = new Intent(context, (Class<?>) activity);
+        context.startActivity(intent);
     }
 }

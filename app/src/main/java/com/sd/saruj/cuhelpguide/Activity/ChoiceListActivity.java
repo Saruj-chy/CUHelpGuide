@@ -11,7 +11,9 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.sd.saruj.cuhelpguide.Adapter.ChoiceListAdapter;
+import com.sd.saruj.cuhelpguide.Class.FacultyBuilderClass;
 import com.sd.saruj.cuhelpguide.ModelClass.Faculty;
+import com.sd.saruj.cuhelpguide.ModelClass.FacultyBuilderModel;
 import com.sd.saruj.cuhelpguide.R;
 
 import java.util.ArrayList;
@@ -20,7 +22,7 @@ import java.util.List;
 public class ChoiceListActivity extends AppCompatActivity {
 
     String subCategory;
-    List<Faculty> productList;
+    List<FacultyBuilderModel> productList;
     RecyclerView recyclerView;
     private ChoiceListAdapter adapter ;
     private GridLayoutManager manager ;
@@ -59,14 +61,21 @@ public class ChoiceListActivity extends AppCompatActivity {
         }
 
 
+//
+//        for(int i=0; i<subName.length; i++){
+//            productList.add(
+//                    new Faculty(
+//                            i+1,
+//                            subName[i]
+//
+//                    )
+//            );
+//        }
+
 
         for(int i=0; i<subName.length; i++){
             productList.add(
-                    new Faculty(
-                            i+1,
-                            subName[i]
-
-                    )
+                    new FacultyBuilderClass().setId(i+1).setName(subName[i]).build()
             );
         }
         

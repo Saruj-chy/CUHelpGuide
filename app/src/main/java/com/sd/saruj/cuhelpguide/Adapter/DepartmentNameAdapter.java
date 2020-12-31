@@ -10,9 +10,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.sd.saruj.cuhelpguide.Class.ExtraIntentClass;
+import com.sd.saruj.cuhelpguide.Class.DepartmentNameIntentClass;
 import com.sd.saruj.cuhelpguide.DepartmentInformation.DepartmentInformationActivity;
-import com.sd.saruj.cuhelpguide.Interfaces.ExtraIntentInterface;
+import com.sd.saruj.cuhelpguide.Interfaces.PutIntentInterface;
 import com.sd.saruj.cuhelpguide.ModelClass.Faculty;
 import com.sd.saruj.cuhelpguide.R;
 
@@ -23,7 +23,7 @@ public class DepartmentNameAdapter extends RecyclerView.Adapter<RecyclerView.Vie
     private Context mCtx;
     private List<Faculty> productList;
     int departmentType ;
-    private ExtraIntentInterface extraInterface ;
+    private PutIntentInterface extraInterface ;
 
     public DepartmentNameAdapter(Context mCtx, List<Faculty> productList) {
         this.mCtx = mCtx;
@@ -71,7 +71,7 @@ public class DepartmentNameAdapter extends RecyclerView.Adapter<RecyclerView.Vie
         LayoutInflater inflater = LayoutInflater.from(mCtx);
         View view = inflater.inflate(R.layout.card_list, null);
         Log.e("faculty", "viewType: "+ viewType ) ;
-        extraInterface = new ExtraIntentClass(mCtx) ;
+        extraInterface = new DepartmentNameIntentClass(mCtx) ;
 
         return new DepartmentNameAdapter.ProductViewHolderownmake(view);
     }

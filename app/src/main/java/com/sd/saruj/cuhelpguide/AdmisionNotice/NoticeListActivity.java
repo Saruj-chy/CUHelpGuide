@@ -16,9 +16,11 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.sd.saruj.cuhelpguide.Adapter.NoticeListAdapter;
+import com.sd.saruj.cuhelpguide.Class.FacultyBuilderClass;
 import com.sd.saruj.cuhelpguide.Constant.Config;
-import com.sd.saruj.cuhelpguide.Interfaces.NoticeClickListener;
+import com.sd.saruj.cuhelpguide.Interfaces.NoticeClickInterfaces;
 import com.sd.saruj.cuhelpguide.ModelClass.Faculty;
+import com.sd.saruj.cuhelpguide.ModelClass.FacultyBuilderModel;
 import com.sd.saruj.cuhelpguide.R;
 
 import org.json.JSONArray;
@@ -33,9 +35,9 @@ public class NoticeListActivity extends AppCompatActivity {
     private RecyclerView mNoticeRecycler;
     private Toolbar mNoticeToolbar;
 
-    public static List<Faculty> mNoticeList;
+    public static List<FacultyBuilderModel> mNoticeList;
     private NoticeListAdapter mNoticeAdapter;
-    NoticeClickListener mItemClickListener;
+    NoticeClickInterfaces mItemClickListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,7 +58,7 @@ public class NoticeListActivity extends AppCompatActivity {
         mNoticeList = new ArrayList<>();
 
 
-        mItemClickListener = new NoticeClickListener() {
+        mItemClickListener = new NoticeClickInterfaces() {
             @Override
             public void onClick(View view, int position, boolean isLongClick) {
                 Intent intent = new Intent(NoticeListActivity.this,NoticeViewActivity.class);
@@ -88,11 +90,18 @@ public class NoticeListActivity extends AppCompatActivity {
                                 JSONObject product = array.getJSONObject(i);
 
                                 //adding the product to product list
-                                mNoticeList.add(new Faculty(
-                                        product.getInt("notice_id"),
-                                        product.getString("notice_name"),
-                                        product.getString("notice_url")
-                                ));
+//                                mNoticeList.add(new Faculty(
+//                                        product.getInt("notice_id"),
+//                                        product.getString("notice_name"),
+//                                        product.getString("notice_url")
+//                                ));
+
+                                mNoticeList.add(new FacultyBuilderClass()
+                                        .setId(product.getInt("notice_id"))
+                                        .setName(product.getString("notice_name"))
+                                        .setUrl(product.getString("notice_url"))
+                                        .build());
+//
                             }
 
                             mNoticeAdapter = new NoticeListAdapter(mNoticeList, getApplicationContext(), mItemClickListener);
