@@ -2,16 +2,14 @@ package com.sd.saruj.cuhelpguide.Class;
 
 import android.content.Context;
 import android.content.Intent;
-import android.util.Log;
 
-import com.sd.saruj.cuhelpguide.Interfaces.ExtraIntentInterface;
-import com.sd.saruj.cuhelpguide.Interfaces.IntentInterface;
+import com.sd.saruj.cuhelpguide.Interfaces.OnIntentInterface;
 
-public class IntentClass implements IntentInterface {
+public class RegistrationIntentClass implements OnIntentInterface {
 
     Context context ;
 
-    public IntentClass(Context context) {
+    public RegistrationIntentClass(Context context) {
         this.context = context;
     }
 

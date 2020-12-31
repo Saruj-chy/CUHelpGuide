@@ -11,6 +11,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -18,6 +19,8 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.sd.saruj.cuhelpguide.Class.DUnitSubjectViewClass;
+import com.sd.saruj.cuhelpguide.Interfaces.DUnitSubjectViewInterfaces;
 import com.sd.saruj.cuhelpguide.ModelClass.Faculty;
 import com.sd.saruj.cuhelpguide.R;
 import com.sd.saruj.cuhelpguide.Adapter.UnitSubjectViewAdapter;
@@ -43,15 +46,16 @@ public class DUnitSubjectViewActivity extends AppCompatActivity {
             "Human resource and Management",        "Banking and Insurance"
             };
     String[] commerceSubject =
-            {  "Economics",  "Political Science ",   "Sociology ",   " Public Administration",
-            "Anthropology ",    " International Relation",   "Communication and Journalism ",
-            "Development Studies ",     "Criminology and Police Science "
+            {   " Public Administration" ,"Economics",  "Political Science ",   "Sociology ",   "Anthropology ",
+                    " International Relation",   "Communication and Journalism ", "Development Studies ",     "Criminology and Police Science "
             };
     String[] artsSubject =
-            {    "Economics",   " Political Science",   " Sociology",   "Public Administration ",   "Anthropology ",
-            " International Relation",  "Communication and Journalism",     "Development Studies",      "Criminology and Police Science",
+            {    " International Relation",  "Communication and Journalism",     "Development Studies",  "Economics",
+                    " Political Science",   " Sociology",   "Public Administration ",   "Anthropology ",     "Criminology and Police Science",
             "Accounting",   "Management",   "Finance",      "Marketing",    "Geography and Environmental study",    "Psychology"
             };
+
+    private DUnitSubjectViewInterfaces mInterfaces ;
 
 
     @Override
@@ -77,13 +81,24 @@ public class DUnitSubjectViewActivity extends AppCompatActivity {
 
         mySpinner = findViewById(R.id.unitSpinner);
         mySpinner.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, categories));
+        productList = new ArrayList<>();
+        mInterfaces = new DUnitSubjectViewClass(getApplicationContext()) ;
 
         //spinner selection events
         mySpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int position, long itemID) {
                 if (position >= 0 && position < categories.length) {
-                    getSelectedCategoryData(position);
+                    if(position==0){
+                        mInterfaces.getDepartmentListByPosition(scienceSubject, productList) ;
+                        ViewAdapter();
+                    }else if(position==1){
+                        mInterfaces.getDepartmentListByPosition(commerceSubject, productList) ;
+                        ViewAdapter();
+                    } else if(position==2){
+                        mInterfaces.getDepartmentListByPosition(artsSubject, productList) ;
+                        ViewAdapter();
+                    }
                 } else {
                     Toast.makeText(getApplicationContext(), "Selected Category Does not Exist!", Toast.LENGTH_SHORT).show();
                 }
@@ -94,44 +109,16 @@ public class DUnitSubjectViewActivity extends AppCompatActivity {
             }
         });
 
-        productList = new ArrayList<>();
-
-        for(int i=0; i<scienceSubject.length; i++){
-            productList.add(
-                    new Faculty(
-                            0,
-                            scienceSubject[i]
-                    )
-            );
-        }
-        for(int i=0; i<commerceSubject.length; i++){
-            productList.add(
-                    new Faculty(
-                            1,
-                            commerceSubject[i]
-                    )
-            );
-        }
-        for(int i=0; i<artsSubject.length; i++){
-            productList.add(
-                    new Faculty(
-                            2,
-                            artsSubject[i]
-                    )
-            );
-        }
-
-        adapter = new UnitSubjectViewAdapter(this, productList);
-        recyclerView.setAdapter(adapter);
-
-
-        GridLayoutManager manager = new GridLayoutManager(this, 2, GridLayoutManager.VERTICAL, false);
-        recyclerView.setLayoutManager(manager);
-
         AddTextChange();
 
     }
 
+    private void ViewAdapter() {
+        adapter = new UnitSubjectViewAdapter(this, productList);
+        recyclerView.setAdapter(adapter);
+        GridLayoutManager manager = new GridLayoutManager(this, 2, GridLayoutManager.VERTICAL, false);
+        recyclerView.setLayoutManager(manager);
+    }
 
 
     public void AddTextChange(){

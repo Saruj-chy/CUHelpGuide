@@ -9,6 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.sd.saruj.cuhelpguide.ModelClass.Faculty;
+import com.sd.saruj.cuhelpguide.ModelClass.FacultyBuilderModel;
 import com.sd.saruj.cuhelpguide.R;
 
 import java.util.List;
@@ -16,9 +17,9 @@ import java.util.List;
 public class ChoiceListAdapter extends RecyclerView.Adapter<ChoiceListAdapter.ProductViewHolderownmake>
 {
     private Context mCtx;
-    private List<Faculty> productList;
+    private List<FacultyBuilderModel> productList;
 
-    public ChoiceListAdapter(Context mCtx, List<Faculty> productList) {
+    public ChoiceListAdapter(Context mCtx, List<FacultyBuilderModel> productList) {
         this.mCtx = mCtx;
         this.productList = productList;
     }
@@ -37,10 +38,9 @@ public class ChoiceListAdapter extends RecyclerView.Adapter<ChoiceListAdapter.Pr
     @Override
     public void onBindViewHolder(@NonNull ChoiceListAdapter.ProductViewHolderownmake holder, final int position) {
 
-        Faculty faculty = productList.get(position);
+        FacultyBuilderModel faculty = productList.get(position);
 
-        Faculty product = productList.get(position);
-        holder.textViewName.setText(product.getName());
+        holder.textViewName.setText(faculty.getName());
 
         final String Name = faculty.getName().toString().trim();
 

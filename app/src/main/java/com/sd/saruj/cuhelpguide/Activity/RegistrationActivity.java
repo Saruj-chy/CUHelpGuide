@@ -1,8 +1,6 @@
 package com.sd.saruj.cuhelpguide.Activity;
 
 import android.app.ProgressDialog;
-import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -22,8 +20,9 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.sd.saruj.cuhelpguide.Class.IntentClass;
-import com.sd.saruj.cuhelpguide.Interfaces.IntentInterface;
+import com.sd.saruj.cuhelpguide.Class.RegistrationFlagClass;
+import com.sd.saruj.cuhelpguide.Class.RegistrationIntentClass;
+import com.sd.saruj.cuhelpguide.Interfaces.OnIntentInterface;
 import com.sd.saruj.cuhelpguide.MainActivity;
 import com.sd.saruj.cuhelpguide.ModelClass.Members;
 import com.sd.saruj.cuhelpguide.R;
@@ -54,7 +53,7 @@ public class RegistrationActivity extends AppCompatActivity  {
     String getState ;
     SharedPreferences sharedPreferences;
 
-    IntentInterface mInterface ;
+    OnIntentInterface mInterface ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,7 +61,7 @@ public class RegistrationActivity extends AppCompatActivity  {
         setContentView(R.layout.activity_registration);
 
         sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
-        mInterface = new IntentClass(this) ;
+
 
         mAuth = FirebaseAuth.getInstance();
         memberFireStore = FirebaseFirestore.getInstance() ;
@@ -80,6 +79,7 @@ public class RegistrationActivity extends AppCompatActivity  {
         alreadyHaveAccountLink.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                mInterface = new RegistrationIntentClass(getApplicationContext()) ;
                 mInterface.onIntent(LoginActivity.class);
             }
         });
@@ -140,9 +140,11 @@ public class RegistrationActivity extends AppCompatActivity  {
                                     @Override
                                     public void onSuccess(Void aVoid) {
                                         Clear();
-                                        SentRegisterToUserActivity();
-                                        Toast.makeText(RegistrationActivity.this, "Account created Successfully", Toast.LENGTH_SHORT).show();
-                                        loadingBar.dismiss();                                    }
+//                                        SentRegisterToUserActivity();
+                                        mInterface = new RegistrationFlagClass(getApplicationContext()) ;
+                                        mInterface.onIntent(MainActivity.class);
+                                        loadingBar.dismiss();
+                                    }
                                 }) ;
 
                             }
@@ -165,12 +167,12 @@ public class RegistrationActivity extends AppCompatActivity  {
         userConfirmPassword.setText("");
     }
 
-    private void SentRegisterToUserActivity() {
-        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        startActivity(intent);
-        finish();
-    }
+//    private void SentRegisterToUserActivity() {
+//        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+//        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+//        startActivity(intent);
+//        finish();
+//    }
 
 
 

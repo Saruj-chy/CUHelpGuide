@@ -9,6 +9,7 @@ public class FacultyBuilderClass {
     private  String title;
     private  String details;
     private String type;
+    private String url;
 
 
     public FacultyBuilderClass setId(int id) {
@@ -36,8 +37,13 @@ public class FacultyBuilderClass {
         return this ;
     }
 
+    public FacultyBuilderClass setUrl(String url) {
+        this.url = url;
+        return this ;
+    }
+
     public FacultyBuilderModel build(){
-        FacultyBuilderModel builderModel = new FacultyBuilderModel( id,  name,  title,  details,  type) ;
+        FacultyBuilderModel builderModel = new FacultyBuilderModel( id,  name,  title,  details,  type, url) ;
         return builderModel ;
     }
 }

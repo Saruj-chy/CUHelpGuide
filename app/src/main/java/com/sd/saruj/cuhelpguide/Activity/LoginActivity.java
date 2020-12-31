@@ -1,8 +1,6 @@
 package com.sd.saruj.cuhelpguide.Activity;
 
 import android.app.ProgressDialog;
-import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -14,6 +12,9 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.sd.saruj.cuhelpguide.Class.LoginFlagClass;
+import com.sd.saruj.cuhelpguide.Class.LoginIntentClass;
+import com.sd.saruj.cuhelpguide.Interfaces.OnIntentInterface;
 import com.sd.saruj.cuhelpguide.MainActivity;
 import com.sd.saruj.cuhelpguide.R;
 
@@ -29,8 +30,6 @@ import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-import static com.sd.saruj.cuhelpguide.MainActivity.sharedSaved;
-
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -45,6 +44,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private ProgressDialog loadingBar;
     private String memberState ;
+    private OnIntentInterface mInterface ; ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,7 +61,9 @@ public class LoginActivity extends AppCompatActivity {
         needNewAccountLink.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                SendUserToRegisterActivity();
+//                SendUserToRegisterActivity();
+                mInterface = new LoginIntentClass(getApplicationContext());
+                mInterface.onIntent(RegistrationActivity.class);
             }
         });
         loginButton.setOnClickListener(new View.OnClickListener() {
@@ -102,7 +104,9 @@ public class LoginActivity extends AppCompatActivity {
                                                 if (documentSnapshot.exists()) {
                                                     memberState = documentSnapshot.getString("memberState");
 
-                                                    SendUserToMainActivity();
+//                                                    SendUserToMainActivity();
+                                                    mInterface = new LoginFlagClass(getApplicationContext()) ;
+                                                    mInterface.onIntent(MainActivity.class);
                                                 }
                                             }
                                         })
@@ -131,7 +135,9 @@ public class LoginActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         if(currentUSer != null ){
-            SendUserToMainActivity();
+//            SendUserToMainActivity();
+            mInterface = new LoginFlagClass(getApplicationContext()) ;
+            mInterface.onIntent(MainActivity.class);
         }
 
     }
@@ -145,17 +151,17 @@ public class LoginActivity extends AppCompatActivity {
 
         loadingBar = new ProgressDialog(this);
     }
-    private void SendUserToRegisterActivity() {
-        Intent intent = new Intent(getApplicationContext(), RegistrationActivity.class);
-        startActivity(intent);
-    }
-
-    private void SendUserToMainActivity() {
-        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        startActivity(intent);
-        finish();
-    }
+//    private void SendUserToRegisterActivity() {
+//        Intent intent = new Intent(getApplicationContext(), RegistrationActivity.class);
+//        startActivity(intent);
+//    }
+//
+//    private void SendUserToMainActivity() {
+//        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+//        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+//        startActivity(intent);
+//        finish();
+//    }
 
 
 

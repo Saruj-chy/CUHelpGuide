@@ -14,7 +14,9 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.sd.saruj.cuhelpguide.Class.FacultyBuilderClass;
 import com.sd.saruj.cuhelpguide.ModelClass.Faculty;
+import com.sd.saruj.cuhelpguide.ModelClass.FacultyBuilderModel;
 import com.sd.saruj.cuhelpguide.R;
 import com.sd.saruj.cuhelpguide.Adapter.RetriveSubjectPostListAdapter;
 
@@ -32,7 +34,7 @@ public class RetriveSubjectPostListActivity extends AppCompatActivity {
     private static final String URL_PRODUCTS = "http://192.168.1.5/android/CU_HELP_GUIDE/getAllDepartmentPost.php?subject=";
 
     //a list to store all the products
-    List<Faculty> productList;
+    List<FacultyBuilderModel> productList;
 
     //the recyclerview
     RecyclerView recyclerView;
@@ -81,13 +83,14 @@ public class RetriveSubjectPostListActivity extends AppCompatActivity {
                                 //getting product object from json array
                                 JSONObject product = array.getJSONObject(i);
 
-                                //adding the product to product list
-                                productList.add(new Faculty(
-                                        product.getInt("id"),
-                                        product.getString("title"),
-                                        product.getString("post"),
-                                        product.getString("subject")
-                                ));
+
+                                productList.add(new FacultyBuilderClass()
+                                        .setId(product.getInt("id"))
+                                        .setTitle(product.getString("title"))
+                                        .setDetails(product.getString("post"))
+                                        .setType(product.getString("subject"))
+                                        .build()
+                                );
                             }
 
                             //creating adapter object and setting it to recyclerview

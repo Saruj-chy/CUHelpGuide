@@ -9,9 +9,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.sd.saruj.cuhelpguide.Class.ExtraIntentClass;
-import com.sd.saruj.cuhelpguide.Interfaces.ExtraIntentInterface;
-import com.sd.saruj.cuhelpguide.ModelClass.Faculty;
+import com.sd.saruj.cuhelpguide.Class.AllUnitViewIntentClass;
+import com.sd.saruj.cuhelpguide.Interfaces.PutIntentInterface;
+import com.sd.saruj.cuhelpguide.ModelClass.FacultyBuilderModel;
 import com.sd.saruj.cuhelpguide.R;
 import com.sd.saruj.cuhelpguide.Activity.UnitSubjectViewActivity;
 import com.sd.saruj.cuhelpguide.Activity.DUnitSubjectViewActivity;
@@ -24,10 +24,10 @@ public class AllUnitViewAdapter extends RecyclerView.Adapter<AllUnitViewAdapter.
     private Context mCtx;
 
     //we are storing all the products in a list
-    private List<Faculty> productList;
-    private ExtraIntentInterface extraInterface ;
+    private List<FacultyBuilderModel> productList;
+    private PutIntentInterface extraInterface ;
 
-    public AllUnitViewAdapter(Context mCtx, List<Faculty> productList) {
+    public AllUnitViewAdapter(Context mCtx, List<FacultyBuilderModel> productList) {
         this.mCtx = mCtx;
         this.productList = productList;
     }
@@ -40,17 +40,16 @@ public class AllUnitViewAdapter extends RecyclerView.Adapter<AllUnitViewAdapter.
         //inflating and returning our view holder
         LayoutInflater inflater = LayoutInflater.from(mCtx);
         View view = inflater.inflate(R.layout.card_list, null);
-        extraInterface = new ExtraIntentClass(mCtx) ;
+        extraInterface = new AllUnitViewIntentClass(mCtx) ;
         return new AllUnitViewAdapter.ProductViewHolderownmake(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull AllUnitViewAdapter.ProductViewHolderownmake holder, final int position) {
 
-        Faculty faculty = productList.get(position);
+        FacultyBuilderModel faculty = productList.get(position);
 
-        Faculty product = productList.get(position);
-        holder.textViewName.setText(product.getName());
+        holder.textViewName.setText(faculty.getName());
 
         final String Name = faculty.getName().toString().trim();
 

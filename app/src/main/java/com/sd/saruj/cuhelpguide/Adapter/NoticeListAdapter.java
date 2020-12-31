@@ -9,19 +9,20 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.sd.saruj.cuhelpguide.Interfaces.NoticeClickListener;
+import com.sd.saruj.cuhelpguide.Interfaces.NoticeClickInterfaces;
 import com.sd.saruj.cuhelpguide.ModelClass.Faculty;
+import com.sd.saruj.cuhelpguide.ModelClass.FacultyBuilderModel;
 import com.sd.saruj.cuhelpguide.R;
 
 import java.util.List;
 
 public class NoticeListAdapter extends RecyclerView.Adapter<NoticeListAdapter.Holder> {
 
-    private List<Faculty> mNoticeList;
+    private List<FacultyBuilderModel> mNoticeList;
     private Context mContext;
-    NoticeClickListener mNoticeClickListener;
+    NoticeClickInterfaces mNoticeClickListener;
 
-    public NoticeListAdapter(List<Faculty> list, Context context, NoticeClickListener noticeClickListener) {
+    public NoticeListAdapter(List<FacultyBuilderModel> list, Context context, NoticeClickInterfaces noticeClickListener) {
         this.mNoticeList = list;
         this.mContext = context;
         this.mNoticeClickListener = noticeClickListener;

@@ -15,7 +15,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
+import com.sd.saruj.cuhelpguide.Class.UnitSubjectViewClass;
 import com.sd.saruj.cuhelpguide.Constant.DepartmentName;
+import com.sd.saruj.cuhelpguide.Interfaces.UnitSubjectViewInterfaces;
 import com.sd.saruj.cuhelpguide.ModelClass.Faculty;
 import com.sd.saruj.cuhelpguide.R;
 import com.sd.saruj.cuhelpguide.Adapter.UnitSubjectViewAdapter;
@@ -30,6 +32,8 @@ public class UnitSubjectViewActivity extends AppCompatActivity {
     private EditText unitEdit;
     private UnitSubjectViewAdapter adapter;
     private GridLayoutManager manager;
+
+    private UnitSubjectViewInterfaces mInterfaces ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,27 +58,28 @@ public class UnitSubjectViewActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));
 
         productList = new ArrayList<>();
+        mInterfaces = new UnitSubjectViewClass(this) ;
 
         Log.e("Unit", "unitname: "+unitName ) ;
 
         switch (unitName){
             case "A Unit":
-                getUnitName(DepartmentName.unit_A_Subj,unitName);
+                mInterfaces.getUnitName(DepartmentName.unit_A_Subj,unitName, productList);
                 break;
             case "B Unit":
-                getUnitName(DepartmentName.unit_B_Subj,unitName);
+                mInterfaces.getUnitName(DepartmentName.unit_B_Subj,unitName, productList);
                 break;
             case "B1 Unit":
                 unitEdit.setVisibility(View.GONE);
-                getUnitName(DepartmentName.unit_B1_Subj,unitName);
+                mInterfaces.getUnitName(DepartmentName.unit_B1_Subj,unitName, productList);
                 break;
             case "C Unit":
                 unitEdit.setVisibility(View.GONE);
-                getUnitName(DepartmentName.unit_C_Subj,unitName);
+                mInterfaces.getUnitName(DepartmentName.unit_C_Subj,unitName, productList);
                 break;
             case "D1 Unit":
                 unitEdit.setVisibility(View.GONE);
-                getUnitName(DepartmentName.unit_D1_Subj,unitName);
+                mInterfaces.getUnitName(DepartmentName.unit_D1_Subj,unitName, productList);
                 break;
             default:
                 return;
@@ -91,18 +96,6 @@ public class UnitSubjectViewActivity extends AppCompatActivity {
         AddTextChange();
 
 
-    }
-
-    private void getUnitName(String[] unitNameList, String type) {
-        for(int i=0; i<unitNameList.length; i++){
-            productList.add(
-                    new Faculty(
-                            i+1,
-                            unitNameList[i],
-                            type
-                    )
-            );
-        }
     }
 
 
