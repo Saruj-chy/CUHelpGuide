@@ -16,17 +16,17 @@
         android:gravity="center"
         android:layout_height="wrap_content"
         android:padding="10dp"
-        android:background="@color/colorAccent"
-        android:shadowColor="@color/colorPrimary"
-        android:textColor="@color/white"
+
+        android:shadowColor="@color/transparent_grey"
+        android:textColor="@color/transparent_black"
         android:textSize="15sp" />
 
 
         <View
         android:layout_below="@+id/dropdown"
         android:layout_width="match_parent"
-        android:layout_height="5dp"
-        android:background="#05DBF7"/>
+        android:layout_height="2dp"
+        android:background="@color/transparent_grey"/>
 
     </RelativeLayout>
 </androidx.cardview.widget.CardView>

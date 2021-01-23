@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -54,6 +55,9 @@ public class MainPageRecyclerAdapter extends RecyclerView.Adapter<MainPageRecycl
                 mInterface.OnClick(position);
             }
         });
+
+//        LinearLayout layoutBottomSheet = mCtx.findViewById(R.id.bottom_sheet);
+
 
 //        else if(position==4) {
 //            holder.textViewName.setOnClickListener(new View.OnClickListener() {

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bottom_sheet"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#ffffff"
+    app:behavior_hideable="true"
+    app:behavior_peekHeight="0dp"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:layout_marginBottom="10dp"
+            >
+            <TextView
+                android:id="@+id/text_bottom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Select any Test: "
+                android:textSize="18dp"
+                android:background="@color/transparent_grey"
+                android:textStyle="bold"
+                android:padding="10dp"
+                android:textColor="@color/colorPrimaryDark"
+                />
+
+
+            <TextView
+                android:id="@+id/text_practice_bottom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Practice Test "
+                android:textColor="@color/transparent_black"
+                android:textSize="14dp"
+                android:layout_below="@+id/text_bottom"
+                android:layout_marginLeft="40dp"
+                android:padding="7dp"
+                android:background="@drawable/ripple_effect"
+
+
+                />
+            <TextView
+                android:id="@+id/text_model_bottom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ModelTest"
+                android:textColor="@color/transparent_black"
+                android:textSize="14dp"
+                android:layout_below="@+id/text_practice_bottom"
+                android:layout_marginLeft="40dp"
+                android:padding="7dp"
+                android:background="@drawable/ripple_effect"
+                />
+
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+
+</LinearLayout>

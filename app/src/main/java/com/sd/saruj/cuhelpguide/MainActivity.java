@@ -4,7 +4,9 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.Window;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -16,13 +18,13 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.sd.saruj.cuhelpguide.Activity.ChoiceActivity;
 import com.sd.saruj.cuhelpguide.Activity.LoginActivity;
 import com.sd.saruj.cuhelpguide.Activity.UpploadPostActivity;
 import com.sd.saruj.cuhelpguide.Class.FacultyBuilderClass;
-import com.sd.saruj.cuhelpguide.ModelClass.Faculty;
 import com.sd.saruj.cuhelpguide.Activity.FacultyNameActivity;
 import com.sd.saruj.cuhelpguide.ModelClass.FacultyBuilderModel;
 import com.sd.saruj.cuhelpguide.ModelQuestion.ModelQuestionMainActivity;
@@ -39,6 +41,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     ActionBarDrawerToggle drawerToggle;
 
     RecyclerView recyclerList;
+
 //    List<Faculty> mainToolsList;
     List<FacultyBuilderModel> mainToolsList;
     private MainPageRecyclerAdapter adapter ;
@@ -54,6 +57,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private FirebaseAuth mAuth = FirebaseAuth.getInstance();
     FacultyBuilderModel builderModel;
 
+
+    private BottomSheetBehavior sheetBehavior;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -63,6 +68,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Toolbar toolbar = findViewById(R.id.main_page_toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("CU Help Guide");
+
+
 
 
         recyclerList = findViewById(R.id.main_page_recycler) ;
@@ -94,11 +101,34 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawerLayout.addDrawerListener(drawerToggle);
         drawerToggle.syncState();
 
+        //for bottom Sheet
+        getBottomSheet() ;
+
     }
 
+    private void getBottomSheet() {
 
+        TextView mPracticeText, mModelText;
+        mPracticeText = findViewById(R.id.text_practice_bottom) ;
+        mModelText = findViewById(R.id.text_model_bottom) ;
 
-@Override
+        mPracticeText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), PracticeTestActivity.class));
+            }
+        });
+
+        mModelText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), ModelQuestionMainActivity.class));
+            }
+        });
+
+    }
+
+    @Override
 public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
@@ -163,6 +193,13 @@ public void onBackPressed() {
         super.onBackPressed();
         }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        LinearLayout layoutBottomSheet = findViewById(R.id.bottom_sheet);
+        sheetBehavior = BottomSheetBehavior.from(layoutBottomSheet);
+        sheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+    }
 
     public static void sharedSaved(SharedPreferences sharedPreferences, String state, String memberState){
         SharedPreferences.Editor editor = sharedPreferences.edit();

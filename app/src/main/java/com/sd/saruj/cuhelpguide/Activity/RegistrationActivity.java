@@ -118,6 +118,9 @@ public class RegistrationActivity extends AppCompatActivity  {
         else if(TextUtils.isEmpty(password) || TextUtils.isEmpty(confirm_password)){
             Toast.makeText(getApplicationContext(), "Please enter your password..", Toast.LENGTH_SHORT).show();
         }
+        else if(password.length()<6){
+            Toast.makeText(this, "Enter password above 6 digit", Toast.LENGTH_SHORT).show();
+        }
         else if(!password.equals(confirm_password)){
             Toast.makeText(getApplicationContext(), "Your password is not match...", Toast.LENGTH_SHORT).show();
         }

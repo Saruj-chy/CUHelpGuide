@@ -17,6 +17,7 @@ public class RegistrationIntentClass implements OnIntentInterface {
     @Override
     public void onIntent(Object activity) {
         Intent intent = new Intent(context, (Class<?>) activity);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         context.startActivity(intent);
     }
 }

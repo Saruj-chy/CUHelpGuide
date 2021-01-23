@@ -26,44 +26,51 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
-                android:scaleType="fitCenter"
+                android:scaleType="fitXY"
                 android:src="@drawable/environment" />
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/register_image"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="5dp"
+            >
             <LinearLayout
                 android:id="@+id/registr_linearLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/register_image"
-                android:layout_marginLeft="17dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginRight="17dp"
+                android:layout_marginBottom="5dp"
+
                 android:orientation="horizontal">
 
                 <EditText
                     android:id="@+id/register_first_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="2dp"
+
                     android:layout_weight="1"
-                    android:background="@drawable/input"
+                    android:background="@drawable/border"
                     android:hint="First Name..."
                     android:inputType="text"
-                    android:padding="10dp"
-                    android:paddingStart="15dp"
-                    android:textSize="20dp" />
+                    android:padding="7dp"
+                    android:paddingStart="10dp"
+                    android:textSize="16dp" />
 
                 <EditText
                     android:id="@+id/register_last_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="2dp"
                     android:layout_weight="1"
-                    android:background="@drawable/input"
+                    android:background="@drawable/border"
                     android:hint="Last Name..."
+                    android:layout_marginLeft="5dp"
                     android:inputType="text"
-                    android:padding="10dp"
-                    android:paddingStart="15dp"
-                    android:textSize="20dp" />
+                    android:padding="7dp"
+                    android:paddingStart="10dp"
+                    android:textSize="16dp" />
             </LinearLayout>
 
             <EditText
@@ -72,15 +79,14 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/registr_linearLayout"
                 android:layout_alignParentStart="true"
-                android:layout_marginLeft="17dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="17dp"
-                android:background="@drawable/input"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/border"
                 android:drawableStart="@drawable/ic_person"
                 android:hint="User Name..."
                 android:inputType="textEmailAddress"
-                android:padding="10dp"
-                android:textSize="20dp" />
+                android:padding="7dp"
+                android:textSize="16dp" />
 
             <EditText
                 android:id="@+id/register_email"
@@ -88,14 +94,13 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/register_UserName"
                 android:layout_alignParentStart="true"
-                android:layout_marginLeft="17dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="17dp"
-                android:background="@drawable/input"
+                android:background="@drawable/border"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
                 android:drawableStart="@drawable/ic_email"
                 android:hint="Email..."
                 android:inputType="textEmailAddress"
-                android:padding="10dp" />
+                android:padding="7dp" />
 
             <EditText
                 android:id="@+id/register_password"
@@ -103,14 +108,14 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/register_email"
                 android:layout_alignParentStart="true"
-                android:layout_marginLeft="17dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="17dp"
-                android:background="@drawable/input"
+
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/border"
                 android:drawableStart="@drawable/password"
                 android:hint="Password..."
                 android:inputType="textPassword"
-                android:padding="10dp" />
+                android:padding="7dp" />
 
             <EditText
                 android:id="@+id/register_confirm_password"
@@ -118,29 +123,29 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/register_password"
                 android:layout_alignParentStart="true"
-                android:layout_marginLeft="17dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="17dp"
-                android:background="@drawable/input"
+
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/border"
                 android:drawableStart="@drawable/password"
                 android:hint="Confirm Password..."
                 android:inputType="textPassword"
-                android:padding="10dp" />
+                android:padding="7dp" />
 
             <Button
                 android:id="@+id/register_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/register_confirm_password"
-                android:layout_marginLeft="19dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="19dp"
+
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
                 android:background="@drawable/buttons"
-                android:padding="4dp"
+                android:padding="5dp"
                 android:text="Create Account"
                 android:textAllCaps="false"
                 android:textColor="@android:color/background_light"
-                android:textSize="24sp" />
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/already_account_link"
@@ -157,6 +162,7 @@
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="17sp"
                 android:textStyle="bold" />
+        </RelativeLayout>
 
         </RelativeLayout>
     </ScrollView>
