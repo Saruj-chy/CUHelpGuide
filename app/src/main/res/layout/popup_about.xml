@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="450dp">
+        <TextView
+            android:id="@+id/text_name_popup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="কিছু নিয়মাবলী"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:textColor="@color/lightgreen"
+            android:padding="10dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="10dp"
+            />
+        <View
+            android:id="@+id/view_popup"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/text_name_popup"
+            android:background="@android:color/darker_gray" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/view_popup"
+            android:layout_above="@+id/view_popup2"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            >
+            <ScrollView
+                android:id="@+id/scrollable"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentTop="true"
+                >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/rules_about"
+                    android:textSize="14dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:paddingBottom="20dp"
+                    android:justificationMode="inter_word"
+                    android:textColor="@android:color/black"
+                    />
+
+
+            </ScrollView>
+
+
+
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/view_popup2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_above="@+id/relative_confirm"
+            android:background="@android:color/darker_gray" />
+        <RelativeLayout
+            android:id="@+id/relative_confirm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+
+            >
+
+
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -8,6 +8,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.sd.saruj.cuhelpguide.Interfaces.NoticeClickInterfaces;
 import com.sd.saruj.cuhelpguide.ModelClass.Faculty;
 import com.sd.saruj.cuhelpguide.ModelClass.FacultyBuilderModel;
 import com.sd.saruj.cuhelpguide.R;
@@ -19,7 +21,7 @@ public class ChoiceListAdapter extends RecyclerView.Adapter<ChoiceListAdapter.Pr
     private Context mCtx;
     private List<FacultyBuilderModel> productList;
 
-    public ChoiceListAdapter(Context mCtx, List<FacultyBuilderModel> productList) {
+    public ChoiceListAdapter(Context mCtx, List<FacultyBuilderModel> productList ) {
         this.mCtx = mCtx;
         this.productList = productList;
     }

@@ -23,6 +23,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.sd.saruj.cuhelpguide.Adapter.ChoiceListAdapter;
 import com.sd.saruj.cuhelpguide.Adapter.NoticeListAdapter;
 import com.sd.saruj.cuhelpguide.Class.FacultyBuilderClass;
 import com.sd.saruj.cuhelpguide.Constant.Config;
@@ -45,10 +46,9 @@ public class ChoiceActivity extends AppCompatActivity {
     private GridLayoutManager mGridManager;
     private Toolbar mChoiceToolbar;
 
-    private NoticeListAdapter mChoiceAdapter;
+    private ChoiceListAdapter mChoiceAdapter;
     private List<FacultyBuilderModel> mChoiceList;
 
-    NoticeClickInterfaces mItemClickListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -238,7 +238,7 @@ public class ChoiceActivity extends AppCompatActivity {
     }
 
     private void changeAdapter() {
-        mChoiceAdapter = new NoticeListAdapter(mChoiceList, getApplicationContext(), mItemClickListener);
+        mChoiceAdapter = new ChoiceListAdapter(getApplicationContext(), mChoiceList);
         mChoiceRecyclerView.setAdapter(mChoiceAdapter);
         mGridManager = new GridLayoutManager(getApplicationContext(), 2, GridLayoutManager.VERTICAL, false);
         mChoiceRecyclerView.setLayoutManager(mGridManager);

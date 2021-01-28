@@ -27,10 +27,14 @@
                 android:layout_height="wrap_content"
                 android:text="Select any Test: "
                 android:textSize="18dp"
+                android:gravity="center"
                 android:background="@color/transparent_grey"
                 android:textStyle="bold"
                 android:padding="10dp"
                 android:textColor="@color/colorPrimaryDark"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
                 />
 
 
@@ -40,9 +44,10 @@
                 android:layout_height="wrap_content"
                 android:text="Practice Test "
                 android:textColor="@color/transparent_black"
+                android:gravity="center"
                 android:textSize="14dp"
+                android:textStyle="bold"
                 android:layout_below="@+id/text_bottom"
-                android:layout_marginLeft="40dp"
                 android:padding="7dp"
                 android:background="@drawable/ripple_effect"
 
@@ -54,9 +59,10 @@
                 android:layout_height="wrap_content"
                 android:text="ModelTest"
                 android:textColor="@color/transparent_black"
+                android:gravity="center"
+                android:textStyle="bold"
                 android:textSize="14dp"
                 android:layout_below="@+id/text_practice_bottom"
-                android:layout_marginLeft="40dp"
                 android:padding="7dp"
                 android:background="@drawable/ripple_effect"
                 />
