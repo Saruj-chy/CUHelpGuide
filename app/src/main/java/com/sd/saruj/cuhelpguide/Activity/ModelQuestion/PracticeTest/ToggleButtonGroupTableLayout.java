@@ -1,4 +1,4 @@
-package com.sd.saruj.cuhelpguide.ModelQuestion.PracticeTest;
+package com.sd.saruj.cuhelpguide.Activity.ModelQuestion.PracticeTest;
 
 import android.content.Context;
 import android.graphics.Color;

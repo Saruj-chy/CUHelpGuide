@@ -31,8 +31,8 @@ import com.sd.saruj.cuhelpguide.Activity.UpploadPostActivity;
 import com.sd.saruj.cuhelpguide.Class.FacultyBuilderClass;
 import com.sd.saruj.cuhelpguide.Activity.FacultyNameActivity;
 import com.sd.saruj.cuhelpguide.ModelClass.FacultyBuilderModel;
-import com.sd.saruj.cuhelpguide.ModelQuestion.ModelQuestionMainActivity;
-import com.sd.saruj.cuhelpguide.ModelQuestion.PracticeTest.PracticeTestActivity;
+import com.sd.saruj.cuhelpguide.Activity.ModelQuestion.ModelQuestionMainActivity;
+import com.sd.saruj.cuhelpguide.Activity.ModelQuestion.PracticeTest.PracticeTestActivity;
 import com.sd.saruj.cuhelpguide.Activity.SubjectReviewActivity;
 
 import java.util.ArrayList;
@@ -114,7 +114,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     private void getBottomSheet() {
-
         TextView mPracticeText, mModelText;
         mPracticeText = findViewById(R.id.text_practice_bottom) ;
         mModelText = findViewById(R.id.text_model_bottom) ;

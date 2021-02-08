@@ -1,18 +1,15 @@
-package com.sd.saruj.cuhelpguide.DepartmentInformation;
+package com.sd.saruj.cuhelpguide.Activity;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -20,18 +17,15 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.bumptech.glide.Glide;
 import com.sd.saruj.cuhelpguide.Constant.Config;
-import com.sd.saruj.cuhelpguide.MainActivity;
+import com.sd.saruj.cuhelpguide.ModelClass.DepartmentModel;
 import com.sd.saruj.cuhelpguide.R;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.HashMap;
-
-import static com.sd.saruj.cuhelpguide.R.string.science_chemistry;
 
 public class DepartmentInformationActivity extends AppCompatActivity {
     TextView departmentText;

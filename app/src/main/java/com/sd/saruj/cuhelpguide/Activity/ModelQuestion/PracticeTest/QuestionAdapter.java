@@ -1,4 +1,4 @@
-package com.sd.saruj.cuhelpguide.ModelQuestion.PracticeTest;
+package com.sd.saruj.cuhelpguide.Activity.ModelQuestion.PracticeTest;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -58,20 +58,16 @@ public class QuestionAdapter extends RecyclerView.Adapter {
         questionViewHolder.mRb3.setText(question.getmOption3());
         questionViewHolder.mRb4.setText(question.getmOption4());
 
-
-
-
-
-            ArrayList<RadioButton> radioButtons = questionViewHolder.mTableLayout.getChildren();
-            for (final RadioButton rb : radioButtons) {
-                rb.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        //   Toast.makeText(v.getContext(),position,Toast.LENGTH_SHORT).show();
-                        questionViewHolder.mTableLayout.checkAnswer(rb, question.getmAnswer(), mContext);
-                    }
-                });
-            }
+        ArrayList<RadioButton> radioButtons = questionViewHolder.mTableLayout.getChildren();
+        for (final RadioButton rb : radioButtons) {
+            rb.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    //   Toast.makeText(v.getContext(),position,Toast.LENGTH_SHORT).show();
+                    questionViewHolder.mTableLayout.checkAnswer(rb, question.getmAnswer(), mContext);
+                }
+            });
+        }
 
 
     }

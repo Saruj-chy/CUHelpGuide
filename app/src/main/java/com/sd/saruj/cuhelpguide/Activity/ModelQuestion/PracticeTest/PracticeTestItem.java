@@ -1,4 +1,4 @@
-package com.sd.saruj.cuhelpguide.ModelQuestion.PracticeTest;
+package com.sd.saruj.cuhelpguide.Activity.ModelQuestion.PracticeTest;
 
 public class PracticeTestItem {
 

@@ -1,4 +1,4 @@
-package com.sd.saruj.cuhelpguide.ModelQuestion.PracticeTest;
+package com.sd.saruj.cuhelpguide.Activity.ModelQuestion.PracticeTest;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -8,7 +8,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
 import android.util.Log;
 
-import com.sd.saruj.cuhelpguide.ModelQuestion.PracticeTest.QuizContract.QuestionsTable;
+import com.sd.saruj.cuhelpguide.Activity.ModelQuestion.PracticeTest.QuizContract.QuestionsTable;
 
 import java.util.ArrayList;
 import java.util.List;

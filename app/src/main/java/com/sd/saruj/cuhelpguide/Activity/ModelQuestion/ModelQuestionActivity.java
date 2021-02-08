@@ -1,4 +1,4 @@
-package com.sd.saruj.cuhelpguide.ModelQuestion;
+package com.sd.saruj.cuhelpguide.Activity.ModelQuestion;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,7 +14,6 @@ import android.widget.Toast;
 
 import com.sd.saruj.cuhelpguide.R;
 
-import java.lang.reflect.Array;
 import java.util.Collections;
 import java.util.List;
 

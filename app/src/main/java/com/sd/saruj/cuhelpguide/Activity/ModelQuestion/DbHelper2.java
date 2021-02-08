@@ -1,4 +1,4 @@
-package com.sd.saruj.cuhelpguide.ModelQuestion;
+package com.sd.saruj.cuhelpguide.Activity.ModelQuestion;
 
 import android.content.ContentValues;
 import android.content.Context;

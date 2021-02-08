@@ -2,6 +2,7 @@ package com.sd.saruj.cuhelpguide.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
 
 import androidx.appcompat.app.ActionBar;
@@ -28,6 +29,8 @@ public class ShowPostActivity extends AppCompatActivity {
         details = intent.getStringExtra("details");
         subjectName = intent.getStringExtra("subjectName");
 
+//        setTitle(subjectName);
+
         Toolbar toolbar = findViewById(R.id.show_post_toolbar);
         setSupportActionBar(toolbar);
         ActionBar actionBar = getSupportActionBar();
@@ -35,7 +38,9 @@ public class ShowPostActivity extends AppCompatActivity {
         actionBar.setDisplayShowCustomEnabled(true);
         getSupportActionBar().setTitle(subjectName);
 
+        Log.e("name", subjectName+"  "+ title) ;
+
         titleText.setText(title);
-        detailsText.setText(details);
+        detailsText.setText("         "+details);
     }
 }

@@ -19,6 +19,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.sd.saruj.cuhelpguide.Constant.Config;
 import com.sd.saruj.cuhelpguide.R;
 
 import java.util.HashMap;
@@ -34,7 +35,6 @@ public class UpploadPostActivity extends AppCompatActivity {
 
     private static String TAG = "MainActivity"; //MainActivity
 
-    private String insertDataURL = "http://10.0.2.2/android/CU_HELP_GUIDE/uploadPost.php";
 
     String[] allSubName = {
             "All Subject"
@@ -163,8 +163,6 @@ public class UpploadPostActivity extends AppCompatActivity {
             public void onClick(View view) {
                 spin = spin2.getSelectedItem().toString();
                 uploadPost();
-
-//                Toast.makeText(getApplicationContext(), spin, Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -172,19 +170,24 @@ public class UpploadPostActivity extends AppCompatActivity {
     }
 
     private void uploadPost() {
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, insertDataURL, new Response.Listener<String>() {
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, Config.INSERT_POST_URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                //progressBar.setVisibility(View.GONE);
-                titleEditText.setText("");
-                editText.setText("");
 
-                Toast.makeText(getApplicationContext(), "Data Inserted Successfully", Toast.LENGTH_SHORT).show();
+                if(response.equalsIgnoreCase("true")){
+                    titleEditText.setText("");
+                    editText.setText("");
+
+                    Toast.makeText(getApplicationContext(), "Post upload Successfully...", Toast.LENGTH_SHORT).show();
+                } else{
+                    Toast.makeText(getApplicationContext(), "Please check Connection...", Toast.LENGTH_SHORT).show();
+                }
+
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getApplicationContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Please check Connection...", Toast.LENGTH_SHORT).show();
             }
         }) {
             @Override
@@ -204,5 +207,7 @@ public class UpploadPostActivity extends AppCompatActivity {
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(stringRequest);
         Log.d("TAG", "stringRequest: "+stringRequest ) ;
+
+
     }
 }

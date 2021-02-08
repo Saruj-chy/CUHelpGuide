@@ -32,11 +32,11 @@
             android:name=".Activity.SubjectReviewActivity"
             android:parentActivityName=".MainActivity" />
         <activity android:name=".Activity.ChoiceActivity" />
-        <activity android:name=".ModelQuestion.PracticeTest.QuestionActivity" />
-        <activity android:name=".ModelQuestion.PracticeTest.PracticeTestActivity" />
-        <activity android:name=".ModelQuestion.ModelQuestionMainActivity" />
-        <activity android:name=".ModelQuestion.ResultActivity" />
-        <activity android:name=".ModelQuestion.ModelQuestionActivity" />
+        <activity android:name=".Activity.ModelQuestion.PracticeTest.QuestionActivity" />
+        <activity android:name=".Activity.ModelQuestion.PracticeTest.PracticeTestActivity" />
+        <activity android:name=".Activity.ModelQuestion.ModelQuestionMainActivity" />
+        <activity android:name=".Activity.ModelQuestion.ResultActivity" />
+        <activity android:name=".Activity.ModelQuestion.ModelQuestionActivity" />
         <activity
             android:name=".Activity.DUnitSubjectViewActivity"
             android:parentActivityName=".Activity.AllUnitViewActivity" />
@@ -47,7 +47,7 @@
             android:name=".Activity.AllUnitViewActivity"
             android:parentActivityName=".MainActivity" />
         <activity
-            android:name=".DepartmentInformation.DepartmentInformationActivity"
+            android:name=".Activity.DepartmentInformationActivity"
             android:parentActivityName=".Activity.FacultyNameActivity" />
         <activity
             android:name=".Activity.DepartmentNameActivity"

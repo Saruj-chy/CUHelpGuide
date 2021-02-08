@@ -9,7 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.sd.saruj.cuhelpguide.Class.FacultyNameIntentClass;
-import com.sd.saruj.cuhelpguide.DepartmentInformation.DepartmentInformationActivity;
+import com.sd.saruj.cuhelpguide.Activity.DepartmentInformationActivity;
 import com.sd.saruj.cuhelpguide.Activity.DepartmentNameActivity;
 import com.sd.saruj.cuhelpguide.Interfaces.PutIntentInterface;
 import com.sd.saruj.cuhelpguide.ModelClass.FacultyBuilderModel;

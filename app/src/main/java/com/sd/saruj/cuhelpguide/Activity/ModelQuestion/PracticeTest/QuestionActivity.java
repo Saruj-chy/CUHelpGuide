@@ -1,8 +1,7 @@
-package com.sd.saruj.cuhelpguide.ModelQuestion.PracticeTest;
+package com.sd.saruj.cuhelpguide.Activity.ModelQuestion.PracticeTest;
 
 import android.graphics.Color;
 import android.os.Bundle;
-import android.view.Window;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,9 +14,9 @@ import com.sd.saruj.cuhelpguide.R;
 import java.util.ArrayList;
 import java.util.Collections;
 
-import static com.sd.saruj.cuhelpguide.ModelQuestion.PracticeTest.PracticeTestAdapter.CATEGORY_COLOR;
-import static com.sd.saruj.cuhelpguide.ModelQuestion.PracticeTest.PracticeTestAdapter.CATEGORY_ID;
-import static com.sd.saruj.cuhelpguide.ModelQuestion.PracticeTest.PracticeTestAdapter.CATEGORY_TITLE;
+import static com.sd.saruj.cuhelpguide.Activity.ModelQuestion.PracticeTest.PracticeTestAdapter.CATEGORY_COLOR;
+import static com.sd.saruj.cuhelpguide.Activity.ModelQuestion.PracticeTest.PracticeTestAdapter.CATEGORY_ID;
+import static com.sd.saruj.cuhelpguide.Activity.ModelQuestion.PracticeTest.PracticeTestAdapter.CATEGORY_TITLE;
 
 public class QuestionActivity extends AppCompatActivity {
 

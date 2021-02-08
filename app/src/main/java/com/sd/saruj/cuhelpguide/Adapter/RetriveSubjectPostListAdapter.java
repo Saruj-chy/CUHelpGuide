@@ -2,6 +2,7 @@ package com.sd.saruj.cuhelpguide.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -41,11 +42,20 @@ public class RetriveSubjectPostListAdapter extends RecyclerView.Adapter<RetriveS
 
 
 
-        holder.textViewId.setText(String.valueOf(position+1));
+        holder.textViewId.setText(position+1+".");
         holder.textViewtitle.setText(product.getTitle());
-        holder.textViewPost.setText(String.valueOf(product.getDetails()));
 
-        holder.textViewMore.setOnClickListener(new View.OnClickListener() {
+        String detailsText = product.getDetails() ;
+        if(detailsText.length()>100){
+            String text = detailsText.substring(0, 100);
+            holder.textViewPost.setText("               "+text+"...see more");
+        }else{
+            holder.textViewPost.setText("               "+detailsText);
+        }
+        Log.e("name", product.getName()+" subj... ") ;
+
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Context context = view.getContext();

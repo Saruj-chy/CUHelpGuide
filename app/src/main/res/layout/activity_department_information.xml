@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".DepartmentInformation.DepartmentInformationActivity">
+    tools:context=".Activity.DepartmentInformationActivity">
 
     <include
         layout="@layout/app_bar_layout"
@@ -15,7 +15,7 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="10dp"
+        android:layout_margin="5dp"
         android:layout_below="@+id/dept_information_toolbar"
         android:layout_alignParentTop="@+id/dept_information_toolbar"
         android:layout_alignParentStart="true"
@@ -34,6 +34,7 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
+                android:scaleType="fitXY"
 
                 android:src="@drawable/law" />
             <ScrollView
@@ -49,6 +50,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_below="@+id/departmentImage"
+                android:padding="5dp"
+                android:justificationMode="inter_word"
 
                 />
             </ScrollView>

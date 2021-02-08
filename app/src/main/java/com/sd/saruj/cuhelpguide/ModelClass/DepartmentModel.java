@@ -1,4 +1,4 @@
-package com.sd.saruj.cuhelpguide.DepartmentInformation;
+package com.sd.saruj.cuhelpguide.ModelClass;
 
 import java.lang.reflect.Field;
 
