@@ -17,15 +17,15 @@ import com.sd.saruj.cuhelpguide.R;
 
 import java.util.ArrayList;
 
-public class PracticeTestAdapter extends ArrayAdapter<PracticeTestItem> {
+public class PracticeTestAdapter extends ArrayAdapter<PracticeTestItemModel> {
 
     static final String CATEGORY_COLOR = "CategoryColor";
     static final String CATEGORY_ID = "CategoryID";
     static final String CATEGORY_TITLE = "CategoryTitle";
     private Context mContext;
-    private ArrayList<PracticeTestItem> mCategoryItems;
+    private ArrayList<PracticeTestItemModel> mCategoryItems;
 
-    PracticeTestAdapter(@NonNull Context context, int resource, @NonNull ArrayList<PracticeTestItem> categoryItems) {
+    PracticeTestAdapter(@NonNull Context context, int resource, @NonNull ArrayList<PracticeTestItemModel> categoryItems) {
         super(context, resource, categoryItems);
         this.mContext = context;
         this.mCategoryItems = categoryItems;
@@ -41,7 +41,7 @@ public class PracticeTestAdapter extends ArrayAdapter<PracticeTestItem> {
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
 
         CategoryViewHolder categoryViewHolder;
-        final PracticeTestItem categoryItem = mCategoryItems.get(position);
+        final PracticeTestItemModel categoryItem = mCategoryItems.get(position);
 
         if(convertView == null) {
             convertView = LayoutInflater.from(mContext)

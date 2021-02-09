@@ -10,6 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.sd.saruj.cuhelpguide.ModelClass.PracticeModel;
 import com.sd.saruj.cuhelpguide.R;
 
 import java.util.ArrayList;
@@ -17,14 +18,14 @@ import java.util.ArrayList;
 public class QuestionAdapter extends RecyclerView.Adapter {
 
     private Context mContext;
-    private ArrayList<Question> mQuestionList;
+    private ArrayList<PracticeModel> mQuestionList;
     private String mCategoryLabel;
     private String mCategoryTitle;
 
 
 
 
-    public QuestionAdapter(Context context, ArrayList<Question> questionList, String category, String categortTitle) {
+    public QuestionAdapter(Context context, ArrayList<PracticeModel> questionList, String category, String categortTitle) {
         this.mContext = context;
         this.mQuestionList = questionList;
         this.mCategoryLabel = category;
@@ -49,7 +50,7 @@ public class QuestionAdapter extends RecyclerView.Adapter {
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, final int position) {
-        final Question question = mQuestionList.get(position);
+        final PracticeModel question = mQuestionList.get(position);
         final QuestionViewHolder questionViewHolder = (QuestionViewHolder) holder;
 
         questionViewHolder.mQuestion.setText(question.getmQuestion());

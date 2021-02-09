@@ -1,21 +1,22 @@
 <resources>
-    <string name="app_name">CU Help Guide</string>
+    <string name="app_name">Dream to Chittagong University</string>
 
     <string name="action_settings">Settings</string>
     <string name="action_search">Search</string>
+    <string name="action_volunteer">Volunteer Student</string>
     <string name="drawer_open">Open</string>
     <string name="drawer_close">Close</string>
 
-    <!--   <string-array name="nameList">
+    <!--
+    <string-array name="nameList">
         <item>Headings</item>
         <item>Headings and Details</item>
         <item>All Data</item>
-    </string-array>-->
+    </string-array>
+    -->
 
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_tttttttttttt">tttttttttttt</string>
-    <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
@@ -172,7 +173,7 @@
 
 
     //about
-    <string name="rules_about">একটি কৃষক সংগঠনের সদস্যরা শুরুর দিকে সবাই মিলে সংগঠনের ভিশন স্থির করল যে - \n
+    <string name="rules_about">একটি সংগঠনের সদস্যরা শুরুর দিকে সবাই মিলে সংগঠনের ভিশন স্থির করল যে - \n
 ১. সংগঠনের কার্যাবলিতে স্বচ্ছতা ও বিশ্বাসযোগ্যতা এনে শক্তিশালী করবে;\n
 ২. শক্তিশালী সংগঠন গড়ে তোলার মাধ্যমে সদস্যদের জীবনমানের উন্নতি ঘটাবে;\n
 ৩. মধ্যমেয়াদি সময়ে অর্থাৎ আগামী ৫ বছরে তারা এটা অর্জন করতে চায়;\n

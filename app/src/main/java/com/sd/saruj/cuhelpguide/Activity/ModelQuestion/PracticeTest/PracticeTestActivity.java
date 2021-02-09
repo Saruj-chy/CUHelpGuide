@@ -14,7 +14,7 @@ public class PracticeTestActivity extends AppCompatActivity {
 
     private GridView mGridView;
     private PracticeTestAdapter mCategoryAdapter;
-    private ArrayList<PracticeTestItem> mCategoryItems;
+    private ArrayList<PracticeTestItemModel> mCategoryItems;
     //======   color
     private int[] mColors;
 
@@ -43,7 +43,7 @@ public class PracticeTestActivity extends AppCompatActivity {
         mColors = getResources().getIntArray(R.array.colors);
 
         for(int i = 0; i< mCategoryTitles.length; i++) {
-            mCategoryItems.add(new PracticeTestItem(mColors[i], mCategoryTitles[i], mCategoryID[i]));
+            mCategoryItems.add(new PracticeTestItemModel(mColors[i], mCategoryTitles[i], mCategoryID[i]));
             Log.d("TAG", "Title\t" + mCategoryTitles[i] + "\tID\t" + mCategoryID[i]);
         }
     }

@@ -1,4 +1,4 @@
-package com.sd.saruj.cuhelpguide.AdmisionNotice;
+package com.sd.saruj.cuhelpguide.Activity;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,10 +16,9 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.sd.saruj.cuhelpguide.Adapter.NoticeListAdapter;
-import com.sd.saruj.cuhelpguide.Class.FacultyBuilderClass;
+import com.sd.saruj.cuhelpguide.ModelClass.FacultyBuilderClass;
 import com.sd.saruj.cuhelpguide.Constant.Config;
 import com.sd.saruj.cuhelpguide.Interfaces.NoticeClickInterfaces;
-import com.sd.saruj.cuhelpguide.ModelClass.Faculty;
 import com.sd.saruj.cuhelpguide.ModelClass.FacultyBuilderModel;
 import com.sd.saruj.cuhelpguide.R;
 
@@ -61,7 +60,7 @@ public class NoticeListActivity extends AppCompatActivity {
         mItemClickListener = new NoticeClickInterfaces() {
             @Override
             public void onClick(View view, int position, boolean isLongClick) {
-                Intent intent = new Intent(NoticeListActivity.this,NoticeViewActivity.class);
+                Intent intent = new Intent(NoticeListActivity.this, NoticeViewActivity.class);
                 intent.putExtra("url", mNoticeList.get(position).getType());
                 startActivity(intent);
             }

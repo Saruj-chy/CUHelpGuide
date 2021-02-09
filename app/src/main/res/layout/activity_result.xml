@@ -7,7 +7,7 @@
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
     android:paddingTop="16dp"
-    tools:context=".Activity.ModelQuestion.ResultActivity">
+    tools:context=".Activity.ModelQuestion.ModelTest.ResultActivity">
 
     <ImageView
         android:id="@+id/img1"

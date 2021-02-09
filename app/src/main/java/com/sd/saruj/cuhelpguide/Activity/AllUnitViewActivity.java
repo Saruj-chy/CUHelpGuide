@@ -9,8 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
-import com.sd.saruj.cuhelpguide.Class.FacultyBuilderClass;
-import com.sd.saruj.cuhelpguide.ModelClass.Faculty;
+import com.sd.saruj.cuhelpguide.ModelClass.FacultyBuilderClass;
 import com.sd.saruj.cuhelpguide.ModelClass.FacultyBuilderModel;
 import com.sd.saruj.cuhelpguide.R;
 import com.sd.saruj.cuhelpguide.Adapter.AllUnitViewAdapter;

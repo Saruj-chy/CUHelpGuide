@@ -11,18 +11,22 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_alignParentBottom="true"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop = "16dp"
         android:paddingLeft="16dp"
         android:paddingBottom="16dp"
         >
+
         <ImageView
+            android:id="@+id/drawer_image"
+
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:layout_marginBottom="16dp"
-            android:background="@drawable/cu_logo"
-
+            android:layout_marginBottom="@dimen/dimen_8dp"
+            android:background="@drawable/profile"
             />
         <TextView
+            android:id="@+id/drawer_userName"
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Sarose Datta"
@@ -31,6 +35,8 @@
             android:fontFamily="sans-serif-condensed"
             />
         <TextView
+            android:id="@+id/drawer_status"
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="saruj.chy222@gmail.com"

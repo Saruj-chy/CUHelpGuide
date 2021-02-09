@@ -1,4 +1,4 @@
-package com.sd.saruj.cuhelpguide.Activity.ModelQuestion;
+package com.sd.saruj.cuhelpguide.Activity.ModelQuestion.ModelTest;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,6 +12,9 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.sd.saruj.cuhelpguide.Activity.ModelQuestion.ModelDD.DBBuildChain;
+import com.sd.saruj.cuhelpguide.Activity.ModelQuestion.ModelDD.DBHandler;
+import com.sd.saruj.cuhelpguide.ModelClass.QuestionModel;
 import com.sd.saruj.cuhelpguide.R;
 
 import java.util.Collections;
@@ -20,11 +23,11 @@ import java.util.List;
 public class ModelQuestionActivity extends AppCompatActivity {
 
 
-    List<Question> questionList;
+    List<QuestionModel> questionList;
 
     int quid = 0;
     String name, modelName;
-    Question currentQuestion1, currentQuestion2, currentQuestion3, currentQuestion4, currentQuestion5, currentQuestion6 ;
+    QuestionModel currentQuestion1, currentQuestion2, currentQuestion3, currentQuestion4, currentQuestion5, currentQuestion6 ;
 
     TextView txtQuestion1, txtQuestion2, txtQuestion3, txtQuestion4, txtQuestion5, txtQuestion6;
     RadioButton rda0,rdb1,rdc2,  rda10,rdb11,rdc12,  rda20,rdb21,rdc22,   rda30,rdb31,rdc32,  rda40,rdb41,rdc42,  rda50,rdb51,rdc52;
@@ -37,23 +40,32 @@ public class ModelQuestionActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         name = intent.getStringExtra("name").toLowerCase().trim();
-        modelName = intent.getStringExtra("name1").toLowerCase().trim();
+//        modelName = intent.getStringExtra("name1").toLowerCase().trim();
 
 
-        switch (name){
-            case "model1":
-                setTitle(modelName);
-                DbHelper dbHelper = new DbHelper(this);
-                questionList = dbHelper.getAllQuestions();
-                break;
+//        setTitle(modelName);
+//        if(questionList.size()>0){
+//            questionList.clear();
+//        }
 
-            case "model2":
-                setTitle(modelName);
-                DbHelper2 dbHelper2 = new DbHelper2(this);
-                questionList = dbHelper2.getAllQuestions();
-                break;
+        DBHandler dbHandler = new DBBuildChain(getApplicationContext()).createChain() ;
+        questionList = dbHandler.process(name);
 
-        }
+
+//        switch (name){
+//            case "model1":
+//                setTitle(modelName);
+//                DbHelper dbHelper = new DbHelper(this);
+//                questionList = dbHelper.getAllQuestions();
+//                break;
+//
+//            case "model2":
+//                setTitle(modelName);
+//                DbHelper2 dbHelper2 = new DbHelper2(this);
+//                questionList = dbHelper2.getAllQuestions();
+//                break;
+//
+//        }
 
 
 

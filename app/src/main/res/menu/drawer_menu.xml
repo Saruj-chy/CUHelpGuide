@@ -32,6 +32,7 @@
         android:id="@+id/item_retrive"
         android:checkable="true"
         android:icon="@drawable/ic_retrive_24"
+        android:visible="false"
         android:title="Retrive Post"
         />
     <item

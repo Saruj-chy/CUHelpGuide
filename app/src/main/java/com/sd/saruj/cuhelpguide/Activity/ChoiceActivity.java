@@ -24,10 +24,8 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.sd.saruj.cuhelpguide.Adapter.ChoiceListAdapter;
-import com.sd.saruj.cuhelpguide.Adapter.NoticeListAdapter;
-import com.sd.saruj.cuhelpguide.Class.FacultyBuilderClass;
+import com.sd.saruj.cuhelpguide.ModelClass.FacultyBuilderClass;
 import com.sd.saruj.cuhelpguide.Constant.Config;
-import com.sd.saruj.cuhelpguide.Interfaces.NoticeClickInterfaces;
 import com.sd.saruj.cuhelpguide.ModelClass.FacultyBuilderModel;
 import com.sd.saruj.cuhelpguide.R;
 

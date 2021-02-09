@@ -1,14 +1,14 @@
-package com.sd.saruj.cuhelpguide.Activity.ModelQuestion;
+package com.sd.saruj.cuhelpguide.ModelClass;
 
-public class Question {
-    private int id;
-    private String question;
-    private String optA;
-    private String optB;
-    private String optC;
-    private String answer;
+public class QuestionModel {
+    public int id;
+    public String question;
+    public String optA;
+    public String optB;
+    public String optC;
+    public String answer;
 
-    public Question(){
+    public QuestionModel(){
         id=0;
         question = "";
         optA = "";
@@ -17,7 +17,7 @@ public class Question {
         answer = "";
     }
 
-    public Question(String question, String optA, String optB, String optC, String answer){
+    public QuestionModel(String question, String optA, String optB, String optC, String answer){
         this.question = question;
         this.optA = optA;
         this.optB = optB;

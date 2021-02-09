@@ -12,8 +12,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.widget.EditText;
 
-import com.sd.saruj.cuhelpguide.Class.FacultyBuilderClass;
-import com.sd.saruj.cuhelpguide.ModelClass.Faculty;
+import com.sd.saruj.cuhelpguide.ModelClass.FacultyBuilderClass;
 import com.sd.saruj.cuhelpguide.ModelClass.FacultyBuilderModel;
 import com.sd.saruj.cuhelpguide.R;
 import com.sd.saruj.cuhelpguide.Adapter.SubjectReviewAdapter;

@@ -1,4 +1,4 @@
-package com.sd.saruj.cuhelpguide.Activity.ModelQuestion;
+package com.sd.saruj.cuhelpguide.Activity.ModelQuestion.ModelTest;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,7 +6,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
+import com.sd.saruj.cuhelpguide.Activity.ModelQuestion.ModelTest.ModelQuestionActivity;
 import com.sd.saruj.cuhelpguide.R;
 
 public class ModelQuestionMainActivity extends AppCompatActivity {
@@ -47,10 +49,7 @@ public class ModelQuestionMainActivity extends AppCompatActivity {
         btn3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //  startActivity(new Intent(getApplicationContext(), MoelQuestionActivity.class));
-                Intent intent = new Intent(getApplicationContext(), ModelQuestionActivity.class);
-                intent.putExtra("name",btn3.getText());
-                startActivity(intent);
+                Toast.makeText(ModelQuestionMainActivity.this, "Question not set Yet...", Toast.LENGTH_SHORT).show();
             }
         });
     }

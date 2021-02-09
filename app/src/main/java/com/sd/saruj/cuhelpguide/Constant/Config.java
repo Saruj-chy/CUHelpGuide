@@ -9,6 +9,7 @@ public class Config {
     public static final String DEPARTMENT_TABLE_URL = "http://192.168.1.5/android/CU_HELP_GUIDE/getDepartmentTableAllData.php";
     public static final String INSERT_POST_URL = "http://192.168.1.5/android/CU_HELP_GUIDE/uploadPost.php";
     public static final String RETRIVE_POST_LIST_URL = "http://192.168.1.5/android/CU_HELP_GUIDE/getAllDepartmentPost.php";
+    public static final String VOLUNTEER_STUDENT_LIST = "http://192.168.1.5/android/CU_HELP_GUIDE/getVolunteerStudentList.php";
 
 
     public static final String FACULTY_NAME= "facultyName";

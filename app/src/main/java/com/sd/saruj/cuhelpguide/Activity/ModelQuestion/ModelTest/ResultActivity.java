@@ -1,4 +1,4 @@
-package com.sd.saruj.cuhelpguide.Activity.ModelQuestion;
+package com.sd.saruj.cuhelpguide.Activity.ModelQuestion.ModelTest;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -22,9 +22,6 @@ public class ResultActivity extends AppCompatActivity {
         RatingBar ratingBar = (RatingBar)findViewById(R.id.ratingBar1);
         ImageView img = (ImageView)findViewById(R.id.img1);
         Button showAnswer = findViewById(R.id.btn);
-
-
-
 
 
         Bundle b = getIntent().getExtras();

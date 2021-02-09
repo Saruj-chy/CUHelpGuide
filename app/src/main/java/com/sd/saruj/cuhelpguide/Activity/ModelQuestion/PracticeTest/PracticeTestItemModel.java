@@ -1,12 +1,12 @@
 package com.sd.saruj.cuhelpguide.Activity.ModelQuestion.PracticeTest;
 
-public class PracticeTestItem {
+public class PracticeTestItemModel {
 
     private int mBgColor;
     private String mTestTitle;
     private String mTestID;
 
-    PracticeTestItem(int imageId, String testTitle, String testID) {
+    PracticeTestItemModel(int imageId, String testTitle, String testID) {
         this.mBgColor = imageId;
         this.mTestTitle = testTitle;
         this.mTestID = testID;

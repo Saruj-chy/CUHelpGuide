@@ -1,6 +1,4 @@
-package com.sd.saruj.cuhelpguide.Class;
-
-import com.sd.saruj.cuhelpguide.ModelClass.FacultyBuilderModel;
+package com.sd.saruj.cuhelpguide.ModelClass;
 
 public class FacultyBuilderClass {
 
@@ -10,6 +8,8 @@ public class FacultyBuilderClass {
     private  String details;
     private String type;
     private String url;
+    private String phone;
+    private String department_name;
 
 
     public FacultyBuilderClass setId(int id) {
@@ -42,8 +42,18 @@ public class FacultyBuilderClass {
         return this ;
     }
 
+    public FacultyBuilderClass setPhone(String phone) {
+        this.phone = phone;
+        return this ;
+    }
+
+    public FacultyBuilderClass setDepartment_name(String department_name) {
+        this.department_name = department_name;
+        return this ;
+    }
+
     public FacultyBuilderModel build(){
-        FacultyBuilderModel builderModel = new FacultyBuilderModel( id,  name,  title,  details,  type, url) ;
+        FacultyBuilderModel builderModel = new FacultyBuilderModel( id,  name,  title,  details,  type, url, phone, department_name) ;
         return builderModel ;
     }
 }

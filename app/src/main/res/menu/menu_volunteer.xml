@@ -1,0 +1,11 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.sd.saruj.drawer_without_navigation.MainActivity">
+    <item
+        android:id="@+id/action_volunteer"
+        android:visible="true"
+        android:title="@string/action_volunteer"
+
+         />
+</menu>

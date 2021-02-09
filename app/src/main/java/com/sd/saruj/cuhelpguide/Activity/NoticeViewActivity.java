@@ -1,4 +1,4 @@
-package com.sd.saruj.cuhelpguide.AdmisionNotice;
+package com.sd.saruj.cuhelpguide.Activity;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;

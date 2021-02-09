@@ -9,6 +9,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.sd.saruj.cuhelpguide.ModelClass.PracticeModel;
 import com.sd.saruj.cuhelpguide.R;
 
 import java.util.ArrayList;
@@ -22,7 +23,7 @@ public class QuestionActivity extends AppCompatActivity {
 
     private RecyclerView mRecyclerView;
     private QuestionAdapter mAdapter;
-    private ArrayList<Question> mQuestionList;
+    private ArrayList<PracticeModel> mQuestionList;
 
     private QuizDBHelper mDbHelper;
 

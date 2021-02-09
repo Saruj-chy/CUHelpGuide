@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="@dimen/dimen_4dp"
+        app:cardUseCompatPadding="true"
+        android:background="@drawable/ripple_effect"
+        app:cardCornerRadius="@dimen/dimen_8dp"
+
+        android:layout_marginLeft="@dimen/dimen_8dp"
+        android:layout_marginRight="@dimen/dimen_8dp"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/ripple_effect"
+            android:padding="10dp"
+            >
+            <TextView
+                android:id="@+id/text_volunteer_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Volunteer Student Name"
+                android:textSize="20dp"
+                android:paddingRight="4dp"
+                android:paddingLeft="@dimen/dimen_4dp"
+                android:textStyle="bold"
+                android:textColor="#08308e"
+                />
+            <TextView
+                android:id="@+id/text_volunteer_phn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/text_volunteer_name"
+                android:text="Volunteer Student Phone"
+                android:textSize="14dp"
+                android:paddingRight="4dp"
+                android:paddingLeft="@dimen/dimen_4dp"
+                android:layout_marginLeft="15dp"
+                />
+            <TextView
+                android:id="@+id/text_volunteer_department"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/text_volunteer_phn"
+                android:text="Volunteer department Name"
+                android:textSize="14dp"
+                android:paddingRight="4dp"
+                android:paddingLeft="@dimen/dimen_4dp"
+                android:layout_marginLeft="15dp"
+
+                />
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+
+
+
+
+
+
+
+</RelativeLayout>

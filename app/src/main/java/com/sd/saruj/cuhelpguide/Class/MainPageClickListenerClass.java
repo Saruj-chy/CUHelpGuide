@@ -3,14 +3,13 @@ package com.sd.saruj.cuhelpguide.Class;
 import android.content.Context;
 import android.content.Intent;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.sd.saruj.cuhelpguide.Activity.AllUnitViewActivity;
 import com.sd.saruj.cuhelpguide.Activity.ChoiceActivity;
 import com.sd.saruj.cuhelpguide.Activity.FacultyNameActivity;
 import com.sd.saruj.cuhelpguide.Activity.SubjectReviewActivity;
-import com.sd.saruj.cuhelpguide.AdmisionNotice.NoticeListActivity;
+import com.sd.saruj.cuhelpguide.Activity.NoticeListActivity;
 import com.sd.saruj.cuhelpguide.Interfaces.MainPageInterfaces;
 import com.sd.saruj.cuhelpguide.MainActivity;
 import com.sd.saruj.cuhelpguide.R;

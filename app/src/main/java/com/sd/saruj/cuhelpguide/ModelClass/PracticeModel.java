@@ -1,22 +1,22 @@
-package com.sd.saruj.cuhelpguide.Activity.ModelQuestion.PracticeTest;
+package com.sd.saruj.cuhelpguide.ModelClass;
 
-public class Question {
-
-
-
-    private String mQuestion;
-    private String mOption1;
-    private String mOption2;
-    private String mOption3;
-    private String mOption4;
-    private String mAnswer;
-    private String mCategory;
+public class PracticeModel {
 
 
-    Question() {
+
+    public String mQuestion;
+    public String mOption1;
+    public String mOption2;
+    public String mOption3;
+    public String mOption4;
+    public String mAnswer;
+    public String mCategory;
+
+
+    public PracticeModel() {
     }
 
-    Question(String mQuestion, String option1, String option2, String option3, String option4, String answer, String category) {
+    public PracticeModel(String mQuestion, String option1, String option2, String option3, String option4, String answer, String category) {
 
         this.mQuestion = mQuestion;
         this.mOption1 = option1;
