@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
 
-    tools:context=".Activity.FacultyNameActivity">
+    tools:context=".controller.Activity.FacultyNameActivity">
 
   <include
     layout="@layout/app_bar_layout"

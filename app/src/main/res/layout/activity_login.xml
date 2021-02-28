@@ -142,7 +142,7 @@
                     android:text="Login"
                     android:textAllCaps="false"
                     android:textSize="24sp"
-                    android:textColor="@android:color/background_light"
+                    android:textColor="@android:color/black"
                     />
 
                 <TextView

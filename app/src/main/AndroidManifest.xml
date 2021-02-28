@@ -13,55 +13,55 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity.ProfileActivity"></activity>
+        <activity android:name=".controller.Activity.ProfileActivity"></activity>
         <activity
-            android:name=".Activity.VolunteerStudentActivity"
-            android:parentActivityName=".MainActivity" />
-        <activity android:name=".Activity.RegistrationActivity" />
-        <activity android:name=".Activity.LoginActivity" />
+            android:name=".controller.Activity.VolunteerStudentActivity"
+            android:parentActivityName=".controller.Activity.MainActivity" />
+        <activity android:name=".controller.Activity.RegistrationActivity" />
+        <activity android:name=".controller.Activity.LoginActivity" />
         <activity
-            android:name=".Activity.NoticeViewActivity"
-            android:parentActivityName=".Activity.NoticeListActivity" />
+            android:name=".controller.Activity.NoticeViewActivity"
+            android:parentActivityName=".controller.Activity.NoticeListActivity" />
         <activity
-            android:name=".Activity.NoticeListActivity"
-            android:parentActivityName=".MainActivity" />
+            android:name=".controller.Activity.NoticeListActivity"
+            android:parentActivityName=".controller.Activity.MainActivity" />
         <activity
-            android:name=".Activity.ShowPostActivity"
-            android:parentActivityName=".Activity.RetriveSubjectPostListActivity" />
+            android:name=".controller.Activity.ShowPostActivity"
+            android:parentActivityName=".controller.Activity.RetriveSubjectPostListActivity" />
         <activity
-            android:name=".Activity.RetriveSubjectPostListActivity"
-            android:parentActivityName=".Activity.SubjectReviewActivity" />
-        <activity android:name=".Activity.UpploadPostActivity" />
+            android:name=".controller.Activity.RetriveSubjectPostListActivity"
+            android:parentActivityName=".controller.Activity.SubjectReviewActivity" />
+        <activity android:name=".controller.Activity.UpploadPostActivity" />
         <activity
-            android:name=".Activity.SubjectReviewActivity"
-            android:parentActivityName=".MainActivity" />
-        <activity android:name=".Activity.ChoiceActivity" />
-        <activity android:name=".Activity.ModelQuestion.PracticeTest.QuestionActivity" />
-        <activity android:name=".Activity.ModelQuestion.PracticeTest.PracticeTestActivity" />
-        <activity android:name=".Activity.ModelQuestion.ModelTest.ModelQuestionMainActivity" />
-        <activity android:name=".Activity.ModelQuestion.ModelTest.ResultActivity" />
-        <activity android:name=".Activity.ModelQuestion.ModelTest.ModelQuestionActivity" />
+            android:name=".controller.Activity.SubjectReviewActivity"
+            android:parentActivityName=".controller.Activity.MainActivity" />
+        <activity android:name=".controller.Activity.ChoiceActivity" />
+        <activity android:name=".controller.Activity.ModelQuestion.PracticeTest.QuestionActivity" />
+        <activity android:name=".controller.Activity.ModelQuestion.PracticeTest.PracticeTestActivity" />
+        <activity android:name=".controller.Activity.ModelQuestion.ModelTest.ModelQuestionMainActivity" />
+        <activity android:name=".controller.Activity.ModelQuestion.ModelTest.ResultActivity" />
+        <activity android:name=".controller.Activity.ModelQuestion.ModelTest.ModelQuestionActivity" />
         <activity
-            android:name=".Activity.DUnitSubjectViewActivity"
-            android:parentActivityName=".Activity.AllUnitViewActivity" />
+            android:name=".controller.Activity.DUnitSubjectViewActivity"
+            android:parentActivityName=".controller.Activity.AllUnitViewActivity" />
         <activity
-            android:name=".Activity.UnitSubjectViewActivity"
-            android:parentActivityName=".Activity.AllUnitViewActivity" />
+            android:name=".controller.Activity.UnitSubjectViewActivity"
+            android:parentActivityName=".controller.Activity.AllUnitViewActivity" />
         <activity
-            android:name=".Activity.AllUnitViewActivity"
-            android:parentActivityName=".MainActivity" />
+            android:name=".controller.Activity.AllUnitViewActivity"
+            android:parentActivityName=".controller.Activity.MainActivity" />
         <activity
-            android:name=".Activity.DepartmentInformationActivity"
-            android:parentActivityName=".Activity.FacultyNameActivity" />
+            android:name=".controller.Activity.DepartmentInformationActivity"
+            android:parentActivityName=".controller.Activity.FacultyNameActivity" />
         <activity
-            android:name=".Activity.DepartmentNameActivity"
-            android:parentActivityName=".Activity.FacultyNameActivity" />
+            android:name=".controller.Activity.DepartmentNameActivity"
+            android:parentActivityName=".controller.Activity.FacultyNameActivity" />
         <activity
-            android:name=".Activity.FacultyNameActivity"
-            android:parentActivityName=".MainActivity" />
-        <activity android:name=".MainActivity" />
+            android:name=".controller.Activity.FacultyNameActivity"
+            android:parentActivityName=".controller.Activity.MainActivity" />
+        <activity android:name=".controller.Activity.MainActivity" />
         <activity
-            android:name=".Activity.SplashScreenActivity"
+            android:name=".SplashScreenActivity"
             android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

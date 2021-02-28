@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
 
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".Activity.ModelQuestion.ModelTest.ModelQuestionActivity"
+    tools:context=".controller.Activity.ModelQuestion.ModelTest.ModelQuestionActivity"
     >
 
     <androidx.cardview.widget.CardView

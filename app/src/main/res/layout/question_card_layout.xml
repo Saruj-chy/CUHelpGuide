@@ -30,7 +30,7 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:text="TextView" />
 
-        <com.sd.saruj.cuhelpguide.Activity.ModelQuestion.PracticeTest.ToggleButtonGroupTableLayout
+        <com.sd.saruj.cuhelpguide.controller.Activity.ModelQuestion.PracticeTest.ToggleButtonGroupTableLayout
             android:id="@+id/table_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -98,7 +98,7 @@
                     android:gravity="center"/>
 
             </TableRow>
-        </com.sd.saruj.cuhelpguide.Activity.ModelQuestion.PracticeTest.ToggleButtonGroupTableLayout>
+        </com.sd.saruj.cuhelpguide.controller.Activity.ModelQuestion.PracticeTest.ToggleButtonGroupTableLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="4dp"
-    tools:context=".Activity.ModelQuestion.PracticeTest.QuestionActivity"
+    tools:context=".controller.Activity.ModelQuestion.PracticeTest.QuestionActivity"
     tools:layout_editor_absoluteY="81dp">
 
     <TextView
